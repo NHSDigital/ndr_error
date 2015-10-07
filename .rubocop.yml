@@ -1,0 +1,22 @@
+AllCops:
+  RunRailsCops: true
+  Exclude:
+  - test/dummy/db/schema.rb
+
+# Multi-line method chaining should be done with trailing dots.
+Style/DotPosition:
+  EnforcedStyle: trailing
+
+# This is unenforceable on Rails 3.x.
+Rails/ActionFilter:
+  Enabled: false
+
+# ...
+LineLength:
+  Max: 99
+
+# Relax some of the cops for tests
+Metrics/ClassLength: &exclude_tests
+  Exclude:
+    - test/**/*.rb
+Metrics/MethodLength: *exclude_tests

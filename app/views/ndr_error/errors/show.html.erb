@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="pull-right">
+    <div class="btn-group">
+      <%= ticket_link_for(@fingerprint) if @fingerprint.ticket_url.present? %>
+      <%= edit_button_for(@fingerprint) if user_can_edit_errors? %>
+    </div>
+
+    <%= purge_button_for(@fingerprint) if user_can_edit_errors? %>
+  </div>
+
+  <% if @error.similar_errors.any? %>
+    <div class="">
+      <%= previous_button_for(@error.previous) %>
+
+      <div class="btn-group">
+        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+          <%= pluralize(@error.similar_errors.length, 'similar error') %> stored
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <% @error.similar_errors.each do |other| %>
+            <li><%= similar_error_link(other) %></li>
+          <% end %>
+        </ul>
+      </div>
+
+      <%= next_button_for(@error.next) %>
+    </div>
+  <% end %>
+</div>
+
+<hr/>
+<h1>
+  <%= link_to 'Errors', error_fingerprints_path %> &#187;
+  <%= @error.error_class %>
+  <br><small><%=h @error.description %></small>
+</h1>
+<hr/>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>UUID:</th><td><code><%= @error.id %></code></td>
+      <th>Fingerprint:</th><td><code><%= @fingerprint.id %></code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="table table-bordered">
+  <tbody>
+    <tr>
+      <th>Time of Error:</th><td><%= @error.created_at.to_s(:db) %></td>
+      <th>User:</th><td><%= @error.user_id %> <small class="text-muted"><%= @error.user_roles %></small></td>
+    </tr>
+    <tr>
+      <th>Request URI:</th><td><%= @error.url %></td>
+      <th>User IP:</th><td><%= @error.ip %></td>
+    </tr>
+    <tr>
+      <th>Hostname / Port:</th><td><%= @error.hostname %> / <%= @error.port %></td>
+      <th>User Agent:</th><td><%= @error.user_agent %></td>
+    </tr>
+    <tr>
+      <th>SVN revision:</th><td><%= @error.svn_revision || "Unknown" %></td>
+      <th>Process ID</th><td><%= @error.process_id %></td>
+    </tr>
+    <tr>
+      <th>Database:</th><td><%= @error.database %></td>
+      <th>Clock Drift:</th><td><%= @error.clock_drift %> <%= content_tag(:span, 'DRIFT', class: 'label label-danger') if @error.clock_drift? %></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4>Captured Request Parameters:</h4>
+<% if @error.parameters.any? %>
+  <table class="table table-bordered">
+    <tbody>
+    <% sorted_parameters_for(@error).each do |key, value| %>
+      <tr>
+        <th><%= key.inspect %>:</th>
+        <td><%= value.inspect %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <pre><span class="text-muted">No parameters available.</span></pre>
+<% end %>
+
+<h4>
+  <small class="pull-right"><%= check_box_tag :toggle_app_trace_only %> only app trace?</small>
+  Backtrace:
+</h4>
+<% if (highlighted_trace = highlighted_trace_for(@error)).present? %>
+  <pre class="backtrace"><%= safe_join highlighted_trace %></pre>
+<% else %>
+  <pre><span class="text-muted">No backtrace available.</span></pre>
+<% end %>

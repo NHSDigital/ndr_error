@@ -1,0 +1,11 @@
+<%= form_for @fingerprint, as: :error_fingerprint, url: error_fingerprint_path(@fingerprint), method: :put do |form| %>
+  <div class="form-group">
+    <%= form.label :ticket_url, 'Ticket URL' %>
+    <div>
+      <%= form.text_field :ticket_url %>
+    </div>
+  </div>
+
+  <%= form.submit 'Update', class: 'btn btn-primary' %>
+  <%= link_to 'Cancel', error_fingerprint_path(@fingerprint), class: 'btn btn-default' %>
+<% end %>
