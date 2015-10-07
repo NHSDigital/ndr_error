@@ -19,4 +19,6 @@ before_install: "rm ${BUNDLE_GEMFILE}.lock"
 
 before_script: "bundle update"
 
-script: "bundle exec rake test"
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rake test
