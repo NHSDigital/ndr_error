@@ -123,6 +123,7 @@ DEPENDENCIES
   mocha
   ndr_error!
   pry
+  rack-cache (~> 1.2.0)
   rails (~> 3.2.0)
   simplecov
   sqlite3
