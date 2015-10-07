@@ -40,10 +40,7 @@ In the host application's `application.rb`, the following configuration can be a
 
 ```ruby
 # Configure the ActionDispatch::ShowExceptions middleware to use NdrError's exception logger:
-config.exceptions_app = lambda do |env|
-  rack_app = NdrError::Middleware::PublicExceptions.new(Rails.public_path)
-  rack_app.call(env)
-end
+config.exceptions_app = NdrError::Middleware::PublicExceptions.new(Rails.public_path)
 ```
 
 ## Configuration

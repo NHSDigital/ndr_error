@@ -4,7 +4,7 @@ require 'rails/all'
 
 Bundler.require(*Rails.groups)
 
-require 'ndr_error'
+require 'ndr_error/middleware/public_exceptions'
 
 module Dummy
   # Dummy application to host and test the engine
@@ -37,10 +37,8 @@ module Dummy
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password, :dummy_app_test_sensitive_parameter]
 
-    config.exceptions_app = lambda do |env|
-      rack_app = NdrError::Middleware::PublicExceptions.new(Rails.public_path)
-      rack_app.call(env)
-    end
+    # Configure the ActionDispatch::ShowExceptions middleware to use NdrError's exception logger.
+    config.exceptions_app = NdrError::Middleware::PublicExceptions.new(Rails.public_path)
 
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
