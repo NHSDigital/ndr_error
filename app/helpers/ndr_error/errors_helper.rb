@@ -33,10 +33,10 @@ module NdrError
 
       text = "+ #{fingerprint.count - 1}"
       opts = {
-        :class            => 'badge badge-info',
-        :'data-toggle'    => 'tooltip',
-        :'data-placement' => 'right',
-        :title            => "Since #{fingerprint.created_at.to_s(:db)}"
+        'class'          => 'badge badge-info',
+        'data-toggle'    => 'tooltip',
+        'data-placement' => 'right',
+        'title'          => "Since #{fingerprint.created_at.to_s(:db)}"
       }
 
       content_tag(:span, text, opts)
@@ -70,9 +70,9 @@ module NdrError
       text  = glyphicon_tag('trash icon-white') + ' Purge'
 
       options = {
-        :method => :delete,
-        :class => css,
-        :'data-confirm' => 'Delete all logs of this error? - only the fingerprint will be kept.'
+        'method'       => :delete,
+        'class'        => css,
+        'data-confirm' => 'Delete all logs of this error? - only the fingerprint will be kept.'
       }
 
       link_to(text, error_fingerprint_path(fingerprint), options)
