@@ -22,3 +22,4 @@ before_script: "bundle update"
 script:
   - RAILS_ENV=test bundle exec rake db:migrate --trace
   - bundle exec rake test
+  - rubocop .
