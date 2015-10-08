@@ -24,7 +24,7 @@ module NdrError
       assert_equal 'Gem.path/app', trace
 
       # Should remove gem version number when fuzzing gem paths
-      line  = Gem.path.first + "/gems/evil-1.4.3/lib/evil/file.rb:623:in `method'"
+      line = Gem.path.first + "/gems/evil-1.4.3/lib/evil/file.rb:623:in `method'"
       assert_equal "Gem.path/gems/evil-/lib/evil/file.rbin `method'", send(:fuzz_backtrace, [line])
     end
 

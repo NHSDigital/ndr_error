@@ -10,7 +10,7 @@ module NdrError
       highlighting = error.application_trace
 
       error.backtrace.map do |line|
-        css_classes  = 'trace-item'
+        css_classes = 'trace-item'
         css_classes << ' stack-only' unless highlighting.include?(line)
 
         content_tag(:span, line, class: css_classes)
@@ -43,7 +43,7 @@ module NdrError
     end
 
     def similar_error_link(error)
-      text  = content_tag(:span, error.user_id, class: 'text-muted')
+      text = content_tag(:span, error.user_id, class: 'text-muted')
       text << ' - ' << error.created_at.to_s(:db)
 
       link_to text, error_fingerprint_path(error.error_fingerprint, log_id: error)
@@ -79,7 +79,7 @@ module NdrError
     end
 
     def previous_button_for(error)
-      css  = 'btn btn-default'
+      css = 'btn btn-default'
       css << ' disabled' if error.nil?
       text = glyphicon_tag('chevron-left') + h('previous occurrence')
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
@@ -88,7 +88,7 @@ module NdrError
     end
 
     def next_button_for(error)
-      css  = 'btn btn-default'
+      css = 'btn btn-default'
       css << ' disabled' if error.nil?
       text = h('next occurrence') + glyphicon_tag('chevron-right')
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
