@@ -1,10 +1,8 @@
 require 'rubygems'
-gemfile = File.expand_path('../../../../Gemfile', __FILE__)
 
-if File.exist?(gemfile)
-  ENV['BUNDLE_GEMFILE'] = gemfile
-  require 'bundler'
-  Bundler.setup
-end
+# Use the specified gemfile, defaulting to ndr_error's Gemfile.
+ENV['BUNDLE_GEMFILE'] ||= File.expand_path('../../../../Gemfile', __FILE__)
+require 'bundler'
+Bundler.setup
 
 $LOAD_PATH.unshift File.expand_path('../../../../lib', __FILE__)
