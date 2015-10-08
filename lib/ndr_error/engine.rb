@@ -10,6 +10,7 @@ module NdrError
   class Engine < ::Rails::Engine
     isolate_namespace NdrError
 
+    # Hook into host app's asset pipeline
     initializer 'ndr_error.assets.precompile' do |app|
       app.config.assets.precompile += %w(ndr_error.css ndr_error.js)
     end
@@ -17,6 +18,16 @@ module NdrError
     # Extract context filtering from the host application
     initializer 'ndr_error.set_default_filtering' do |app|
       NdrError.filtered_parameters.concat app.config.filter_parameters
+    end
+
+    # Ensure helpers remain visible in development...
+    # See:
+    #
+    #   * http://stackoverflow.com/questions/{9809787,26645033,12191822}
+    #   * https://robots.thoughtbot.com/tips-for-writing-your-own-rails-engine
+    #
+    config.to_prepare do
+      ApplicationController.helper(ApplicationHelper)
     end
   end
 end
