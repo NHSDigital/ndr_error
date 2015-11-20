@@ -116,16 +116,8 @@ module NdrError
     # as YAML. Will attempt to store as many as possible
     # of the parameters in the available 4000 chars.
     def register_request(request)
-      return self.parameters_yml = {} unless request
-
-      assign_attributes(
-        port:       request.env['SERVER_PORT'],
-        ip:         "#{request.env['REMOTE_ADDR']}/#{request.remote_ip}",
-        url:        "#{request.env['REQUEST_URI']} (on #{request.host})",
-        user_agent: request.env['HTTP_USER_AGENT']
-      )
-
-      self.parameters_yml = prepare_request_params(request)
+      extract_request_params(request)
+      extract_request_attributes(request)
     end
 
     # Store as much of `params' as possible in
@@ -182,16 +174,29 @@ module NdrError
 
     # For the given `request' object, return the
     # parameters in a form suitable for logging.
-    def prepare_request_params(request)
-      sources = [:parameters, :request_parameters, :query_parameters]
-      params  = sources.map { |source| request.send(source) }.reduce(:merge)
+    def extract_request_params(request)
+      params = {}
 
-      # Redact any sensitive parameters:
-      params.each do |name, _value|
-        params[name] = '[FILTERED]' if unloggable?(name)
+      if request
+        sources = [:parameters, :request_parameters, :query_parameters]
+        sources.inject(params) { |a, e| a.merge!(request.send e) }
+
+        # Redact any sensitive parameters:
+        params.each do |name, _value|
+          params[name] = '[FILTERED]' if unloggable?(name)
+        end
       end
 
-      params
+      self.parameters_yml = params
+    end
+
+    def extract_request_attributes(request)
+      return unless request
+
+      self.port       = request.env['SERVER_PORT']
+      self.ip         = "#{request.env['REMOTE_ADDR']}/#{request.remote_ip}"
+      self.url        = "#{request.env['REQUEST_URI']} (on #{request.host})"
+      self.user_agent = request.env['HTTP_USER_AGENT']
     end
 
     # Returns true if the parameter should not be captured:

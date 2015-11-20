@@ -5,7 +5,7 @@ module NdrError
     before_filter :check_permissions, only: [:edit, :update, :destroy]
 
     def index
-      if NdrError.cleanup!
+      if NdrError::Log.perform_cleanup!
         flash[:notice] = 'Scheduled deletion of historical logs completed.'
       end
 

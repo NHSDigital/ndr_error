@@ -43,6 +43,14 @@ module Dummy
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
+    if Rails::VERSION::MAJOR > 3
+      # Rails 4+: force strong_parameters on:
+      config.action_controller.permit_all_parameters = false
+    elsif Rails::VERSION::MAJOR > 2
+      # Rails 3: enable protected_attributes:
+      config.active_record.whitelist_attributes = true
+    end
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types

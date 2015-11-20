@@ -156,7 +156,7 @@ PLATFORMS
 DEPENDENCIES
   mocha
   ndr_error!
-  ndr_support
+  ndr_support (~> 3.0)
   pry
   rubocop
   simplecov

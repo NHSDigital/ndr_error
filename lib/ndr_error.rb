@@ -3,10 +3,14 @@ require 'ndr_error/engine'
 require 'ndr_error/backtrace_compression'
 require 'ndr_error/finder'
 require 'ndr_error/fuzzing'
+require 'ndr_error/logging'
 require 'ndr_error/uuid_builder'
 
 # Configuration for NdrError + convienence methods.
 module NdrError
+  extend Finder
+  extend Logging
+
   # Callable object, that by default is called by the NdrError::Middleware::PublicExceptions
   # middleware (with the request and exception objects) when an exception is handled.
   # Returning a "falsey" value will prevent the exception from being logged.
@@ -77,34 +81,5 @@ module NdrError
   # namespaced modules.
   def self.table_name_prefix
     'error_'
-  end
-
-  # Log the given `exception`.
-  def self.log(exception, ancillary_data, request_object)
-    log = Log.new(ancillary_data)
-    log.register_exception(exception)
-    log.register_request(request_object)
-
-    print = Fingerprint.find_or_create_by_id(log.md5_digest)
-    error = print.store_log(log)
-
-    [print, error]
-  end
-
-  extend Finder
-  # Proxy to paginate fingerprint results, filtering them
-  # if search keywords have been supplied.
-  def self.paginate(keywords, page)
-    search(keywords).paginate(page: page, per_page: Fingerprint.per_page)
-  end
-
-  # Sends finds through to the fingerprint resource.
-  def self.find(id)
-    Fingerprint.find(id)
-  end
-
-  # Performs a hard delete of logs, where necessary.
-  def self.cleanup!
-    Log.perform_cleanup!
   end
 end

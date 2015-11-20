@@ -30,7 +30,8 @@ module NdrError
     def self.find_or_create_by_id(digest)
       existing = find_by_error_fingerprintid(digest)
 
-      existing || create(count: 0) do |print|
+      existing || create do |print|
+        print.count = 0
         print.error_fingerprintid = digest
       end
     end

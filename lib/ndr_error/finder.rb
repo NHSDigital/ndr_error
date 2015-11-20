@@ -15,6 +15,17 @@ module NdrError
       order(records)
     end
 
+    # Proxy to paginate fingerprint results, filtering them
+    # if search keywords have been supplied.
+    def paginate(keywords, page)
+      search(keywords).paginate(page: page, per_page: Fingerprint.per_page)
+    end
+
+    # Sends finds through to the fingerprint resource.
+    def find(id)
+      Fingerprint.find(id)
+    end
+
     private
 
     # Intelligent search order:

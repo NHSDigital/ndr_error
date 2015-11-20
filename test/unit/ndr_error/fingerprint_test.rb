@@ -5,14 +5,14 @@ module NdrError
   class FingerprintTest < ActiveSupport::TestCase
     test 'should not validate a blank ticket url' do
       with_ticket_url_regexp_as(%r{it/must/be/this}) do
-        assert Fingerprint.new(ticket_url: '').valid?
+        assert valid_ticket_url?('')
       end
     end
 
     test 'should not validate ticket url without format' do
       with_ticket_url_regexp_as(nil) do
-        assert Fingerprint.new(ticket_url: '').valid?
-        assert Fingerprint.new(ticket_url: 'this/is/ok').valid?
+        assert valid_ticket_url?('')
+        assert valid_ticket_url?('this/is/ok')
       end
     end
 
@@ -25,14 +25,14 @@ module NdrError
           https://github.com/PublicHealthEngland/ndr_error/issues/22
         )
 
-        valid_urls.each { |url| assert Fingerprint.new(ticket_url: url).valid? }
+        valid_urls.each { |url| assert valid_ticket_url?(url) }
 
         invalid_urls = %w(
           https://github.com/PublicHealthEngland/ndr_error/issues
           https://google.com
         )
 
-        invalid_urls.each { |url| assert Fingerprint.new(ticket_url: url).invalid? }
+        invalid_urls.each { |url| refute valid_ticket_url?(url) }
       end
     end
 
@@ -128,6 +128,10 @@ module NdrError
       yield
     ensure
       NdrError.ticket_url_format = previous_regexp
+    end
+
+    def valid_ticket_url?(url)
+      Fingerprint.new { |print| print.ticket_url = url }.valid?
     end
 
     def build_error
