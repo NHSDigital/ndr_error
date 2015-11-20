@@ -68,7 +68,7 @@ Configuration | Default | Description
 `log_grace_period` | `90.days` | The soft-delete window, after which the `ERROR_LOG` table is periodically purged.
 `compress_backtrace` | `true` | As much of the exception backtrace as possible is logged. By default, it is compressed to be make efficient use of the available space. However, if human-readability is desired, this can be disabled.
 `description_fuzzers` | ... | An array of objects which are called in order with the exception's description, in order to "fuzz" it for fingerprinting. By default, object details are stripped (e.g. hexidecimal identifiers).
-`ticket_url_format` | nil | Authorised users can tag fingerprints with a (ticket) url; if present, this configuration a regular expression to validate the format of any given URLs.
+`ticket_url_format` | `nil` | Authorised users can tag fingerprints with a (ticket) url; if present, this configuration a regular expression to validate the format of any given URLs.
 
 For example, in a host application initializer:
 
@@ -76,7 +76,7 @@ For example, in a host application initializer:
 # Configure user:
 NdrError.user_column    = :person_id
 NdrError.log_parameters = lambda do 
-  { user_id: Person.currently_authenticated.id || 'N/A' }
+  { user_id: Person.currently_authenticated.try(:id) || 'N/A' }
 end
 
 # Remove SQL from Oracle exceptions:
