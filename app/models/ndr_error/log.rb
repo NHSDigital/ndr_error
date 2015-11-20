@@ -10,7 +10,9 @@ module NdrError
     include NdrError::UuidBuilder
 
     # Migrate away from host-specific column name:
-    alias_attribute :user_id, NdrError.user_column
+    unless :user_id == NdrError.user_column
+      alias_attribute :user_id, NdrError.user_column
+    end
 
     self.primary_key = 'error_logid'
 
