@@ -75,8 +75,8 @@ For example, in a host application initializer:
 ```ruby
 # Configure user:
 NdrError.user_column    = :person_id
-NdrError.log_parameters = lambda do 
-  { user_id: Person.currently_authenticated.try(:id) || 'N/A' }
+NdrError.log_parameters = lambda do |request|
+  { user_id: Person.currently_authenticated.try(:id) || request.user_id || 'N/A' }
 end
 
 # Remove SQL from Oracle exceptions:

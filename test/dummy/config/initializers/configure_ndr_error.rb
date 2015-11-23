@@ -4,5 +4,5 @@ Rails.application.config.to_prepare do
   NdrError.user_column = :custom_user_column
 
   # Set ERROR_LOG.CUSTOM_USER_COLUMN to "Bob Jones":
-  NdrError.log_parameters = -> { { user_id: 'Bob Jones' } }
+  NdrError.log_parameters = ->(_request) { { user_id: 'Bob Jones' } }
 end

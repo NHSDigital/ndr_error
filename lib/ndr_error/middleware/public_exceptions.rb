@@ -17,7 +17,7 @@ module NdrError
       private
 
       def log_exception(request, exception)
-        parameters = NdrError.log_parameters.call
+        parameters = NdrError.log_parameters.call(request)
         _fingerprint, _log = NdrError.log(exception, parameters, request)
       end
 

@@ -32,9 +32,11 @@ module NdrError
   self.user_column = nil # Must be configured by the host app
 
   # A callable object that returns a hash of current context (e.g. user).
-  # The host app must at least set the :user_column to a value.
+  # The host app must at least set the :user_column to a value. If bundled
+  # NdrError::Middleware::PublicExceptions middleware is used, it is called
+  # with the Rack request object.
   mattr_accessor :log_parameters
-  self.log_parameters = -> { Hash.new }
+  self.log_parameters = ->(_request) { Hash.new }
 
   # Request parameters that we should not be capturing as part of the error context.
   mattr_accessor :filtered_parameters
