@@ -39,6 +39,7 @@ a Rack application that can be used as part of the Rails exception-handling midd
 In the host application's `application.rb`, the following configuration can be added:
 
 ```ruby
+require 'ndr_error/middleware/public_exceptions'
 # Configure the ActionDispatch::ShowExceptions middleware to use NdrError's exception logger:
 config.exceptions_app = NdrError::Middleware::PublicExceptions.new(Rails.public_path)
 ```
