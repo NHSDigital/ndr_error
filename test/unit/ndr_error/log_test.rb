@@ -186,6 +186,12 @@ module NdrError
       assert_equal text, error.description
     end
 
+    test 'should store error missing description' do
+      error = simulate_raise(Exception, '', [])
+
+      assert_equal 'No Description available', error.description
+    end
+
     test 'should store error type' do
       klass = RuntimeError
       error = simulate_raise(klass, 'msg', [])

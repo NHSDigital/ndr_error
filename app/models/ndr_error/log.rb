@@ -105,11 +105,7 @@ module NdrError
     def register_exception(exception)
       self.error_class = exception.class.to_s
       self.backtrace   = exception.backtrace
-      self.description = if exception.message.size >= 4000
-                           "#{exception.message[0..4000 - 15]}...[truncated]"
-                         else
-                           exception.message
-                         end
+      self.description = description_from(exception.message)
     end
 
     # Stores parameters from the given _request_ object
@@ -197,6 +193,11 @@ module NdrError
       self.ip         = "#{request.env['REMOTE_ADDR']}/#{request.remote_ip}"
       self.url        = "#{request.env['REQUEST_URI']} (on #{request.host})"
       self.user_agent = request.env['HTTP_USER_AGENT']
+    end
+
+    def description_from(message)
+      return 'No Description available' if message.blank?
+      message.size < 4000 ? message : "#{message[0..4000 - 15]}...[truncated]"
     end
 
     # Returns true if the parameter should not be captured:
