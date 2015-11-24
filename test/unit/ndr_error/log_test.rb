@@ -160,18 +160,6 @@ module NdrError
       assert_equal safe_output, error.parameters
     end
 
-    test 'should validate presence of user context' do
-      logged_error = simulate_raise(Exception, 'unknown bar', [])
-
-      logged_error.user_id = nil
-      logged_error.valid?
-      assert logged_error.errors[:user_id].any?, 'was no error'
-
-      logged_error.user_id = 'Bob Jones'
-      logged_error.valid?
-      refute logged_error.errors[:user_id].any?, 'was still an error'
-    end
-
     test 'should store error backtrace' do
       trace = %w( line1 line2 line3 )
       error = simulate_raise(Exception, 'boom', trace)

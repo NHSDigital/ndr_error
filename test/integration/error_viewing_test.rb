@@ -34,8 +34,8 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
   end
 
   test 'should be able to view details of an exception' do
-    print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
-    print2 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
+    print1 = simulate_raise(StandardError, 'Doh!', [], user_id: 'Bob Jones').error_fingerprint
+    print2 = simulate_raise(StandardError, 'Doh!', [], user_id: 'Sam Smith').error_fingerprint
 
     assert_equal print1, print2
 

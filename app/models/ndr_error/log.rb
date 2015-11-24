@@ -25,7 +25,6 @@ module NdrError
       scope.order('created_at DESC, error_logid DESC')
     end
 
-    validates :user_id, presence: true
     validates :error_fingerprintid, presence: true
     validates :description, presence: true
 

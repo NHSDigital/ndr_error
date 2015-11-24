@@ -27,10 +27,10 @@ module ActiveSupport
       NdrError::Fingerprint.find_or_create_by_id(digest)
     end
 
-    def simulate_raise(klass, message, trace)
+    def simulate_raise(klass, message, trace, context = {})
       exception = klass.new(message)
       exception.set_backtrace(trace)
-      _print, error = NdrError.log(exception, { user_id: 'Bob Jones' }, nil)
+      _print, error = NdrError.log(exception, context, nil)
       error
     end
 
@@ -40,7 +40,6 @@ module ActiveSupport
 
       error = NdrError::Log.new({})
       error.register_exception(exception)
-      error.user_id = 'John Smith'
       error.stubs(valid?: true)
 
       error
