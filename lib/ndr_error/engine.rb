@@ -12,7 +12,10 @@ module NdrError
 
     # Hook into host app's asset pipeline
     initializer 'ndr_error.assets.precompile' do |app|
-      app.config.assets.precompile += %w(ndr_error.css ndr_error.js)
+      app.config.assets.precompile += %w(
+        ndr_error/ndr_error.css
+        ndr_error/ndr_error.js
+      )
     end
 
     # Extract context filtering from the host application
