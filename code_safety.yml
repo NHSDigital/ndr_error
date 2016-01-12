@@ -1,612 +1,612 @@
 ---
 file safety:
   ".gitignore":
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 82ea082f0e2f924d4205fd1aaf2f154097e698d5
   ".rubocop.yml":
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: c58298b386e51e3783a7870eff8e33a037072bf6
   ".travis.yml":
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 82ea082f0e2f924d4205fd1aaf2f154097e698d5
   CODE_OF_CONDUCT.md:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   Gemfile:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6032d2ffd7911c5f861e336ae463cd7af52badf7
   MIT-LICENSE:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   README.md:
-    comments:
+    comments: 
     reviewed_by: josh.pencheon
     safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   Rakefile:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 7756cd950207b10e26cdbbc9bca9cfa6ba3833e6
   app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.eot:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.svg:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.ttf:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.woff:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/images/ndr_error/bootstrap/glyphicons-halflings-white.png:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/images/ndr_error/bootstrap/glyphicons-halflings.png:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-affix.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-alert.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-button.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-carousel.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-collapse.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-dropdown.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-modal.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-popover.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-scrollspy.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-tab.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-tooltip.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-transition.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap-typeahead.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/bootstrap/bootstrap.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/jquery-1.11.3.min.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/ndr_error.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_alerts.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_badges.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_breadcrumbs.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_button-groups.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_buttons.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_carousel.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_close.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_code.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_component-animations.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_dropdowns.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_forms.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_glyphicons.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_grid.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_input-groups.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_jumbotron.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_labels.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_list-group.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_media.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_mixins.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_modals.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_navbar.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_navs.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_normalize.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_pager.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_pagination.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_panels.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_popovers.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_print.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_progress-bars.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_responsive-embed.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_responsive-utilities.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_scaffolding.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_tables.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_theme.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_thumbnails.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_tooltip.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_type.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_utilities.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_variables.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/_wells.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/bootstrap.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_alerts.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_background-variant.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_border-radius.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_buttons.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_center-block.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_clearfix.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_forms.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_gradients.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_grid-framework.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_grid.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_hide-text.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_image.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_labels.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_list-group.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_nav-divider.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_nav-vertical-align.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_opacity.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_pagination.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_panels.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_progress-bar.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_reset-filter.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_resize.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_responsive-visibility.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_size.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_tab-focus.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_table-row.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_text-emphasis.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_text-overflow.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/bootstrap/mixins/_vendor-prefixes.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/stylesheets/ndr_error/ndr_error.scss:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/controllers/ndr_error/application_controller.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/controllers/ndr_error/errors_controller.rb:
     comments: Potentially disclosive defaults. Index and Show have no authorization
       mechanisms in place. Under default NdrError configuration (as at rev fe0a25b)
       any (potentially malevolent) user can view captured errors and possibly harvest
-      information. JMP 2016-01-12: Authorisation configuration is now required.
+      information. JMP 2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   app/helpers/ndr_error/application_helper.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/helpers/ndr_error/errors_helper.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   app/models/ndr_error/fingerprint.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   app/models/ndr_error/log.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
   app/views/layouts/ndr_error/ndr_error.html.erb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/views/ndr_error/errors/edit.html.erb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/views/ndr_error/errors/index.html.erb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/views/ndr_error/errors/show.html.erb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   config/routes.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   db/migrate/20150918162403_create_error_fingerprints.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   db/migrate/20150918162612_create_error_logs.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   gemfiles/Gemfile.rails32:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: d9ad4ba4da8f0f9d932e5f8d4908f304513cc3b8
   gemfiles/Gemfile.rails41:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 76af22daf1950fe3bfaaece2b7802c91383b2d6d
   gemfiles/Gemfile.rails42:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 76af22daf1950fe3bfaaece2b7802c91383b2d6d
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
-      user is both authenticated and authorized to read/update/delete any error.
-      JMP 2016-01-12: Authorisation configuration is now required.
+      user is both authenticated and authorized to read/update/delete any error. JMP
+      2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
     safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   lib/ndr_error/backtrace_compression.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/engine.rb:
-    comments:
+    comments: 
     reviewed_by: josh.pencheon
     safe_revision: a2ca5b2eb62aafa4d43cc36cd2508ac985b0bbf2
   lib/ndr_error/finder.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   lib/ndr_error/fuzzing.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/logging.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   lib/ndr_error/middleware/public_exceptions.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: fe0a25b59af569faaa71169177bfacf801f75b4b
   lib/ndr_error/uuid_builder.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/version.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/tasks/ndr_error_tasks.rake:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   ndr_error.gemspec:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 4e7f4cc5c5bcd2b85a9d6855b6060ad7258e777f
   script/rails:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/README.rdoc:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/Rakefile:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/assets/javascripts/application.js:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/assets/stylesheets/application.css:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/controllers/application_controller.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/controllers/disaster_controller.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/helpers/application_helper.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/mailers/.gitkeep:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/models/.gitkeep:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/views/layouts/application.html.erb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config.ru:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/dummy/config/application.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   test/dummy/config/boot.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6032d2ffd7911c5f861e336ae463cd7af52badf7
   test/dummy/config/database.yml:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/environment.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/environments/development.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/environments/production.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/environments/test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/dummy/config/initializers/backtrace_silencers.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/configure_ndr_error.rb:
-    comments:
+    comments: 
     reviewed_by: josh.pencheon
     safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   test/dummy/config/initializers/inflections.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/mime_types.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/secret_token.rb:
@@ -615,98 +615,98 @@ file safety:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/session_store.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/wrap_parameters.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/locales/en.yml:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/routes.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/db/migrate/20150918163720_add_custom_user_column_to_error_logs.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/db/schema.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/lib/assets/.gitkeep:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/log/.gitkeep:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/404.html:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/422.html:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/500.html:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/favicon.ico:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/script/rails:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/integration/error_logging_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/integration/error_viewing_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
   test/ndr_error_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/test_helper.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
   test/unit/helpers/ndr_error/application_helper_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/unit/helpers/ndr_error/errors_helper_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/unit/ndr_error/finder_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/unit/ndr_error/fingerprint_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   test/unit/ndr_error/fuzzing_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/unit/ndr_error/log_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
   test/unit/ndr_error/logging_test.rb:
-    comments:
+    comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
