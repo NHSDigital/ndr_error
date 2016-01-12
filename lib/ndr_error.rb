@@ -18,9 +18,9 @@ module NdrError
   self.exception_app_callback = ->(_request, _exception) { true }
 
   # Callable object (called with controller context) that is used to check
-  # if the current user is authenticated with the host app. Defaults to true.
+  # if the current user is authenticated with the host app.
   mattr_accessor :check_current_user_authentication
-  self.check_current_user_authentication = ->(_context) { true }
+  self.check_current_user_authentication = nil # Must be configured by the host app
 
   # Callable object (called with controller context) that is used to check
   # update/destroy permissions of the current session. Defaults to true.

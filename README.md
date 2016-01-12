@@ -53,13 +53,13 @@ Configuration | Description
 --- | ---
 `user_column` | The `ERROR_LOG` table doesn't have a user-identifying column by default. `NdrError` expects you to add one; use this variable to inform it of the column name you chose. Regardless of the column name, the attribute is aliased to `user_id`.
 `log_parameters` | A callable object that should return a hash specifying (at minimum) the `user_id`. This is invoked when an exception is being logged, to tag it with some context.
+`check_current_user_authentication` | A callable object that should return whether or not the current user should be able to view logged exceptions.
 
 Other configuration:
 
 Configuration | Default | Description
 --- | --- | ---
 `exception_app_callback` | `-> { true }` | A callback that is fired when an exception is being logged. Can be used for e.g. sending email notifications. Returning false will abort the logging.
-`check_current_user_authentication` | `-> { true }` | A callable object that should return whether or not the current user should be able to view logged exceptions.
 `check_current_user_permissions` | `-> { true }` | A callable object that should return whether or not the current user should be able to tag / delete logged exceptions.
 `filtered_parameters` | derived from host app | The context logging tries to capture request parameters. Use this to list sensitive parameters which should not be logged.
 `hostname_identifier` | `-> { 'unknown host' }` | A callable object that returns the hostname of the machine on which Rails is running.
