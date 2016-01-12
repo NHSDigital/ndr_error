@@ -26,8 +26,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   README.md:
     comments:
-    reviewed_by: Miles Smith
-    safe_revision: d1d1bd0cd1f5c1f1527ff4760df326e40e6cdb58
+    reviewed_by: josh.pencheon
+    safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   Rakefile:
     comments:
     reviewed_by: Miles Smith
@@ -412,9 +412,9 @@ file safety:
     comments: Potentially disclosive defaults. Index and Show have no authorization
       mechanisms in place. Under default NdrError configuration (as at rev fe0a25b)
       any (potentially malevolent) user can view captured errors and possibly harvest
-      information.
-    reviewed_by: Miles Smith
-    safe_revision: '0'
+      information. JMP 2016-01-12: Authorisation configuration is now required.
+    reviewed_by: josh.pencheon
+    safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   app/helpers/ndr_error/application_helper.rb:
     comments:
     reviewed_by: Miles Smith
@@ -472,19 +472,19 @@ file safety:
     reviewed_by: Miles Smith
     safe_revision: 76af22daf1950fe3bfaaece2b7802c91383b2d6d
   lib/ndr_error.rb:
-    comments: Potentially dangerous defaults. Default configuration assumes any
-      given user is both authenticated and authorized to read/update/delete any
-      error.
-    reviewed_by: Miles Smith
-    safe_revision: 0
+    comments: Potentially dangerous defaults. Default configuration assumes any given
+      user is both authenticated and authorized to read/update/delete any error.
+      JMP 2016-01-12: Authorisation configuration is now required.
+    reviewed_by: josh.pencheon
+    safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   lib/ndr_error/backtrace_compression.rb:
     comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/engine.rb:
     comments:
-    reviewed_by: Miles Smith
-    safe_revision: eac5e37b0802f73d705b9465ecdd34d400d79edd
+    reviewed_by: josh.pencheon
+    safe_revision: a2ca5b2eb62aafa4d43cc36cd2508ac985b0bbf2
   lib/ndr_error/finder.rb:
     comments:
     reviewed_by: Miles Smith
@@ -599,8 +599,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/configure_ndr_error.rb:
     comments:
-    reviewed_by: Miles Smith
-    safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
+    reviewed_by: josh.pencheon
+    safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   test/dummy/config/initializers/inflections.rb:
     comments:
     reviewed_by: Miles Smith
