@@ -515,8 +515,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   ndr_error.gemspec:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 4e7f4cc5c5bcd2b85a9d6855b6060ad7258e777f
+    reviewed_by: josh.pencheon
+    safe_revision: 6a74c561a047a663bac2b5a77b4a281dfcf4db8c
   script/rails:
     comments: 
     reviewed_by: Miles Smith
