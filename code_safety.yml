@@ -507,8 +507,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/version.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: 47ac2f8a88fdc2ad5283e9975ac45f97b6c9ab01
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
