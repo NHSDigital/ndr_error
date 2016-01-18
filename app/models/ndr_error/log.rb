@@ -146,7 +146,7 @@ module NdrError
       self[:parameters_yml] = yml_dump
     end
 
-    alias_method :set_parameters_yml, :parameters_yml=
+    alias set_parameters_yml parameters_yml=
 
     # Returns the params hash associated
     # with the request.
@@ -185,7 +185,7 @@ module NdrError
 
       if request
         sources = [:parameters, :request_parameters, :query_parameters]
-        sources.inject(params) { |a, e| a.merge!(request.send e) }
+        sources.inject(params) { |a, e| a.merge! request.send(e) }
 
         # Redact any sensitive parameters:
         params.each do |name, _value|
