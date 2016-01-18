@@ -22,6 +22,14 @@ end
 module ActiveSupport
   # Add additional helper methods for creating logged errors
   class TestCase
+    def with_config(key, value)
+      original_value = NdrError.send(key)
+      NdrError.send("#{key}=", value)
+      yield
+    ensure
+      NdrError.send("#{key}=", original_value)
+    end
+
     def create_fingerprint(digest = nil)
       digest ||= Digest::MD5.hexdigest SecureRandom.base64(32)
       NdrError::Fingerprint.find_or_create_by_id(digest)

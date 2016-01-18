@@ -122,12 +122,8 @@ module NdrError
 
     private
 
-    def with_ticket_url_regexp_as(regexp)
-      previous_regexp = NdrError.ticket_url_format
-      NdrError.ticket_url_format = regexp
-      yield
-    ensure
-      NdrError.ticket_url_format = previous_regexp
+    def with_ticket_url_regexp_as(regexp, &block)
+      with_config(:ticket_url_format, regexp, &block)
     end
 
     def valid_ticket_url?(url)
