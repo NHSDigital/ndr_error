@@ -45,7 +45,7 @@ module NdrError
       string = data || ''
 
       if NdrError.compress_backtrace
-        data   = Base64.decode64(string)
+        data = Base64.decode64(string)
         begin
           string = Zlib::Inflate.inflate(data)
         rescue

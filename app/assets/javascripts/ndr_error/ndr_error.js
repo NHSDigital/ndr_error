@@ -33,7 +33,7 @@ jQuery(function() {
 
     // Show search hints.
     $searchField.popover({
-      title: '<strong>Filter by user, error, and print</strong>',
+      title: '<strong>Filter by keywords</strong>',
       content: ' \
         Separate search terms with [ , ; / ]. \
         <em>Terms with two characters or less are ignored</em>.',

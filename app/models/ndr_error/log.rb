@@ -32,9 +32,20 @@ module NdrError
     before_create :register_system
     before_create :set_uuid_primary_key
 
+    def self.text_columns
+      user_column = NdrError.user_column.to_s
+      %w(error_class description).tap do |text_columns|
+        # Allow searching of `user_column` if it is textual:
+        if :string == columns_hash[user_column].try(:type)
+          text_columns << user_column
+        else
+          fail SecurityError, "Column '#{user_column}' not found!"
+        end
+      end
+    end
+
     def self.filter_by_keywords(keywords)
-      columns    = %w(description error_class) << NdrError.user_column.to_s
-      fragment   = columns.map { |column| "lower(#{column}) LIKE lower(:key)" }.join(' OR ')
+      fragment   = text_columns.map { |column| "lower(#{column}) LIKE lower(:key)" }.join(' OR ')
       name_match = keywords.map { |part| sanitize_sql([fragment, key: "%#{part}%"]) }.join(' OR ')
 
       where(name_match)
@@ -135,7 +146,7 @@ module NdrError
       self[:parameters_yml] = yml_dump
     end
 
-    alias_method :set_parameters_yml, :parameters_yml=
+    alias set_parameters_yml parameters_yml=
 
     # Returns the params hash associated
     # with the request.
@@ -174,7 +185,7 @@ module NdrError
 
       if request
         sources = [:parameters, :request_parameters, :query_parameters]
-        sources.inject(params) { |a, e| a.merge!(request.send e) }
+        sources.inject(params) { |a, e| a.merge! request.send(e) }
 
         # Redact any sensitive parameters:
         params.each do |name, _value|
