@@ -11,6 +11,10 @@ Rails:
 Style/DotPosition:
   EnforcedStyle: trailing
 
+# Override HoundCI's preference for double quotes:
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
 # This is unenforceable on Rails 3.x.
 Rails/ActionFilter:
   Enabled: false
