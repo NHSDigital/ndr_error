@@ -55,7 +55,7 @@ module NdrError
       css << ' btn-xs' if small
 
       url = fingerprint.ticket_url
-      link_to(text, /^http/i.match(url) ? url : "http://#{url}", class: css)
+      link_to(text, /^http/i =~ url ? url : "http://#{url}", class: css)
     end
 
     def edit_button_for(fingerprint)

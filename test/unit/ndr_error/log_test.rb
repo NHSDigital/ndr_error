@@ -205,14 +205,9 @@ module NdrError
     end
 
     test 'should store the database name if configured to do so' do
-      begin
-        original_database_identifier = NdrError.database_identifier
-        NdrError.database_identifier = -> { 'SQLite test DB' }
-
+      with_config(:database_identifier, -> { 'SQLite test DB' }) do
         error = simulate_raise(Exception, 'Not found: 123', [])
         assert_equal 'SQLite test DB', error.database
-      ensure
-        NdrError.database_identifier = original_database_identifier
       end
     end
 
@@ -222,14 +217,9 @@ module NdrError
     end
 
     test 'should store the hostname if configured to do so' do
-      begin
-        original_hostname_identifier = NdrError.hostname_identifier
-        NdrError.hostname_identifier = -> { 'Dummy Host' }
-
+      with_config(:hostname_identifier, -> { 'Dummy Host' }) do
         error = simulate_raise(Exception, 'Not found: 123', [])
         assert_equal 'Dummy Host', error.hostname
-      ensure
-        NdrError.hostname_identifier = original_hostname_identifier
       end
     end
 
@@ -245,18 +235,15 @@ module NdrError
     end
 
     test 'should auto-calculate clock drift on create when configured' do
-      begin
-        # For DB clock drift checking:
-        NdrError.database_time_checker = lambda do
-          stamp = ActiveRecord::Base.connection.execute('select CURRENT_TIMESTAMP')[0][0]
-          Time.zone.parse(stamp) + Time.zone.utc_offset
-        end
+      test_checker = lambda do
+        stamp = ActiveRecord::Base.connection.execute('select CURRENT_TIMESTAMP')[0][0]
+        Time.zone.parse(stamp) + Time.zone.utc_offset
+      end
 
+      with_config(:database_time_checker, test_checker) do
         error = simulate_raise(Exception, 'Not found: 123', [])
         assert error.clock_drift.is_a?(Numeric)
-        assert !error.clock_drift.zero? # what are the chances!
-      ensure
-        NdrError.database_time_checker = -> { nil }
+        refute error.clock_drift.zero? # what are the chances!
       end
     end
 
@@ -397,6 +384,15 @@ module NdrError
       # Now we do need a fallback:
       error = simulate_raise(Exception, 'msg', %w( bob/local-app-copy/foo bob/gems/bar ))
       assert_equal %w( bob/local-app-copy/foo ), error.application_trace
+    end
+
+    test 'should raise when trying to generate SQL from non-existant user_column' do
+      trigger = -> { Log.filter_by_keywords %w(key words) }
+      trigger.call
+
+      with_config(:user_column, :not_a_column) do
+        assert_raises(SecurityError) { trigger.call }
+      end
     end
   end
 end

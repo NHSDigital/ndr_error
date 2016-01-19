@@ -2,7 +2,7 @@ module NdrError
   # Module to contain helpers for logging
   module Logging
     # Which attributes can be populated when manually logging an exception:
-    ANCILLARY_ATTRS_WHITELIST = [:user_id, :user_roles, :svn_revision]
+    ANCILLARY_ATTRS_WHITELIST = [:user_id, :user_roles, :svn_revision].freeze
 
     # Log the given `exception`.
     def log(exception, ancillary_data, request_object)
