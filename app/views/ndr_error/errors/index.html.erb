@@ -1,5 +1,5 @@
-<div class="container">
-  <div id="search_form_container" class="pull-right">
+<div class="row">
+  <div id="search_form_container" class="col-md-4 col-md-offset-8">
   <%= form_tag(error_fingerprints_path, method: :get) do %>
     <div class="input-group">
       <% if @keywords.any? %>
@@ -14,38 +14,44 @@
   </div>
 </div>
 
-<h1>
-  Listing Errors Types
-</h1>
+<div class="row">
+  <h1 class="col-md-12">
+    Listing Errors Types
+  </h1>
+</div>
 
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>Most Recent Occurrence</th>
-      <th>Error</th>
-    </tr>
-  </thead>
-  <tbody>
-  <% @fingerprints.each do |fingerprint| %>
-    <% latest = fingerprint.latest_occurrence %>
-    <tr>
-      <td>
-        <%= latest_timestamp_for(fingerprint) %>
-        <%= multiple_occurrences_badge_for(fingerprint) %><br>
-        <%= latest_user_for(fingerprint, @keywords) %>
-      </td>
-      <td>
-        <div class="pull-right">
-          <%= ticket_link_for(fingerprint, true) if fingerprint.ticket_url.present? %>
-        </div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Most Recent Occurrence</th>
+          <th>Error</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @fingerprints.each do |fingerprint| %>
+        <% latest = fingerprint.latest_occurrence %>
+        <tr>
+          <td>
+            <%= latest_timestamp_for(fingerprint) %>
+            <%= multiple_occurrences_badge_for(fingerprint) %><br>
+            <%= latest_user_for(fingerprint, @keywords) %>
+          </td>
+          <td>
+            <div class="pull-right">
+              <%= ticket_link_for(fingerprint, true) if fingerprint.ticket_url.present? %>
+            </div>
 
-        <%= latest ? link_to_fingerprint(fingerprint, latest) : 'N/A' %><br>
-        <%= digest_for(fingerprint, @keywords) %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+            <%= latest ? link_to_fingerprint(fingerprint, latest) : 'N/A' %><br>
+            <%= digest_for(fingerprint, @keywords) %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
 
-<span class="pull-right text-muted"><%= pagination_summary_for(@fingerprints) %></span>
-<%= will_paginate(@fingerprints) %>
+    <span class="pull-right text-muted"><%= pagination_summary_for(@fingerprints) %></span>
+    <%= will_paginate(@fingerprints) %>
+  </div>
+</div>
