@@ -4,14 +4,18 @@ file safety:
     comments: 
     reviewed_by: Miles Smith
     safe_revision: 82ea082f0e2f924d4205fd1aaf2f154097e698d5
+  ".hound.yml":
+    comments: 
+    reviewed_by: joshpencheon
+    safe_revision: ab221104d8fd14299e55364a6ca2f1b77b857bd2
   ".rubocop.yml":
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: c58298b386e51e3783a7870eff8e33a037072bf6
+    reviewed_by: joshpencheon
+    safe_revision: 951bdf3e702a6d92f77ed760456e41e96192f195
   ".travis.yml":
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 82ea082f0e2f924d4205fd1aaf2f154097e698d5
+    reviewed_by: joshpencheon
+    safe_revision: a7a7cbfce42822ae069d2f8e3b56ca7cd4635d25
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -30,8 +34,8 @@ file safety:
     safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   Rakefile:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 7756cd950207b10e26cdbbc9bca9cfa6ba3833e6
+    reviewed_by: joshpencheon
+    safe_revision: 6230511fbc54c6db60ec1390c6e8e2e3348d18d5
   app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.eot:
     comments: 
     reviewed_by: Miles Smith
@@ -118,8 +122,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/ndr_error.js:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: joshpencheon
+    safe_revision: 4423061830a85d86c380163d41c82b8ac305ba5a
   app/assets/stylesheets/ndr_error/bootstrap/_alerts.scss:
     comments: 
     reviewed_by: Miles Smith
@@ -421,16 +425,16 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/helpers/ndr_error/errors_helper.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
+    reviewed_by: joshpencheon
+    safe_revision: 834487f0259227c3b71d003a0b1360e2408075cc
   app/models/ndr_error/fingerprint.rb:
     comments: 
     reviewed_by: Miles Smith
     safe_revision: 27acf70056937d1d7e37df0b90de576926498604
   app/models/ndr_error/log.rb:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
+    comments: raises SecurityError if user column isn't known to Rails
+    reviewed_by: joshpencheon
+    safe_revision: 834487f0259227c3b71d003a0b1360e2408075cc
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments: 
     reviewed_by: Miles Smith
@@ -441,8 +445,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/views/ndr_error/errors/index.html.erb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: joshpencheon
+    safe_revision: 1c37094e278a2e892dc23b3120321561fd6397f6
   app/views/ndr_error/errors/show.html.erb:
     comments: 
     reviewed_by: Miles Smith
@@ -478,9 +482,9 @@ file safety:
     reviewed_by: josh.pencheon
     safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   lib/ndr_error/backtrace_compression.rb:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    comments: diff not displayed, file re-checked
+    reviewed_by: joshpencheon
+    safe_revision: 834487f0259227c3b71d003a0b1360e2408075cc
   lib/ndr_error/engine.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -495,8 +499,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/logging.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 27acf70056937d1d7e37df0b90de576926498604
+    reviewed_by: joshpencheon
+    safe_revision: 834487f0259227c3b71d003a0b1360e2408075cc
   lib/ndr_error/middleware/public_exceptions.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -507,16 +511,16 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   lib/ndr_error/version.rb:
     comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 47ac2f8a88fdc2ad5283e9975ac45f97b6c9ab01
+    reviewed_by: joshpencheon
+    safe_revision: fe41cfaeea34b3ec5f5c1a5e2381a963db130efc
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   ndr_error.gemspec:
     comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 6a74c561a047a663bac2b5a77b4a281dfcf4db8c
+    reviewed_by: joshpencheon
+    safe_revision: 6230511fbc54c6db60ec1390c6e8e2e3348d18d5
   script/rails:
     comments: 
     reviewed_by: Miles Smith
@@ -680,8 +684,8 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/test_helper.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
+    reviewed_by: joshpencheon
+    safe_revision: 4423061830a85d86c380163d41c82b8ac305ba5a
   test/unit/helpers/ndr_error/application_helper_test.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -696,16 +700,16 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/unit/ndr_error/fingerprint_test.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 27acf70056937d1d7e37df0b90de576926498604
+    reviewed_by: joshpencheon
+    safe_revision: 4423061830a85d86c380163d41c82b8ac305ba5a
   test/unit/ndr_error/fuzzing_test.rb:
     comments: 
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/unit/ndr_error/log_test.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: c1069cf57756553d19f072dd61102140e7abbe66
+    reviewed_by: joshpencheon
+    safe_revision: 4423061830a85d86c380163d41c82b8ac305ba5a
   test/unit/ndr_error/logging_test.rb:
     comments: 
     reviewed_by: Miles Smith
