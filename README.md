@@ -12,7 +12,7 @@ The grouping used can be customised by the host application (see below).
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'ndr_error', git: 'https://github.com/PublicHealthEngland/ndr_error.git'
+gem 'ndr_error'
 ```
 
 And then execute:
