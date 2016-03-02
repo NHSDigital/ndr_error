@@ -10,6 +10,10 @@
 
 <h1>This is the Dummy App's layout file!</h1>
 
+<% flash.each do |key, value| %>
+  <%= content_tag(:p, value, klass: key) %>
+<% end %>
+
 <%= yield %>
 
 </body>
