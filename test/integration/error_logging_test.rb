@@ -59,10 +59,10 @@ class ErrorLoggingTest < ActionDispatch::IntegrationTest
   def assert_application_fails_gracefully(message, log_count = 1)
     assert_difference('NdrError::Log.count', log_count) do
       # get "/fingerprinting/errors/fail/#{message}?raise=true"
-      get "/disaster/cause/?message=#{message}"
+      visit "/disaster/cause/?message=#{message}"
 
-      assert response.body.include? 'This is the 500 page for DummyApp.'
-      assert_equal 500, response.status
+      assert page.body.include? 'This is the 500 page for DummyApp.'
+      assert_equal 500, page.status_code
     end
   end
 end

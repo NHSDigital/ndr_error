@@ -10,27 +10,27 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
   test 'should use authentication' do
     NdrError.stubs(check_current_user_authentication: ->(_context) { false })
 
-    get '/fingerprinting/errors'
+    visit '/fingerprinting/errors'
 
-    assert_redirected_to '/'
-    assert_equal flash[:error], 'You are not authenticated.'
+    assert_equal '/', current_path
+    assert page.has_content?('You are not authenticated.')
   end
 
   test 'should use the layout of the engine, not that of the host app' do
-    get '/fingerprinting/errors'
+    visit '/fingerprinting/errors'
 
-    refute response.body.include? "This is the Dummy App's layout file!"
-    assert response.body.include? 'Error Logging by NDR'
+    refute page.body.include? "This is the Dummy App's layout file!"
+    assert page.body.include? 'Error Logging by NDR'
   end
 
   test 'should be able to view a list of exceptions' do
     simulate_raise(StandardError, 'Doh!', [])
     simulate_raise(RuntimeError, 'Whoops!', [])
 
-    get '/fingerprinting/errors'
+    visit '/fingerprinting/errors'
 
-    assert response.body.include? 'StandardError: Doh!'
-    assert response.body.include? 'RuntimeError: Whoops!'
+    assert page.body.include? 'StandardError: Doh!'
+    assert page.body.include? 'RuntimeError: Whoops!'
   end
 
   test 'should be able to view details of an exception' do
@@ -39,67 +39,59 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
 
     assert_equal print1, print2
 
-    get "/fingerprinting/errors/#{print1.error_fingerprintid}"
+    visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
 
-    assert response.body.include? 'Doh!'
-    assert response.body.include? '1 similar error stored'
-    assert response.body.include? 'Bob Jones'
+    assert page.body.include? 'Doh!'
+    assert page.body.include? '1 similar error stored'
+    assert page.body.include? 'Bob Jones'
   end
 
   test 'should redirect to listing when error not found' do
-    get '/fingerprinting/errors/notafingerprint'
+    visit '/fingerprinting/errors/notafingerprint'
 
-    assert_redirected_to '/fingerprinting/errors'
-    assert_equal flash[:error], 'Unknown or deleted error fingerprint'
+    assert_equal '/fingerprinting/errors', current_path
+    assert page.has_content?('Unknown or deleted error fingerprint')
   end
 
   test 'should be able to edit details of an exception' do
     print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
 
-    get "/fingerprinting/errors/#{print1.error_fingerprintid}/edit"
+    visit "/fingerprinting/errors/#{print1.error_fingerprintid}/edit"
 
-    assert response.body.include? 'Ticket URL'
-    assert response.body.include? 'Update'
-    assert response.body.include? 'Cancel'
+    assert page.body.include? 'Ticket URL'
+    assert page.body.include? 'Update'
+    assert page.body.include? 'Cancel'
   end
 
   test 'should be able to update reference url of a fingerprint' do
     print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
-    params = { error_fingerprint: { ticket_url: 'http://google.com' } }
 
-    put "/fingerprinting/errors/#{print1.error_fingerprintid}", params
+    visit "/fingerprinting/errors/#{print1.error_fingerprintid}/edit"
+    fill_in('Ticket URL', with: 'http://google.com')
+    click_button 'Update'
 
-    assert_redirected_to "/fingerprinting/errors/#{print1.error_fingerprintid}"
-    assert_equal 'The Error Fingerprint was successfully updated!', flash[:notice]
+    assert_equal "/fingerprinting/errors/#{print1.error_fingerprintid}", current_path
+    assert page.has_content?('The Error Fingerprint was successfully updated!')
 
     get "/fingerprinting/errors/#{print1.error_fingerprintid}"
-    assert response.body.include? 'View ticket'
-  end
-
-  test 'should protect log purging' do
-    print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
-
-    NdrError.stubs(check_current_user_permissions: ->(_context) { false })
-
-    delete "/fingerprinting/errors/#{print1.error_fingerprintid}"
-
-    assert_redirected_to '/fingerprinting/errors'
-    assert_equal flash[:error], 'You do not have the required permissions for that.'
+    assert page.body.include? 'View ticket'
   end
 
   test 'should be able to purge logs' do
     print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
 
-    delete "/fingerprinting/errors/#{print1.error_fingerprintid}"
+    visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
+    click_link 'Purge'
 
-    assert_redirected_to '/fingerprinting/errors'
-    assert_equal 'Fingerprint purged!', flash[:error]
+    assert_equal '/fingerprinting/errors', current_path
+    assert page.has_content?('Fingerprint purged!')
     assert_equal 0, print1.error_logs.reload.length
 
-    get "/fingerprinting/errors/#{print1.error_fingerprintid}"
+    visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
 
     # Should redirect to filtered listing if there are no logs to view:
-    assert_redirected_to "/fingerprinting/errors?q=#{print1.error_fingerprintid}"
-    assert_equal flash[:error], 'No matching Logs exist for that Fingerprint!'
+    path_with_params = current_url[current_url =~ Regexp.new(current_path)..-1] # TODO: yuk?
+    assert_equal "/fingerprinting/errors?q=#{print1.error_fingerprintid}", path_with_params
+    assert page.has_content?('No matching Logs exist for that Fingerprint!')
   end
 end
