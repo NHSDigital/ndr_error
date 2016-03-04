@@ -3,6 +3,7 @@ require 'ndr_error/engine'
 require 'ndr_error/backtrace_compression'
 require 'ndr_error/finder'
 require 'ndr_error/fuzzing'
+require 'ndr_error/javascript_error'
 require 'ndr_error/logging'
 require 'ndr_error/uuid_builder'
 
