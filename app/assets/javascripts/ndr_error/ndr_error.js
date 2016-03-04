@@ -46,6 +46,7 @@ jQuery(function() {
     jQuery('.badge').tooltip();
 
     $searchField.keydown(function(event) {
+      adfgkljh
       // <ENTER> will submit the search form.
       if (event.keyCode == 13) {
         this.form.submit();
@@ -58,3 +59,15 @@ jQuery(function() {
     });
   })();
 });
+
+window.onerror = function(message, source, lineno, colno, error) {
+  jQuery.post('client_errors/', {
+    'path':    window.location.href,
+    'message': message,
+    'source':  source,
+    'lineno':  lineno,
+    'colno':   colno,
+    'error':   error,
+    'stack':   error && error.stack
+  })
+}
