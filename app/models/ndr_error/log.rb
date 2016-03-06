@@ -153,7 +153,7 @@ module NdrError
     # Returns the params hash associated
     # with the request.
     def parameters
-      YAML.load(parameters_yml)
+      YAML.safe_load(parameters_yml, [Symbol])
     end
 
     # Formats error to be like the ruby error.

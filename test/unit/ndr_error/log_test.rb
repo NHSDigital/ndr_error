@@ -96,6 +96,12 @@ module NdrError
       assert_equal({}, error.parameters)
     end
 
+    test 'should safe-load paramaters' do
+      error     = Log.new(parameters_yml: { not: /allowed/ })
+      exception = assert_raises(Psych::DisallowedClass) { error.parameters }
+      assert_match(/Regexp/, exception.message)
+    end
+
     test 'should store the params hash correctly when they fit in the column' do
       params1 = { a: 1 }
       params2 = { b: 2 }
