@@ -6,8 +6,6 @@ module NdrError
 
     # Log the given `exception`.
     def log(exception, ancillary_data, request_object)
-      return log_client_error(exception, ancillary_data, request_object) if exception.client?
-
       log = initialize_log(ancillary_data)
       log.register_exception(exception)
       log.register_request(request_object)
@@ -19,11 +17,6 @@ module NdrError
     end
 
     private
-
-    # Client errors are logged / fingerprinted differently
-    def log_client_error(exception, ancillary_data, request_object)
-      
-    end
 
     # Manual attribute whitelisting:
     def initialize_log(ancillary_data)

@@ -46,7 +46,7 @@ jQuery(function() {
     jQuery('.badge').tooltip();
 
     $searchField.keydown(function(event) {
-      adfgrdfgkljh
+      wenewnew
       // <ENTER> will submit the search form.
       if (event.keyCode == 13) {
         this.form.submit();
