@@ -1,4 +1,6 @@
 module NdrError
+  # Class to wrap / normalise Javascript exception
+  # data, and allow it to be logged by NdrError.
   class JavascriptError < Exception
     attr_reader :source
 

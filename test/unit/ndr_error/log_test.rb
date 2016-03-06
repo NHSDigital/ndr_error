@@ -396,9 +396,11 @@ module NdrError
     end
 
     test 'should return metadata if client error' do
-      error = Log.new
-      error.register_exception(JavascriptError.new(message: 'oops', stack: "a\nb\nc", test: 'foobar'))
-      assert_equal({'test' => 'foobar'}, error.parameters)
+      error     = Log.new
+      exception = JavascriptError.new(message: 'oops', stack: "a\nb\nc", test: 'foobar')
+
+      error.register_exception(exception)
+      assert_equal({ 'test' => 'foobar' }, error.parameters)
     end
   end
 end
