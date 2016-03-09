@@ -60,3 +60,15 @@ jQuery(function() {
     });
   })();
 });
+
+window.onerror = function(message, source, lineno, colno, error) {
+  jQuery.post('client_errors/', {
+    'client_error': {
+      'message': message,
+      'source':  source,
+      'lineno':  lineno,
+      'colno':   colno,
+      'stack':   error && error.stack
+    }
+  })
+}
