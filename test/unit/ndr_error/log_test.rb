@@ -97,7 +97,7 @@ module NdrError
     end
 
     test 'should safe-load paramaters' do
-      error     = Log.new(parameters_yml: { not: /allowed/ })
+      error     = Log.new { |log| log.parameters_yml = { not: /allowed/ } }
       exception = assert_raises(Psych::DisallowedClass) { error.parameters }
       assert_match(/Regexp/, exception.message)
     end
