@@ -5,9 +5,6 @@ rvm:
   - 2.2
   - 2.3.0
 
-env:
-  - RUBYOPT="-W0"
-
 gemfile:
   - gemfiles/Gemfile.rails32
   - gemfiles/Gemfile.rails41
