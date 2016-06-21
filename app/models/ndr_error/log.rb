@@ -81,7 +81,7 @@ module NdrError
 
     # Gets similar errors.
     def similar_errors(include_self = false)
-      unless @_similar
+      unless defined?(@_similar)
         @_similar = {}
         @_similar[true]  = self.class.similar_to(self)
         @_similar[false] = @_similar[true] - [self]
