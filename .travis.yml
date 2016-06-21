@@ -14,7 +14,7 @@ gemfile:
 matrix:
   exclude:
     - rvm: 2.1.9
-      gemfile: gemfiles/Gemfile.rails-5.0
+      gemfile: gemfiles/Gemfile.rails50
 
 sudo: false
 
