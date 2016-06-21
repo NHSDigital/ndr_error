@@ -190,7 +190,7 @@ module NdrError
     test 'should return most recent errors first' do
       error1 = simulate_raise(Exception, 'first error', [])
       error2 = simulate_raise(Exception, 'second error', [])
-      errors = Log.all
+      errors = Log.all.to_a
 
       index1 = errors.index(error1)
       index2 = errors.index(error2)

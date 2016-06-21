@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.1.0'
 
-  s.add_dependency 'rails', '>= 3.2.22', '< 5'
+  s.add_dependency 'rails', '>= 3.2.22', '< 6'
   s.add_dependency 'will_paginate'
 
   s.add_dependency 'jquery-rails'

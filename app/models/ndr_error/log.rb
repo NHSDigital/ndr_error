@@ -101,7 +101,7 @@ module NdrError
     # Returns the next historical occurence,
     # or nil if there hasn't been one.
     def next
-      lookup = similar_errors(true)
+      lookup = similar_errors(true).to_a
       index  = lookup.index(self)
       lookup[0...index].last
     end
