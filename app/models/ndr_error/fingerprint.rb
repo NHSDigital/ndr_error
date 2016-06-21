@@ -73,7 +73,7 @@ module NdrError
     # have been loaded by rails internally
     # and won't have default scoping applied.
     def first_occurrence
-      @_first ||= error_logs(true).last
+      @_first ||= error_logs.reload.last
     end
 
     # Returns the record corresponding to the
@@ -82,7 +82,7 @@ module NdrError
     # have been loaded by rails internally
     # and won't have default scoping applied.
     def latest_occurrence
-      @_latest ||= error_logs(true).first
+      @_latest ||= error_logs.reload.first
     end
   end
 end
