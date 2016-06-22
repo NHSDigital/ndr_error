@@ -96,6 +96,12 @@ module NdrError
       assert_equal({}, error.parameters)
     end
 
+    test 'should safe-load paramaters' do
+      error     = Log.new { |log| log.parameters_yml = { not: /allowed/ } }
+      exception = assert_raises(Psych::DisallowedClass) { error.parameters }
+      assert_match(/Regexp/, exception.message)
+    end
+
     test 'should store the params hash correctly when they fit in the column' do
       params1 = { a: 1 }
       params2 = { b: 2 }
@@ -393,6 +399,14 @@ module NdrError
       with_config(:user_column, :not_a_column) do
         assert_raises(SecurityError) { trigger.call }
       end
+    end
+
+    test 'should return metadata if client error' do
+      error     = Log.new
+      exception = JavascriptError.new(message: 'oops', stack: "a\nb\nc", test: 'foobar')
+
+      error.register_exception(exception)
+      assert_equal({ 'test' => 'foobar' }, error.parameters)
     end
   end
 end

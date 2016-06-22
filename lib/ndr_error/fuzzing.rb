@@ -17,6 +17,7 @@ module NdrError
     #   * independent of deployment paths
     #   * independent of line numbers
     def fuzz_backtrace(backtrace)
+      return '' if client_error?
       backtrace.map { |line| fuzz_line(line) }.join("\n")
     end
 

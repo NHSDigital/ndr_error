@@ -33,8 +33,9 @@ end
 Capybara.register_driver :poltergeist do |app|
   options = {
     # debug: true, # Uncomment for more verbose
-    # inspector: true, # DEBUGGING suppport.
+    inspector: true, # DEBUGGING suppport.
     phantomjs_options: ['--proxy-type=none'],
+    js_errors: false,
     timeout: 60
   }
 

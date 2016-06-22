@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require ndr_error/client_errors
 //= require_tree .

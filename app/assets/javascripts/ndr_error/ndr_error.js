@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require ndr_error/bootstrap/bootstrap
+//= require ndr_error/client_errors
 
 jQuery(function() {
   // Backtrace toggling:
@@ -46,6 +47,7 @@ jQuery(function() {
     jQuery('.badge').tooltip();
 
     $searchField.keydown(function(event) {
+      wenewnew
       // <ENTER> will submit the search form.
       if (event.keyCode == 13) {
         this.form.submit();
@@ -58,3 +60,15 @@ jQuery(function() {
     });
   })();
 });
+
+window.onerror = function(message, source, lineno, colno, error) {
+  jQuery.post('client_errors/', {
+    'client_error': {
+      'message': message,
+      'source':  source,
+      'lineno':  lineno,
+      'colno':   colno,
+      'stack':   error && error.stack
+    }
+  })
+}

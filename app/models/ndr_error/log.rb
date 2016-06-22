@@ -116,13 +116,15 @@ module NdrError
       self.error_class = exception.class.to_s
       self.backtrace   = exception.backtrace
       self.description = description_from(exception.message)
+
+      self.parameters_yml = exception.metadata if client_error?
     end
 
     # Stores parameters from the given _request_ object
     # as YAML. Will attempt to store as many as possible
     # of the parameters in the available 4000 chars.
     def register_request(request)
-      extract_request_params(request)
+      extract_request_params(request) unless client_error?
       extract_request_attributes(request)
     end
 
@@ -151,7 +153,7 @@ module NdrError
     # Returns the params hash associated
     # with the request.
     def parameters
-      YAML.load(parameters_yml)
+      YAML.safe_load(parameters_yml, [Symbol])
     end
 
     # Formats error to be like the ruby error.
@@ -174,6 +176,10 @@ module NdrError
     # Allow the digest to be set manually if so desired.
     def md5_digest=(digest)
       @_digest = digest
+    end
+
+    def client_error?
+      error_class == 'NdrError::JavascriptError'
     end
 
     private
@@ -199,9 +205,11 @@ module NdrError
     def extract_request_attributes(request)
       return unless request
 
+      uri = request.env[client_error? ? 'HTTP_REFERER' : 'REQUEST_URI']
+
       self.port       = request.env['SERVER_PORT']
       self.ip         = "#{request.env['REMOTE_ADDR']}/#{request.remote_ip}"
-      self.url        = "#{request.env['REQUEST_URI']} (on #{request.host})"
+      self.url        = "#{uri} (on #{request.host})"
       self.user_agent = request.env['HTTP_USER_AGENT']
     end
 
