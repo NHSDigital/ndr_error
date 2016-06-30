@@ -1,8 +1,8 @@
 module NdrError
   # Controller for viewing and managing errors
   class ErrorsController < ApplicationController
-    before_filter :find_fingerprint,  only: [:show, :edit, :update, :destroy]
-    before_filter :check_permissions, only: [:edit, :update, :destroy]
+    before_action :find_fingerprint,  only: [:show, :edit, :update, :destroy]
+    before_action :check_permissions, only: [:edit, :update, :destroy]
 
     def index
       if NdrError::Log.perform_cleanup!

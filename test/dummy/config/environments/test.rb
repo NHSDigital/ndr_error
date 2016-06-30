@@ -6,10 +6,16 @@ Dummy::Application.configure do
   # your test database is "scratch space" for the test suite and is wiped
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
+  config.eager_load    = true
 
   # Configure static asset server for tests with Cache-Control for performance
-  config.serve_static_assets = true
-  config.static_cache_control = 'public, max-age=3600'
+  if config.respond_to?(:public_file_server)
+    config.public_file_server.enabled = true
+    config.public_file_server.headers = { 'Cache-Control' => 'public, max-age=3600' }
+  else
+    config.static_cache_control = 'public, max-age=3600'
+    config.serve_static_files   = true
+  end
 
   # Log error messages when you accidentally call methods on nil
   config.whiny_nils = true
@@ -23,6 +29,9 @@ Dummy::Application.configure do
 
   # Disable request forgery protection in test environment
   config.action_controller.allow_forgery_protection = false
+
+  # Randomise test order each time
+  config.active_support.test_order = :random
 
   # Tell Action Mailer not to deliver emails to the real world.
   # The :test delivery method accumulates sent emails in the

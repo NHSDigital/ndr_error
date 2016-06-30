@@ -1,7 +1,7 @@
 module NdrError
   # Global controller logic
   class ApplicationController < ActionController::Base
-    before_filter :authenticate
+    before_action :authenticate
 
     # Ensure Rails doesn't find any host layouts first:
     layout 'ndr_error/ndr_error'
