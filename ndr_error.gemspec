@@ -31,11 +31,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'test-unit', '~> 3.0'
   s.add_development_dependency 'mocha'
 
-  s.add_development_dependency 'capybara'
-  s.add_development_dependency 'capybara-screenshot'
-  s.add_development_dependency 'poltergeist', '>= 1.8.0'
-
   s.add_development_dependency 'rubocop', '0.36.0'
   s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'ndr_dev_support', '~> 1.1', '>= 1.1.3'
+  s.add_development_dependency 'ndr_dev_support', '~> 1.2'
 end
