@@ -11,6 +11,11 @@ module NdrError
   extend Finder
   extend Logging
 
+  # Allows the host to define a parent model for the Log and
+  # Fingerprint classes. Defaults to ActiveRecord::Base.
+  mattr_accessor :abstract_model_class
+  self.abstract_model_class = ActiveRecord::Base
+
   # Callable object, that by default is called by the NdrError::Middleware::PublicExceptions
   # middleware (with the request and exception objects) when an exception is handled.
   # Returning a "falsey" value will prevent the exception from being logged.

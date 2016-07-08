@@ -4,7 +4,7 @@ module NdrError
   # Log records may be purged, whereas fingerprints are
   # designed to be eternally persisted.
   #
-  class Log < ActiveRecord::Base
+  class Log < NdrError.abstract_model_class
     include NdrError::BacktraceCompression
     include NdrError::Fuzzing
     include NdrError::UuidBuilder

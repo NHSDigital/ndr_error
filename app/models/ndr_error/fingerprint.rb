@@ -1,6 +1,6 @@
 module NdrError
   # Fingerprints group together similar error occurences.
-  class Fingerprint < ActiveRecord::Base
+  class Fingerprint < NdrError.abstract_model_class
     # Pagination:
     self.per_page = 10
 

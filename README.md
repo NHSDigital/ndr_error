@@ -59,6 +59,7 @@ Other configuration:
 
 Configuration | Default | Description
 --- | --- | ---
+`abstract_model_class` | `ActiveRecord::Base` | An abstract model class to be used as the parent for Fingerprints and Logs.
 `exception_app_callback` | `-> { true }` | A callback that is fired when an exception is being logged. Can be used for e.g. sending email notifications. Returning false will abort the logging.
 `check_current_user_permissions` | `-> { true }` | A callable object that should return whether or not the current user should be able to tag / delete logged exceptions.
 `filtered_parameters` | derived from host app | The context logging tries to capture request parameters. Use this to list sensitive parameters which should not be logged.
