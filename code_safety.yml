@@ -520,7 +520,7 @@ file safety:
   ndr_error.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 3d45cb54aae7e27f2fd265fe4a68ff9a2a2983b7
+    safe_revision: 443d8a7b749bcd0cd22ff069dcbedc9971a30ceb
   script/rails:
     comments: 
     reviewed_by: Miles Smith
