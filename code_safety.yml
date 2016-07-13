@@ -3,7 +3,7 @@ file safety:
   ".gitignore":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 6a7bb9604c2540c948c152e9380e91cd6f106065
+    safe_revision: 7bd68c4059bdee51687030e3333195c2d24a443f
   ".hound.yml":
     comments: 
     reviewed_by: joshpencheon
@@ -473,8 +473,8 @@ file safety:
     safe_revision: 76af22daf1950fe3bfaaece2b7802c91383b2d6d
   gemfiles/Gemfile.rails50:
     comments: 
-    reviewed_by: 
-    safe_revision: 
+    reviewed_by: josh.pencheon
+    safe_revision: 4a524b4e90af962b10dc54523dae0c1605f3bbd2
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
@@ -512,7 +512,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 20b2ba94b6557c86d31fe0ea14bf0344459cd5b2
+    safe_revision: a89cb1fc4685322fb78a1ac122d31a7316e0e50a
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -630,10 +630,6 @@ file safety:
     reviewed_by: josh.pencheon
     safe_revision: baff8a5a455103dcf5ad8019fd294ada391b8656
   test/dummy/db/migrate/20150918163720_add_custom_user_column_to_error_logs.rb:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  test/dummy/db/schema.rb:
     comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
