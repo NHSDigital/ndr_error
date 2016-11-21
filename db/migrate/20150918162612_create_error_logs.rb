@@ -1,4 +1,3 @@
-# rubocop:disable all
 # Adds partial ERROR_LOG table to schema (see README).
 class CreateErrorLogs < ActiveRecord::Migration
   def change

@@ -31,7 +31,6 @@ module NdrError
       end
     end
 
-    # rubocop:disable Style/ClassVars
     @@_lock  = Mutex.new
     @@_index = 0
 
@@ -41,6 +40,5 @@ module NdrError
         @@_index = (@@_index + 1) % 0xFFFFFF
       end
     end
-    # rubocop:enable Style/ClassVars
   end
 end

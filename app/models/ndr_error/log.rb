@@ -1,4 +1,3 @@
-# rubocop:disable Metrics/ClassLength
 module NdrError
   # Stores instances of logs. Child of NdrError::Fingerprint.
   # Log records may be purged, whereas fingerprints are

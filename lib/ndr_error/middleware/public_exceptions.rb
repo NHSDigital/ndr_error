@@ -28,7 +28,7 @@ module NdrError
       # Unhandled exceptions with logging could terminate the web server!
       def rescuing_everything
         yield
-      rescue Exception => exception # rubocop:disable Lint/RescueException
+      rescue Exception => exception
         # "Log the exception caused by logging an exception..."
         Rails.logger.warn <<-MSG.strip_heredoc
           NdrError failed to log an exception!
