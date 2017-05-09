@@ -15,6 +15,7 @@ module NdrError
       app.config.assets.precompile += %w(
         ndr_error/ndr_error.css
         ndr_error/ndr_error.js
+        ndr_error/bootstrap/glyphicons-halflings-regular*
       )
     end
 
