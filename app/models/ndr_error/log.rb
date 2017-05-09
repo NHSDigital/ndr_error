@@ -171,18 +171,14 @@ module NdrError
     # parameters in a form suitable for logging.
     def extract_request_params(request)
       params = {}
+      filter = ActionDispatch::Http::ParameterFilter.new(NdrError.filtered_parameters)
 
       if request
         sources = [:parameters, :request_parameters, :query_parameters]
-        sources.inject(params) { |a, e| a.merge!(request.send e) }
-
-        # Redact any sensitive parameters:
-        params.each do |name, _value|
-          params[name] = '[FILTERED]' if unloggable?(name)
-        end
+        sources.inject(params) { |a, e| a.merge! request.send(e) }
       end
 
-      self.parameters_yml = params
+      self.parameters_yml = filter.filter(params)
     end
 
     def extract_request_attributes(request)
@@ -197,16 +193,6 @@ module NdrError
     def description_from(message)
       return 'No Description available' if message.blank?
       message.size < 4000 ? message : "#{message[0..4000 - 15]}...[truncated]"
-    end
-
-    # Returns true if the parameter should not be captured:
-    def unloggable?(parameter)
-      NdrError.filtered_parameters.any? do |filter|
-        case filter
-        when Regexp then filter.match(parameter.to_s)
-        else filter.to_s == parameter.to_s
-        end
-      end
     end
 
     def set_uuid_primary_key

@@ -135,13 +135,13 @@ module NdrError
     end
 
     test 'should not store sensitive request params' do
-      NdrError.filtered_parameters += [:amch, /^p\d/, :n, :p]
+      NdrError.filtered_parameters += [:amch, /^p\d/, :n, :p, :group]
 
       params1 = { a: 1, amch: { 'sensitive' => 'password' } }
-      params2 = { b: 2, n: 'bob', p: 'secret' }
+      params2 = { b: 2, n: 'bob', mixed: { p: 'secret', q: 'fine' } }
       request = mock('request')
       request.stubs(
-        parameters: { 'p2' => 'DANGER' },
+        parameters: { 'p2' => 'DANGER', group: { not: 'this' } },
         query_parameters: params1,
         request_parameters: params2,
         remote_ip: '127.0.0.1',
@@ -154,7 +154,8 @@ module NdrError
 
       safe_output = {
         a: 1, b: 2, amch: '[FILTERED]', n: '[FILTERED]',
-        p: '[FILTERED]', 'p2' => '[FILTERED]'
+        mixed: { p: '[FILTERED]', q: 'fine' },
+        'p2' => '[FILTERED]', group: '[FILTERED]'
       }
 
       assert_equal safe_output, error.parameters
