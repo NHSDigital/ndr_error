@@ -138,7 +138,7 @@ module NdrError
       NdrError.filtered_parameters += [:amch, /^p\d/, :n, :p, :group]
 
       params1 = { a: 1, amch: { 'sensitive' => 'password' } }
-      params2 = { b: 2, n: 'bob', nested: { p: 'secret' } }
+      params2 = { b: 2, n: 'bob', mixed: { p: 'secret', q: 'fine' } }
       request = mock('request')
       request.stubs(
         parameters: { 'p2' => 'DANGER', group: { not: 'this' } },
@@ -154,8 +154,8 @@ module NdrError
 
       safe_output = {
         a: 1, b: 2, amch: '[FILTERED]', n: '[FILTERED]',
-        nested: { p: '[FILTERED]' }, 'p2' => '[FILTERED]',
-        group: '[FILTERED]'
+        mixed: { p: '[FILTERED]', q: 'fine' },
+        'p2' => '[FILTERED]', group: '[FILTERED]'
       }
 
       assert_equal safe_output, error.parameters
