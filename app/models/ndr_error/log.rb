@@ -186,13 +186,21 @@ module NdrError
         sources = [:parameters, :request_parameters, :query_parameters]
         sources.inject(params) { |a, e| a.merge! request.send(e) }
 
-        # Redact any sensitive parameters:
-        params.each do |name, _value|
-          params[name] = '[FILTERED]' if unloggable?(name)
-        end
+        cleanse!(params)
       end
 
       self.parameters_yml = params
+    end
+
+    # Redact any sensitive parameters:
+    def cleanse!(params)
+      params.each do |name, value|
+        if unloggable?(name)
+          params[name] = '[FILTERED]'
+        elsif value.is_a?(Hash)
+          cleanse!(value)
+        end
+      end
     end
 
     def extract_request_attributes(request)
