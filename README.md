@@ -1,5 +1,7 @@
 # NdrError [![Build Status](https://travis-ci.org/PublicHealthEngland/ndr_error.svg?branch=master)](https://travis-ci.org/PublicHealthEngland/ndr_error)
 
+**This Branch is for legacy support of 1.9.3 applcations only**
+
 This is the Public Health England (PHE) National Disease Registers (NDR) Error ruby gem. It is a 
 Rails engine that provides error logging, viewing, and grouping capabilities.
 
