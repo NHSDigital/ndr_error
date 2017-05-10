@@ -1,3 +1,5 @@
+require 'socket'
+
 module NdrError
   # Mixin to assist with building of UUIDs.
   module UuidBuilder
