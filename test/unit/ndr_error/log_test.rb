@@ -232,7 +232,7 @@ module NdrError
 
     test 'should not calculate clock drift without configuration' do
       error = simulate_raise(Exception, 'Not found: 123', [])
-      assert_equal nil, error.clock_drift
+      assert_nil error.clock_drift
     end
 
     test 'should auto-calculate clock drift on create when configured' do
