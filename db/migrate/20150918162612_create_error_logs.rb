@@ -1,5 +1,5 @@
 # Adds partial ERROR_LOG table to schema (see README).
-class CreateErrorLogs < ActiveRecord::Migration
+class CreateErrorLogs < NdrError.migration_class
   def change
     create_table :error_logs, id: false do |t|
       t.string :error_logid, primary_key: true

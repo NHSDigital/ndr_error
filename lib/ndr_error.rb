@@ -89,4 +89,12 @@ module NdrError
   def self.table_name_prefix
     'error_'
   end
+
+  # Rails 5 uses versioned migrations (required as of 5.1). This helper method returns an
+  # appropriate migration superclass for the Rails version of the host application. Note that the
+  # 4.2 compatability layer is targetted since all the bundled migrations were written prior to
+  # Rails 5.
+  def self.migration_class
+    Rails::VERSION::MAJOR < 5 ? ActiveRecord::Migration : ActiveRecord::Migration[4.2]
+  end
 end
