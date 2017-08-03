@@ -1,7 +1,7 @@
 .bundle/
 coverage/
 Gemfile.lock
-gemfiles/
+gemfiles/*.lock
 log/*.log
 pkg/
 test/dummy/db/schema.rb
