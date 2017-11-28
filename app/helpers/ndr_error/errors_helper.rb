@@ -3,7 +3,7 @@ module NdrError
   module ErrorsHelper
     def search_matches(string, keywords)
       return string if keywords.blank?
-      highlight(string, keywords, highlighter: '<strong class="text-danger">\1</strong>')
+      highlight(string.to_s, keywords, highlighter: '<strong class="text-danger">\1</strong>')
     end
 
     def highlighted_trace_for(error)
