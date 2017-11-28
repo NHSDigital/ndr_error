@@ -1,3 +1,6 @@
+// First thing: Ensure asset pipeline compatibility:
+@import "bootstrap-sprockets.scss";
+
 // Core variables and mixins
 @import "variables";
 @import "mixins";
