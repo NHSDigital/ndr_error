@@ -81,7 +81,7 @@ module NdrError
     def previous_button_for(error)
       css = 'btn btn-default'
       css << ' disabled' if error.nil?
-      text = glyphicon_tag('chevron-left') + h('previous occurrence')
+      text = glyphicon_tag('chevron-left') + h('Previous Occurrence')
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
       link_to(text, path, class: css)
@@ -90,7 +90,7 @@ module NdrError
     def next_button_for(error)
       css = 'btn btn-default'
       css << ' disabled' if error.nil?
-      text = h('next occurrence') + glyphicon_tag('chevron-right')
+      text = h('Next Occurrence') + glyphicon_tag('chevron-right')
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
       link_to(text, path, class: css)

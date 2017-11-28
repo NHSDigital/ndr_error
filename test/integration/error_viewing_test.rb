@@ -42,7 +42,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
 
     assert page.body.include? 'Doh!'
-    assert page.body.include? '1 similar error stored'
+    assert page.body.include? '1 Similar Error Stored'
     assert page.body.include? 'Bob Jones'
   end
 

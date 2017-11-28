@@ -1,4 +1,4 @@
-<div class="container">
+<div>
   <div class="pull-right">
     <div class="btn-group">
       <%= ticket_link_for(@fingerprint) if @fingerprint.ticket_url.present? %>
@@ -14,7 +14,7 @@
 
       <div class="btn-group">
         <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-          <%= pluralize(@error.similar_errors.length, 'similar error') %> stored
+          <%= pluralize(@error.similar_errors.length, 'Similar Error') %> Stored
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
