@@ -7,15 +7,16 @@ module NdrError
     self.primary_key = 'error_fingerprintid'
 
     has_many :error_logs,
+             -> { latest_first },
              autosave:    true,
              class_name:  'NdrError::Log',
              foreign_key: 'error_fingerprintid'
 
     validate :ensure_ticket_url_matched_a_supplied_format
 
-    default_scope do
+    scope :latest_first, lambda {
       order("#{table_name}.updated_at DESC, #{table_name}.error_fingerprintid DESC")
-    end
+    }
 
     def self.filter_by_keywords(keywords)
       md5_match = keywords.map do |part|
@@ -73,7 +74,7 @@ module NdrError
     # have been loaded by rails internally
     # and won't have default scoping applied.
     def first_occurrence
-      @_first ||= error_logs.reload.last
+      error_logs.last
     end
 
     # Returns the record corresponding to the
@@ -82,7 +83,7 @@ module NdrError
     # have been loaded by rails internally
     # and won't have default scoping applied.
     def latest_occurrence
-      @_latest ||= error_logs.reload.first
+      error_logs.first
     end
   end
 end

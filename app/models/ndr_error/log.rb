@@ -19,10 +19,10 @@ module NdrError
                class_name:  'NdrError::Fingerprint',
                foreign_key: 'error_fingerprintid'
 
-    default_scope do
-      scope = where("(status is null) or (status not like 'deleted%')")
-      scope.order('created_at DESC, error_logid DESC')
-    end
+    scope :deleted,     -> { where("status like 'deleted%'") }
+    scope :not_deleted, -> { where("(status is null) or (status not like 'deleted%')") }
+
+    scope :latest_first, -> { order('created_at DESC, error_logid DESC') }
 
     validates :error_fingerprintid, presence: true
     validates :description, presence: true
@@ -50,21 +50,12 @@ module NdrError
       where(name_match)
     end
 
-    # Make explicit when circumventing the default scope
-    def self.including_deleted_logs(&block)
-      unscoped(&block)
-    end
-
     # Deletes all those errors that have been flagged for
     # deletion and whose soft-delete grace period has ended.
     #
     # Returns true if any records were deleted.
     def self.perform_cleanup!
-      records = including_deleted_logs do
-        where("status like 'deleted%'")
-      end
-
-      destroys = records.map do |record|
+      destroys = deleted.map do |record|
         stamp_string = record.status.sub(/^[^\d]+/, '')
         record.destroy if Time.zone.parse(stamp_string) < NdrError.log_grace_period.ago
       end
@@ -75,7 +66,7 @@ module NdrError
     # Finds gets all errors that share an MD5 hash
     # (including _error_).
     def self.similar_to(error)
-      error.error_fingerprint.error_logs
+      error.error_fingerprint.error_logs.not_deleted
     end
 
     # Gets similar errors.

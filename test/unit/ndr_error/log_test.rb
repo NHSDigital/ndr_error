@@ -11,12 +11,14 @@ module NdrError
     test 'should flag as deleted successfully' do
       logged_error = simulate_raise(Exception, 'unknown bar', [])
 
-      assert Log.all.include?(logged_error)
+      assert Log.not_deleted.exists?(logged_error.id)
+      refute Log.deleted.exists?(logged_error.id)
 
-      assert_difference('logged_error.error_fingerprint.error_logs.count', -1) do
+      assert_difference('logged_error.error_fingerprint.error_logs.not_deleted.count', -1) do
         logged_error.flag_as_deleted!
 
-        refute Log.all.include?(logged_error)
+        refute Log.not_deleted.exists?(logged_error.id)
+        assert Log.deleted.exists?(logged_error.id)
         assert logged_error.status =~ /deleted at /
       end
     end
@@ -30,18 +32,16 @@ module NdrError
       old_error1.flag_as_deleted!(100.days.ago)
       old_error2.flag_as_deleted!(120.days.ago)
 
+      assert Log.deleted.find(new_error.id)
+      assert Log.deleted.find(old_error1.id)
+      assert Log.deleted.find(old_error2.id)
+
       assert Log.perform_cleanup!
       refute Log.perform_cleanup!
 
-      assert_raises(ActiveRecord::RecordNotFound) { Log.find(new_error.id) }
+      assert Log.deleted.find(new_error.id)
       assert_raises(ActiveRecord::RecordNotFound) { Log.find(old_error1.id) }
       assert_raises(ActiveRecord::RecordNotFound) { Log.find(old_error2.id) }
-
-      Log.including_deleted_logs do
-        assert Log.find(new_error.id)
-        assert_raises(ActiveRecord::RecordNotFound) { Log.find(old_error1.id) }
-        assert_raises(ActiveRecord::RecordNotFound) { Log.find(old_error2.id) }
-      end
     end
 
     test 'should return backtrace as an array' do
@@ -191,13 +191,13 @@ module NdrError
     test 'should return most recent errors first' do
       error1 = simulate_raise(Exception, 'first error', [])
       error2 = simulate_raise(Exception, 'second error', [])
-      errors = Log.all.to_a
+      errors = Log.latest_first.to_a
 
       index1 = errors.index(error1)
       index2 = errors.index(error2)
 
       assert index2 < index1
-      assert_equal error2, Log.first
+      assert_equal error2, Log.latest_first.first
     end
 
     test 'should store default for database if not configured' do

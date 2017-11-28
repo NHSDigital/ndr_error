@@ -93,16 +93,14 @@ module NdrError
       print   = error1.error_fingerprint
 
       assert_equal 3, print.count
-      assert_equal 3, print.error_logs.count
+      assert_equal 3, print.error_logs.not_deleted.count
+      assert_equal 0, print.error_logs.deleted.count
 
       print.purge!
 
       assert_equal 3, print.count
-      assert_equal 0, print.error_logs.count
-
-      Log.including_deleted_logs do
-        assert_equal 3, print.error_logs.count
-      end
+      assert_equal 0, print.error_logs.not_deleted.count
+      assert_equal 3, print.error_logs.deleted.count
     end
 
     test 'should find earliest/latest occurrence correctly' do

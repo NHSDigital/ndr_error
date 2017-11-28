@@ -2,14 +2,14 @@ module NdrError
   # Module to help with searching through fingerprints / logs.
   module Finder
     def search(keywords)
-      scope = Fingerprint.includes(:error_logs)
+      scope = Fingerprint.latest_first
       return scope unless keywords && keywords.any?
 
       # Fetch the collection of fingerprint matches:
       records = scope.filter_by_keywords(keywords).to_a
 
       # Add to that fingerprints with log records that matched the search:
-      log_print_ids = Log.filter_by_keywords(keywords).pluck(:error_fingerprintid)
+      log_print_ids = Log.not_deleted.filter_by_keywords(keywords).pluck(:error_fingerprintid)
       records.concat scope.find(log_print_ids)
 
       order(records)

@@ -14,17 +14,13 @@ module NdrError
     end
 
     def show
-      @error =
-        if (id = params[:log_id])
-          @fingerprint.error_logs.find(id)
-        else
-          @fingerprint.error_logs.first
-        end
+      logs   = @fingerprint.error_logs.not_deleted
+      @error = (id = params[:log_id]) ? logs.find_by(error_logid: id) : logs.first
 
-      return unless @error.nil?
-
-      flash[:error] = 'No matching Logs exist for that Fingerprint!'
-      redirect_to error_fingerprints_url(q: @fingerprint.to_param)
+      if @error.nil?
+        flash[:error] = 'No matching Logs exist for that Fingerprint!'
+        redirect_to error_fingerprints_url(q: @fingerprint.to_param)
+      end
     end
 
     def edit

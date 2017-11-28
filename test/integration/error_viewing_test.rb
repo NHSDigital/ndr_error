@@ -85,7 +85,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
 
     assert_equal '/fingerprinting/errors', current_path
     assert page.has_content?('Fingerprint purged!')
-    assert_equal 0, print1.error_logs.reload.length
+    assert_equal 0, print1.error_logs.not_deleted.count
 
     visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
 
