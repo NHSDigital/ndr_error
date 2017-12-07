@@ -4,6 +4,6 @@ class DisasterController < ApplicationController
   end
 
   def cause
-    fail params[:message]
+    raise params[:message].to_s
   end
 end
