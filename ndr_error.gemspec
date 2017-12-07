@@ -21,8 +21,9 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '>= 4.1', '< 5.2'
   s.add_dependency 'will_paginate'
 
-  s.add_dependency 'jquery-rails'
-  s.add_dependency 'sass-rails'
+  s.add_dependency 'ndr_ui'
+  # s.add_dependency 'jquery-rails'
+  # s.add_dependency 'sass-rails'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'pry'

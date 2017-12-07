@@ -1,40 +1,4 @@
-@import "bootstrap/bootstrap";
-//@import "ndr_error/bootstrap/variables";
-//@import "ndr_error/bootstrap/mixins";
-//@import "ndr_error/bootstrap/reset";
-//@import "ndr_error/bootstrap/normalize";
-//@import "ndr_error/bootstrap/scaffolding";
-//@import "ndr_error/bootstrap/grid";
-//@import "ndr_error/bootstrap/layouts";
-//@import "ndr_error/bootstrap/type";
-//@import "ndr_error/bootstrap/forms";
-//@import "ndr_error/bootstrap/tables";
-//@import "ndr_error/bootstrap/dropdowns";
-//@import "ndr_error/bootstrap/wells";
-//@import "ndr_error/bootstrap/component-animations";
-//@import "ndr_error/bootstrap/close";
-//@import "ndr_error/bootstrap/buttons";
-//@import "ndr_error/bootstrap/button-groups";
-//@import "ndr_error/bootstrap/input-groups";
-//@import "ndr_error/bootstrap/alerts";
-//@import "ndr_error/bootstrap/navs";
-//@import "ndr_error/bootstrap/navbar";
-//@import "ndr_error/bootstrap/breadcrumbs";
-//@import "ndr_error/bootstrap/pagination";
-//@import "ndr_error/bootstrap/pager";
-//@import "ndr_error/bootstrap/modals";
-//@import "ndr_error/bootstrap/tooltip";
-//@import "ndr_error/bootstrap/popovers";
-//@import "ndr_error/bootstrap/thumbnails";
-//@import "ndr_error/bootstrap/labels";
-//@import "ndr_error/bootstrap/panels";
-//@import "ndr_error/bootstrap/badges";
-//@import "ndr_error/bootstrap/progress-bars";
-//@import "ndr_error/bootstrap/accordion";
-//@import "ndr_error/bootstrap/carousel";
-//@import "ndr_error/bootstrap/hero-unit";
-//@import "ndr_error/bootstrap/utilities";
-//@import "ndr_error/bootstrap/responsive-utilities";
+@import "ndr_ui/index";
 
 body { padding-top: 70px; } // Allow for fixed navigation.
 
