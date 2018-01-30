@@ -32,5 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mocha'
 
   s.add_development_dependency 'simplecov'
-  s.add_development_dependency 'ndr_dev_support', '~> 1.3'
+  s.add_development_dependency 'ndr_dev_support', '~> 2.1'
 end
