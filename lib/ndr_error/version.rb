@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 # Contains the version of NdrError. Sourced by the gemspec.
 module NdrError
-  VERSION = '1.1.3'.freeze
+  VERSION = '1.1.4'.freeze
 end
