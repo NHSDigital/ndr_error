@@ -135,6 +135,11 @@ module NdrError
 
       assert_equal error3, print2.first_occurrence
       assert_equal error4, print2.latest_occurrence
+
+      print1.purge!
+
+      assert_nil print1.first_occurrence
+      assert_nil print1.latest_occurrence
     end
 
     private

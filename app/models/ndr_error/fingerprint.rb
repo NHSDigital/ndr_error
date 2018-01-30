@@ -70,20 +70,15 @@ module NdrError
 
     # Returns the record corresponding to the
     # first occurrence of this type of error.
-    # Reload the association as it may
-    # have been loaded by rails internally
-    # and won't have default scoping applied.
     def first_occurrence
-      error_logs.last
+      error_logs.not_deleted.last
     end
 
     # Returns the record corresponding to the
     # most recent occurrence of this type of
-    # error. Reload the association as it may
-    # have been loaded by rails internally
-    # and won't have default scoping applied.
+    # error.
     def latest_occurrence
-      error_logs.first
+      error_logs.not_deleted.first
     end
   end
 end
