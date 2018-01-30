@@ -3,7 +3,7 @@ file safety:
   ".gitignore":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 71591d5cdb0101272d6e7c4b5e5a5227408c6cdd
+    safe_revision: 02ce1726c28b3677fa3939df4bae7f428c5f5e13
   ".hound.yml":
     comments: 
     reviewed_by: joshpencheon
@@ -15,15 +15,15 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8976ca01aa89a8b389e9fd33c10fb4788c7eae66
+    safe_revision: f3d6bab9bdb54dde0761c1a9c1cf706f69437a31
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   Gemfile:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6032d2ffd7911c5f861e336ae463cd7af52badf7
+    reviewed_by: josh.pencheon
+    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
   MIT-LICENSE:
     comments: 
     reviewed_by: Miles Smith
@@ -36,382 +36,14 @@ file safety:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: f9f6fe7769c995d7904d453a06c3490a57893c19
-  app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.eot:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.svg:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.ttf:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/fonts/ndr_error/bootstrap/glyphicons-halflings-regular.woff:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/images/ndr_error/bootstrap/glyphicons-halflings-white.png:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/images/ndr_error/bootstrap/glyphicons-halflings.png:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-affix.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-alert.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-button.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-carousel.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-collapse.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-dropdown.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-modal.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-popover.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-scrollspy.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-tab.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-tooltip.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-transition.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap-typeahead.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/bootstrap/bootstrap.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/javascripts/ndr_error/jquery-1.11.3.min.js:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/assets/javascripts/ndr_error/ndr_error.js:
     comments: 
-    reviewed_by: joshpencheon
-    safe_revision: 4423061830a85d86c380163d41c82b8ac305ba5a
-  app/assets/stylesheets/ndr_error/bootstrap/_alerts.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_badges.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_bootstrap-sprockets.scss:
-    comments: 
     reviewed_by: josh.pencheon
-    safe_revision: b960a1f2e2c8dc274889fd8f57fc21e3837b0ef0
-  app/assets/stylesheets/ndr_error/bootstrap/_breadcrumbs.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_button-groups.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_buttons.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_carousel.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_close.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_code.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_component-animations.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_dropdowns.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_forms.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_glyphicons.scss:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: b960a1f2e2c8dc274889fd8f57fc21e3837b0ef0
-  app/assets/stylesheets/ndr_error/bootstrap/_grid.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_input-groups.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_jumbotron.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_labels.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_list-group.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_media.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_mixins.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_modals.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_navbar.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_navs.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_normalize.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_pager.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_pagination.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_panels.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_popovers.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_print.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_progress-bars.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_responsive-embed.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_responsive-utilities.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_scaffolding.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_tables.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_theme.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_thumbnails.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_tooltip.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_type.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_utilities.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/_variables.scss:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: b960a1f2e2c8dc274889fd8f57fc21e3837b0ef0
-  app/assets/stylesheets/ndr_error/bootstrap/_wells.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/bootstrap.scss:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: b960a1f2e2c8dc274889fd8f57fc21e3837b0ef0
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_alerts.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_background-variant.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_border-radius.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_buttons.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_center-block.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_clearfix.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_forms.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_gradients.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_grid-framework.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_grid.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_hide-text.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_image.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_labels.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_list-group.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_nav-divider.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_nav-vertical-align.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_opacity.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_pagination.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_panels.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_progress-bar.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_reset-filter.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_resize.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_responsive-visibility.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_size.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_tab-focus.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_table-row.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_text-emphasis.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_text-overflow.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
-  app/assets/stylesheets/ndr_error/bootstrap/mixins/_vendor-prefixes.scss:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    safe_revision: 02ce1726c28b3677fa3939df4bae7f428c5f5e13
   app/assets/stylesheets/ndr_error/ndr_error.scss:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: 02ce1726c28b3677fa3939df4bae7f428c5f5e13
   app/controllers/ndr_error/application_controller.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -434,7 +66,7 @@ file safety:
   app/models/ndr_error/fingerprint.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: 122d979b685826ee8aaf96efd1f086b2d669ea23
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
     reviewed_by: josh.pencheon
@@ -467,22 +99,18 @@ file safety:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 58530c9736190c34ac5d9d018c222d64d72db822
-  gemfiles/Gemfile.rails41:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 76af22daf1950fe3bfaaece2b7802c91383b2d6d
   gemfiles/Gemfile.rails42:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 76af22daf1950fe3bfaaece2b7802c91383b2d6d
+    reviewed_by: josh.pencheon
+    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
   gemfiles/Gemfile.rails50:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 42cea4c4fbe4c8cc9ae100f288526716f03116a8
+    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
   gemfiles/Gemfile.rails51:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8976ca01aa89a8b389e9fd33c10fb4788c7eae66
+    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
@@ -520,7 +148,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 6be963b2e913f58dab1375aaf3682612d443f8c5
+    safe_revision: bd03c76576c6063dbd21f3e4be38e6317ea3cc91
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -528,7 +156,7 @@ file safety:
   ndr_error.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 682c23c9f16476df3251708ec708a4a13c2ddc39
+    safe_revision: 4f78b8c33b31e2d936e71f6d2a4631732f4f7161
   script/rails:
     comments: 
     reviewed_by: Miles Smith
@@ -556,7 +184,7 @@ file safety:
   test/dummy/app/controllers/disaster_controller.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 74ca150d40becaeb12020a4779c89273e1aaf3ee
+    safe_revision: 5750c196ac6146402d8130a861fc6040b5192fc2
   test/dummy/app/helpers/application_helper.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -672,7 +300,7 @@ file safety:
   test/integration/error_logging_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 74ca150d40becaeb12020a4779c89273e1aaf3ee
+    safe_revision: 5750c196ac6146402d8130a861fc6040b5192fc2
   test/integration/error_viewing_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -700,7 +328,7 @@ file safety:
   test/unit/ndr_error/fingerprint_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: 122d979b685826ee8aaf96efd1f086b2d669ea23
   test/unit/ndr_error/fuzzing_test.rb:
     comments: 
     reviewed_by: Miles Smith
