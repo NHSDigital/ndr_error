@@ -29,7 +29,7 @@ module NdrError
     # Gets a fingerprint record for the given
     # MD5 digest.
     def self.find_or_create_by_id(digest)
-      existing = find_by_error_fingerprintid(digest)
+      existing = find_by(error_fingerprintid: digest)
 
       existing || create do |print|
         print.count = 0
