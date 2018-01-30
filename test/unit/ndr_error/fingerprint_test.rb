@@ -74,7 +74,8 @@ module NdrError
     test 'should not store error logs if above threshold' do
       error = build_error
       print = create_fingerprint(error.md5_digest)
-      print.error_logs.stubs(count: NdrError.fingerprint_threshold)
+      NdrError.stubs(fingerprint_threshold: 1)
+      assert print.store_log(error.dup)
 
       assert_no_difference('Log.count') do
         assert_difference('print.count') do
@@ -82,6 +83,24 @@ module NdrError
 
           assert error.new_record?
           assert log.nil?
+        end
+      end
+    end
+
+    test 'should store error logs if above threshold because of soft deletes' do
+      error = build_error
+      print = create_fingerprint(error.md5_digest)
+      NdrError.stubs(fingerprint_threshold: 1)
+      assert print.store_log(error.dup)
+
+      print.purge!
+
+      assert_difference('Log.count') do
+        assert_difference('print.count') do
+          log = print.store_log(error)
+
+          refute error.new_record?
+          assert_equal error, log
         end
       end
     end

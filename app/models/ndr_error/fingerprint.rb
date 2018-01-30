@@ -57,7 +57,7 @@ module NdrError
     # to force creation of a new log record.
     #
     def store_log(log, bypass_limit = false)
-      if bypass_limit || (error_logs.count < NdrError.fingerprint_threshold)
+      if bypass_limit || (error_logs.not_deleted.count < NdrError.fingerprint_threshold)
         error_logs << log
       end
 
