@@ -19,6 +19,22 @@ if ActiveSupport::TestCase.method_defined?(:fixture_path=)
   ActiveSupport::TestCase.fixture_path = File.expand_path('../fixtures', __FILE__)
 end
 
+require 'database_cleaner'
+DatabaseCleaner.strategy = :deletion
+
+class ActionDispatch::IntegrationTest
+  # Don't wrap each test case in a transaction:
+  if respond_to?(:use_transactional_fixtures=)
+    self.use_transactional_fixtures = false
+  else
+    self.use_transactional_tests = false
+  end
+
+  # Instead, insert fixtures afresh between each test:
+  setup    { DatabaseCleaner.start }
+  teardown { DatabaseCleaner.clean }
+end
+
 # Include all capybara + poltergeist config
 require 'ndr_dev_support/integration_testing'
 

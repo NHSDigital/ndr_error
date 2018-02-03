@@ -33,4 +33,5 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'simplecov'
   s.add_development_dependency 'ndr_dev_support', '~> 2.1'
+  s.add_development_dependency 'database_cleaner'
 end
