@@ -104,6 +104,12 @@ module NdrError
       extract_request_attributes(request)
     end
 
+    # If we have more details about a parent error, track
+    # that too so it can be mixed in to the MD5 digest.
+    def register_parent(parent_print)
+      @parent_print = parent_print.id if parent_print
+    end
+
     # Store as much of `params' as possible in
     # the YAML parameters column.
     def parameters_yml=(params)
@@ -146,7 +152,7 @@ module NdrError
     # Creates (and caches) the md5 of this error,
     # which is used to match to similar errors.
     def md5_digest
-      @_digest ||= fuzz(description, backtrace)
+      @_digest ||= fuzz(description, backtrace, parent_print)
     end
 
     # Allow the digest to be set manually if so desired.
@@ -155,6 +161,10 @@ module NdrError
     end
 
     private
+
+    def parent_print
+      defined?(@parent_print) && @parent_print
+    end
 
     # For the given `request' object, return the
     # parameters in a form suitable for logging.

@@ -1,4 +1,4 @@
-# Adds complete ERROR_FINGERPRINT table to schema
+# Adds original ERROR_FINGERPRINT table to schema
 class CreateErrorFingerprints < NdrError.migration_class
   def change
     create_table :error_fingerprints, id: false do |t|
