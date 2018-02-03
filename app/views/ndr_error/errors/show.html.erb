@@ -1,3 +1,11 @@
+<%=
+  bootstrap_breadcrumbs([
+    bootstrap_breadcrumb('Errors', error_fingerprints_path),
+    bootstrap_breadcrumb(@fingerprint.id, error_fingerprint_path(@fingerprint, log_id: @error), true)
+  ])
+%>
+
+<hr />
 <div class="clearfix">
   <div class="pull-right">
     <div class="btn-group">
@@ -29,9 +37,7 @@
   <% end %>
 </div>
 
-<hr/>
 <h1>
-  <%= link_to 'Errors', error_fingerprints_path %> &#187;
   <%= @error.error_class %>
   <br><small><%=h @error.description %></small>
 </h1>

@@ -1,3 +1,12 @@
+<%=
+  bootstrap_breadcrumbs([
+    bootstrap_breadcrumb('Errors', error_fingerprints_path),
+    bootstrap_breadcrumb(@fingerprint.id, error_fingerprint_path(@fingerprint), true),
+    bootstrap_breadcrumb('Edit', nil)
+  ])
+%>
+
+
 <%= form_for @fingerprint, as: :error_fingerprint, url: error_fingerprint_path(@fingerprint), method: :put do |form| %>
   <div class="form-group">
     <%= form.label :ticket_url, 'Ticket URL' %>

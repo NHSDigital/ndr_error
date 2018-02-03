@@ -1,3 +1,9 @@
+<%=
+  bootstrap_breadcrumbs([
+    bootstrap_breadcrumb('Errors', error_fingerprints_path)
+  ])
+%>
+
 <div class="row">
   <div id="search_form_container" class="col-md-4 col-md-offset-8">
   <%= form_tag(error_fingerprints_path, method: :get) do %>
