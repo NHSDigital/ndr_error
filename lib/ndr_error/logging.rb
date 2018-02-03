@@ -6,11 +6,8 @@ module NdrError
 
     # Log the given `exception`.
     def log(exception, ancillary_data, request_object)
-      parent_print = nil
-
-      if exception.cause
-        parent_print, _ = log(exception.cause, ancillary_data, request_object)
-      end
+      # Capture details about a parent exception, if possible:
+      parent_print, = exception.cause && log(exception.cause, ancillary_data, request_object)
 
       log = initialize_log(ancillary_data)
       log.register_exception(exception)
