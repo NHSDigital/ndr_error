@@ -43,8 +43,8 @@ module NdrError
     end
 
     def similar_error_link(error)
-      text = content_tag(:span, error.user_id, class: 'text-muted')
-      text << ' - ' << error.created_at.to_s(:db)
+      user = error.user_id && content_tag(:span, error.user_id, class: 'text-muted')
+      text = safe_join([user, error.created_at.to_s(:db)].compact, ' - ')
 
       bootstrap_list_link_to text, error_fingerprint_path(error.error_fingerprint, log_id: error)
     end
@@ -81,7 +81,7 @@ module NdrError
     def previous_button_for(error)
       css = 'btn btn-default'
       css << ' disabled' if error.nil?
-      text = glyphicon_tag('chevron-left') + h('Previous Occurrence')
+      text = glyphicon_tag('chevron-left')
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
       link_to(text, path, class: css)
@@ -90,7 +90,7 @@ module NdrError
     def next_button_for(error)
       css = 'btn btn-default'
       css << ' disabled' if error.nil?
-      text = h('Next Occurrence') + glyphicon_tag('chevron-right')
+      text = glyphicon_tag('chevron-right')
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
       link_to(text, path, class: css)
