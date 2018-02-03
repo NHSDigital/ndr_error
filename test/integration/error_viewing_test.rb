@@ -33,6 +33,26 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     assert page.body.include? 'RuntimeError: Whoops!'
   end
 
+  test 'should be redirected to view a particular occurence' do
+    log       = simulate_raise(StandardError, 'Doh!', [], user_id: 'Bob Jones')
+    base_path = "/fingerprinting/errors/#{log.error_fingerprintid}"
+
+    visit base_path
+    assert page.has_content? 'Doh!'
+    assert current_url.ends_with? "#{base_path}?log_id=#{log.id}"
+  end
+
+  test 'should not be able to view a bare fingerprint' do
+    log       = simulate_raise(StandardError, 'Doh!', [], user_id: 'Bob Jones')
+    base_path = "/fingerprinting/errors/#{log.error_fingerprintid}"
+
+    log.error_fingerprint.purge!
+
+    visit base_path
+    assert_equal '/fingerprinting/errors', current_path
+    assert page.has_content? 'No matching Logs exist for that Fingerprint!'
+  end
+
   test 'should be able to view details of an exception' do
     print1 = simulate_raise(StandardError, 'Doh!', [], user_id: 'Bob Jones').error_fingerprint
     print2 = simulate_raise(StandardError, 'Doh!', [], user_id: 'Sam Smith').error_fingerprint
@@ -43,6 +63,16 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
 
     assert page.body.include? 'Doh!'
     assert page.body.include? '1 Similar Error Stored'
+    assert page.body.include? 'Bob Jones'
+  end
+
+  test 'should not see similar errors options for unique error' do
+    print1 = simulate_raise(StandardError, 'Doh!', [], user_id: 'Bob Jones').error_fingerprint
+
+    visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
+
+    assert page.body.include? 'Doh!'
+    refute page.body.include? 'Similar Error'
     assert page.body.include? 'Bob Jones'
   end
 

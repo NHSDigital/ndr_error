@@ -6,6 +6,8 @@ module NdrError
     # Ensure Rails doesn't find any host layouts first:
     layout 'ndr_error/ndr_error'
 
+    helper NdrUi::BootstrapHelper
+
     private
 
     def authenticate

@@ -280,19 +280,14 @@ module NdrError
       assert error2.error_fingerprintid != error3.error_fingerprintid
     end
 
-    test 'should not find error similar to itself' do
-      error = simulate_raise(Exception, 'boom', [])
-      refute error.similar_errors.index(error)
-    end
-
     test 'should find similar identical errors' do
       error1 = simulate_raise(Exception, 'Not found: 123', [])
       error2 = simulate_raise(Exception, 'Not found: 123', [])
       error3 = simulate_raise(Exception, 'Not found: 123', [])
 
-      assert_equal [error3, error2], error1.similar_errors
-      assert_equal [error3, error1], error2.similar_errors
-      assert_equal [error2, error1], error3.similar_errors
+      assert_equal [error3, error2, error1], error1.similar_errors
+      assert_equal [error3, error2, error1], error2.similar_errors
+      assert_equal [error3, error2, error1], error3.similar_errors
 
       assert error1.previous.nil?
       assert_equal error2, error1.next
@@ -308,18 +303,18 @@ module NdrError
       error3 = simulate_raise(Exception, 'Not found: 123, sorry!', [])
       error4 = simulate_raise(Exception, 'Not found: 456, sorry!', [])
 
-      assert_equal [error2], error1.similar_errors
-      assert_equal [error1], error2.similar_errors
-      assert_equal [error4], error3.similar_errors
-      assert_equal [error3], error4.similar_errors
+      assert_equal [error2, error1], error1.similar_errors
+      assert_equal [error2, error1], error2.similar_errors
+      assert_equal [error4, error3], error3.similar_errors
+      assert_equal [error4, error3], error4.similar_errors
     end
 
     test 'should not find similar errors with textually differing descriptions' do
       error1 = simulate_raise(Exception, 'Not found: 123', [])
       error2 = simulate_raise(Exception, 'Dot round: 123', [])
 
-      assert error1.similar_errors.blank?
-      assert error2.similar_errors.blank?
+      refute error1.similar_errors.index(error2)
+      refute error2.similar_errors.index(error1)
     end
 
     test 'should not find similar errors with different backtraces' do
@@ -327,9 +322,9 @@ module NdrError
       error2 = simulate_raise(Exception, 'Not found: 123', %w( bar baz ))
       error3 = simulate_raise(Exception, 'Not found: 456', %w( baz foo ))
 
-      assert error1.similar_errors.blank?
-      assert error2.similar_errors.blank?
-      assert error3.similar_errors.blank?
+      assert_equal [error1], error1.similar_errors
+      assert_equal [error2], error2.similar_errors
+      assert_equal [error3], error3.similar_errors
     end
 
     test 'should find similar errors with same backtraces' do
@@ -337,9 +332,9 @@ module NdrError
       error2 = simulate_raise(Exception, 'Not found: 123', %w( foo bar ))
       error3 = simulate_raise(Exception, 'Not found: 456', %w( foo bar ))
 
-      assert_equal [error3, error2], error1.similar_errors
-      assert_equal [error3, error1], error2.similar_errors
-      assert_equal [error2, error1], error3.similar_errors
+      assert_equal [error3, error2, error1], error1.similar_errors
+      assert_equal [error3, error2, error1], error2.similar_errors
+      assert_equal [error3, error2, error1], error3.similar_errors
     end
 
     test 'should find similar errors with similar backtraces' do
@@ -347,9 +342,9 @@ module NdrError
       error2 = simulate_raise(Exception, 'Not found: 123', ['foo:23:in baz', 'bar:45:in baz'])
       error3 = simulate_raise(Exception, 'Not found: 456', ['foo:4:in baz', 'bar:6:in baz'])
 
-      assert_equal [error3, error2], error1.similar_errors
-      assert_equal [error3, error1], error2.similar_errors
-      assert_equal [error2, error1], error3.similar_errors
+      assert_equal [error3, error2, error1], error1.similar_errors
+      assert_equal [error3, error2, error1], error2.similar_errors
+      assert_equal [error3, error2, error1], error3.similar_errors
     end
 
     test 'should extract app trace using Rails.root' do

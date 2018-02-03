@@ -20,6 +20,8 @@ module NdrError
       if @error.nil?
         flash[:error] = 'No matching Logs exist for that Fingerprint!'
         redirect_to error_fingerprints_url(q: @fingerprint.to_param)
+      elsif id.blank?
+        redirect_to log_id: @error.id
       end
     end
 

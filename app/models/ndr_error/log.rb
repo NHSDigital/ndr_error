@@ -63,27 +63,15 @@ module NdrError
       destroys.any?
     end
 
-    # Finds gets all errors that share an MD5 hash
-    # (including _error_).
-    def self.similar_to(error)
-      error.error_fingerprint.error_logs.not_deleted
-    end
-
-    # Gets similar errors.
-    def similar_errors(include_self = false)
-      unless defined?(@_similar)
-        @_similar = {}
-        @_similar[true]  = self.class.similar_to(self)
-        @_similar[false] = @_similar[true] - [self]
-      end
-
-      @_similar[include_self ? true : false]
+    # returns all sibling occurences, including self
+    def similar_errors
+      error_fingerprint.error_logs.not_deleted
     end
 
     # Returns the previous historical occurence,
     # or nil if there wasn't one.
     def previous
-      lookup = similar_errors(true).reverse
+      lookup = similar_errors.reverse
       index  = lookup.index(self)
       lookup[0...index].last
     end
@@ -91,7 +79,7 @@ module NdrError
     # Returns the next historical occurence,
     # or nil if there hasn't been one.
     def next
-      lookup = similar_errors(true).to_a
+      lookup = similar_errors.to_a
       index  = lookup.index(self)
       lookup[0...index].last
     end

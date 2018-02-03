@@ -8,13 +8,13 @@
     <%= purge_button_for(@fingerprint) if user_can_edit_errors? %>
   </div>
 
-  <% if @error.similar_errors.any? %>
+  <% if @error.similar_errors.length > 1 %>
     <div class="">
       <%= previous_button_for(@error.previous) %>
 
       <div class="btn-group">
         <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-          <%= pluralize(@error.similar_errors.length, 'Similar Error') %> Stored
+          <%= pluralize(@error.similar_errors.length - 1, 'Similar Error') %> Stored
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">

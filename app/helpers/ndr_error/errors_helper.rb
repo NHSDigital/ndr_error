@@ -46,7 +46,7 @@ module NdrError
       text = content_tag(:span, error.user_id, class: 'text-muted')
       text << ' - ' << error.created_at.to_s(:db)
 
-      link_to text, error_fingerprint_path(error.error_fingerprint, log_id: error)
+      bootstrap_list_link_to text, error_fingerprint_path(error.error_fingerprint, log_id: error)
     end
 
     def ticket_link_for(fingerprint, small = false)
