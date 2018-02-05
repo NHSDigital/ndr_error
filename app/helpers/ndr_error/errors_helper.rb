@@ -49,6 +49,13 @@ module NdrError
       bootstrap_list_link_to text, error_fingerprint_path(error.error_fingerprint, log_id: error)
     end
 
+    def downstream_fingerprint_link(print)
+      hash = content_tag(:span, print.id, class: 'text-muted')
+      text = print.error_logs.first.try(:error_class) || 'N/A'
+
+      bootstrap_list_link_to hash + ' - ' + text, error_fingerprint_path(print)
+    end
+
     def ticket_link_for(fingerprint, small = false)
       text = glyphicon_tag('asterisk') + ' View ticket'
       css  = 'btn btn-default'

@@ -15,7 +15,7 @@ module NdrError
 
     has_many :caused_error_fingerprints,
              class_name:  'NdrError::Fingerprint',
-             foreign_key: 'error_fingerprintid'
+             foreign_key: 'causal_error_fingerprintid'
 
     has_many :error_logs,
              -> { latest_first },

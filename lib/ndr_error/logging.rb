@@ -15,6 +15,7 @@ module NdrError
       log.register_parent(parent_print)
 
       print = Fingerprint.find_or_create_by_id(log.md5_digest)
+      print.causal_error_fingerprint = parent_print
       error = print.store_log(log)
 
       [print, error]

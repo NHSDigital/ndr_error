@@ -23,6 +23,34 @@ module NdrError
       assert failure.message =~ /Mass-assigning/
     end
 
+    test 'should capture causal information as related fingerprints' do
+      assert_difference(-> { Fingerprint.count }, 2) do
+        begin
+          1 / 0
+        rescue
+          begin
+            [].foo
+          rescue => downstream_exception
+            print, log = log(downstream_exception, { user_id: 'Bob' }, nil)
+            cause = print.causal_error_fingerprint
+
+            assert log.is_a? Log
+            assert_equal 'NoMethodError', log.error_class
+            assert_equal 'Bob', log.user_id
+
+            assert cause.is_a? Fingerprint
+            refute_equal cause, print
+            assert cause.caused_error_fingerprints.include?(print)
+
+            cause_log = cause.error_logs.first
+            assert cause_log.is_a? Log
+            assert_equal 'ZeroDivisionError', cause_log.error_class
+            assert_equal 'Bob', cause_log.user_id
+          end
+        end
+      end
+    end
+
     private
 
     def exception(message, backtrace = [])
