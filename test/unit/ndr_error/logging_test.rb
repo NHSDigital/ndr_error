@@ -23,6 +23,20 @@ module NdrError
       assert failure.message =~ /Mass-assigning/
     end
 
+    test 'should monitor in block form' do
+      assert_difference(-> { Fingerprint.count }) do
+        assert_raises do
+          monitor { raise 'oops' }
+        end
+      end
+
+      assert_difference(-> { Fingerprint.count }) do
+        print, log = monitor(swallow: true) { raise 'oops' }
+        assert print.is_a? Fingerprint
+        assert log.is_a? Log
+      end
+    end
+
     test 'should capture causal information as related fingerprints' do
       assert_difference(-> { Fingerprint.count }, 2) do
         begin

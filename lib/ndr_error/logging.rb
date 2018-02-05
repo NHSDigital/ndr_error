@@ -21,6 +21,13 @@ module NdrError
       [print, error]
     end
 
+    def monitor(ancillary_data: {}, request: nil, swallow: false)
+      yield
+    rescue Exception => exception
+      data = log(exception, ancillary_data, request)
+      swallow ? data : raise(exception)
+    end
+
     private
 
     # Manual attribute whitelisting:
