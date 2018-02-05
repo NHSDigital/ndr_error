@@ -38,15 +38,22 @@ module NdrError
     end
 
     test 'should capture causal information as related fingerprints' do
+      trigger = -> { [].foo }
+      params  = { user_id: 'Bob' }
+
+      solo_print, = monitor(swallow: true, request: nil, ancillary_data: params) { trigger.call }
+
       assert_difference(-> { Fingerprint.count }, 2) do
         begin
           1 / 0
         rescue
           begin
-            [].foo
+            trigger.call
           rescue => downstream_exception
-            print, log = log(downstream_exception, { user_id: 'Bob' }, nil)
+            print, log = log(downstream_exception, params, nil)
             cause = print.causal_error_fingerprint
+
+            refute_equal solo_print.id, print.id, 'cause should have been factored'
 
             assert log.is_a? Log
             assert_equal 'NoMethodError', log.error_class
