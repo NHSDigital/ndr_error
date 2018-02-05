@@ -16,25 +16,48 @@
     <%= purge_button_for(@fingerprint) if user_can_edit_errors? %>
   </div>
 
-  <% if @error.similar_errors.length > 1 %>
-    <div class="btn-group">
-      <%= previous_button_for(@error.previous) %>
+  <div class="btn-toolbar">
+    <% if @error.similar_errors.length > 1 %>
+      <div class="btn-group">
+        <%= previous_button_for(@error.previous) %>
 
+        <div class="btn-group">
+          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+            <%= pluralize(@error.similar_errors.length - 1, 'Similar Error') %> Stored
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <% @error.similar_errors.each do |other| %>
+              <li><%= similar_error_link(other) %></li>
+            <% end %>
+          </ul>
+        </div>
+
+        <%= next_button_for(@error.next) %>
+      </div>
+    <% end %>
+
+    <% if @fingerprint.causal_error_fingerprint %>
+      <div class="btn-group">
+        <%= link_to bootstrap_icon_tag('arrow-up') + ' View Cause', error_fingerprint_path(@fingerprint.causal_error_fingerprint), class: 'btn btn-default' %>
+      </div>
+    <% end %>
+
+    <% if @fingerprint.caused_error_fingerprints.any? %>
       <div class="btn-group">
         <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
-          <%= pluralize(@error.similar_errors.length - 1, 'Similar Error') %> Stored
+          <%= pluralize(@fingerprint.caused_error_fingerprints.length, 'Downstream Error') %> Stored
           <span class="caret"></span>
         </a>
         <ul class="dropdown-menu">
-          <% @error.similar_errors.each do |other| %>
-            <li><%= similar_error_link(other) %></li>
+          <% @fingerprint.caused_error_fingerprints.each do |print| %>
+            <li><%= downstream_fingerprint_link print %></li>
           <% end %>
         </ul>
       </div>
+    <% end %>
+  </div>
 
-      <%= next_button_for(@error.next) %>
-    </div>
-  <% end %>
 </div>
 
 <h1>

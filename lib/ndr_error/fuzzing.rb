@@ -1,8 +1,12 @@
 module NdrError
   # Mixin to help with fuzzing of exception messages/traces.
   module Fuzzing
-    def fuzz(description, backtrace)
-      Digest::MD5.hexdigest(fuzz_description(description) + fuzz_backtrace(backtrace))
+    def fuzz(description, backtrace, parent_print = nil)
+      Digest::MD5.hexdigest([
+        fuzz_description(description),
+        fuzz_backtrace(backtrace),
+        parent_print
+      ].compact.join)
     end
 
     private

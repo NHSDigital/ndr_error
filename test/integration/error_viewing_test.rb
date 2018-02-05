@@ -124,4 +124,24 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     assert_equal "/fingerprinting/errors?q=#{print1.error_fingerprintid}", path_with_params
     assert page.has_content?('No matching Logs exist for that Fingerprint!')
   end
+
+  test 'should be able to view causal error' do
+    print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
+    print2 = simulate_raise(StandardError, 'Oh!', []).error_fingerprint
+
+    print2.causal_error_fingerprint = print1
+    print2.save!
+
+    down_link = '1 Downstream Error Stored'
+    up_link   = 'View Cause'
+
+    visit "/fingerprinting/errors/#{print2.error_fingerprintid}"
+
+    assert page.has_no_content? down_link
+    click_link up_link
+
+    assert current_path.end_with?(print1.id)
+    assert page.has_content? down_link
+    assert page.has_no_link? up_link
+  end
 end

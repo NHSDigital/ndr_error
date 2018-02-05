@@ -23,6 +23,55 @@ module NdrError
       assert failure.message =~ /Mass-assigning/
     end
 
+    test 'should monitor in block form' do
+      assert_difference(-> { Fingerprint.count }) do
+        assert_raises do
+          monitor { raise 'oops' }
+        end
+      end
+
+      assert_difference(-> { Fingerprint.count }) do
+        print, log = monitor(swallow: true) { raise 'oops' }
+        assert print.is_a? Fingerprint
+        assert log.is_a? Log
+      end
+    end
+
+    test 'should capture causal information as related fingerprints' do
+      trigger = -> { [].foo }
+      params  = { user_id: 'Bob' }
+
+      solo_print, = monitor(swallow: true, request: nil, ancillary_data: params) { trigger.call }
+
+      assert_difference(-> { Fingerprint.count }, 2) do
+        begin
+          1 / 0
+        rescue
+          begin
+            trigger.call
+          rescue => downstream_exception
+            print, log = log(downstream_exception, params, nil)
+            cause = print.causal_error_fingerprint
+
+            refute_equal solo_print.id, print.id, 'cause should have been factored'
+
+            assert log.is_a? Log
+            assert_equal 'NoMethodError', log.error_class
+            assert_equal 'Bob', log.user_id
+
+            assert cause.is_a? Fingerprint
+            refute_equal cause, print
+            assert cause.caused_error_fingerprints.include?(print)
+
+            cause_log = cause.error_logs.first
+            assert cause_log.is_a? Log
+            assert_equal 'ZeroDivisionError', cause_log.error_class
+            assert_equal 'Bob', cause_log.user_id
+          end
+        end
+      end
+    end
+
     private
 
     def exception(message, backtrace = [])

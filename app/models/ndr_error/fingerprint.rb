@@ -6,6 +6,17 @@ module NdrError
 
     self.primary_key = 'error_fingerprintid'
 
+    belongs_to_options = {
+      class_name:  'NdrError::Fingerprint',
+      foreign_key: 'causal_error_fingerprintid'
+    }
+    belongs_to_options[:optional] = true if Rails::VERSION::MAJOR > 4
+    belongs_to :causal_error_fingerprint, belongs_to_options
+
+    has_many :caused_error_fingerprints,
+             class_name:  'NdrError::Fingerprint',
+             foreign_key: 'causal_error_fingerprintid'
+
     has_many :error_logs,
              -> { latest_first },
              autosave:    true,

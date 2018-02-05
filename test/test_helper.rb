@@ -22,12 +22,12 @@ end
 require 'database_cleaner'
 DatabaseCleaner.strategy = :deletion
 
-class ActionDispatch::IntegrationTest
+ActionDispatch::IntegrationTest.class_eval do
   # Don't wrap each test case in a transaction:
-  if respond_to?(:use_transactional_fixtures=)
-    self.use_transactional_fixtures = false
-  else
+  if respond_to?(:use_transactional_tests=)
     self.use_transactional_tests = false
+  else
+    self.use_transactional_fixtures = false
   end
 
   # Instead, insert fixtures afresh between each test:
