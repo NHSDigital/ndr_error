@@ -22,7 +22,7 @@ end
 require 'database_cleaner'
 DatabaseCleaner.strategy = :deletion
 
-class ActionDispatch::IntegrationTest
+ActionDispatch::IntegrationTest.class_eval do
   # Don't wrap each test case in a transaction:
   if respond_to?(:use_transactional_tests=)
     self.use_transactional_tests = false

@@ -23,7 +23,7 @@ module NdrError
 
     def monitor(ancillary_data: {}, request: nil, swallow: false)
       yield
-    rescue Exception => exception
+    rescue Exception => exception # rubocop:disable Lint/RescueException
       data = log(exception, ancillary_data, request)
       swallow ? data : raise(exception)
     end
