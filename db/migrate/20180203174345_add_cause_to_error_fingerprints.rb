@@ -6,5 +6,7 @@ class AddCauseToErrorFingerprints < NdrError.migration_class
     add_foreign_key :error_fingerprints, :error_fingerprints,
                     column:      :causal_error_fingerprintid,
                     primary_key: :error_fingerprintid
+
+    add_index :error_fingerprints, :causal_error_fingerprintid
   end
 end
