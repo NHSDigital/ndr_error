@@ -1,28 +1,22 @@
 language: ruby
-
 rvm:
-  - 2.3
-  - 2.4
-  - 2.5
-
+- 2.3
+- 2.4
+- 2.5
 gemfile:
-  - gemfiles/Gemfile.rails42
-  - gemfiles/Gemfile.rails50
-  - gemfiles/Gemfile.rails51
-
+- gemfiles/Gemfile.rails42
+- gemfiles/Gemfile.rails50
+- gemfiles/Gemfile.rails51
 sudo: false
-
 cache: bundler
-
-before_script: "bundle update"
-
+before_script: bundle update
 script:
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake test
-
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake test
 notifications:
   slack:
-    secure: rBle/mKAbEQ2lcCbxJ5mnph8YGttApzP/MrYNeCfY8G6Do4gbG4Vwd29JxABvZ8DIonBa9Qd6loW9xoUi4DSaaUUB205/4KGivp42RTZW2zyln8uMS1PZglZZuhu/0lUcKKOOj/DP+ITOs8UqgSVhf9t7dihF4XNXhq0sd0wsK5qNFdoYENILr/Cb4jI+Lqwk2JOtONC+LjUc2WqvIFp0YYU9XNWsh9nulEmRHU8piqY5dzxOk93TwIr6rtPGaphgEFkNe1JHbKWrQ4HwQq9vRrKPOX1K0U2x3sNFWufprB5d9ik1YEdSCTKm20Wa8TzoMKXEkWKDygYPkvntGF2GmZXliF/CLWC1hixCb/PhyvuluuYTAeIN6JobZDMyo+CFoEHkYjiY/TRIj9kXCEaQMN6T/Ccvxi7quFWHtxBloSRqtjN6Oqn60Niu3RdRiHKPv5uIjKCY3+lF+KJ6v8+7qzM7ETNlWeipMBH+4eMTqNqoBLX3QJUzJOZUHUpDFFg+GnYM2WFMv4LV3QNX6UU3631YwiQDgu06BnhHZba840Zhsu8z2p6KZ+sejaEVCsvfFS1y71plvZIGoeZGjX8JCZfSs+SW76i42a5pgOeFKAVUD8UCxGWGAoh//Iu3OQzv1cbq/7F1v64OL13ugNY9DQyWr8iCpqO8yKww3qNTnM=
     on_pull_requests: false
     on_success: always
     on_failure: always
+    rooms:
+      secure: buz9fL78yLJZNuYNt5upZyXJesDqSsRqQzBfyxQjmy2t22WFlRBBPZUtiCpcAw4CJiTlyZqEKihxYdpcn26EdRGv5mG/R+POy4xAVap+I1jgWHbgbN9cLW6cPcDgirxD6UWP0Cskt+L9VcAyS9tSNCzjLOne113PPKr82BO5mcfFobF4iWVTsXntgwLxCfl/lsuSm0w2/lzOyFgqkTC3xq78e1C5m6XKlm2brf9TFu2sT2S05xZzBBYsloJXChUeUf5PA9cQdDLfvlJVVn2tYkm4mh6nHQXUczCtU1XL8AKGWHBnFEZ2aHWmVBvWGCKCFwQrbs5ipOH1U76xXQ9iomOerj4kWBITW9p9arxW3ydxu03gV4a5xTKMn+4ISyFmyrEz7GDmT6ER/ymAuSOb82TMTSN6GgepgRPImIiVij8uU86OrUzavvdA1XhVq0NU8c3g3+b/8MDD219crSgbWqaQjnzllfE3T1ldaKII9/xsCk1Ewz8a8Y1XkPqxDHY8lAq6NAB67dV99pwxASQ+7hIu07k9ZJNBOnP3Bt4xZHSVx4ni/0Iv99XeaSBkI4hp2nEYJB61or9B7By8H+x3Zn7m+rftYJpxSbkDwnXQYhn1nkRG+G2lnVxTde3tjUwKDa9gl+eEQAG9g9Jw6FIyhYUxRGpPkWosUmpGJZy3P7g=
