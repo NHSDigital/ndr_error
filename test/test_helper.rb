@@ -7,7 +7,7 @@ ENV['RAILS_ENV'] = 'test'
 require File.expand_path('../dummy/config/environment.rb', __FILE__)
 require 'rails/test_help'
 
-require 'mocha/mini_test'
+require 'mocha/minitest'
 
 Rails.backtrace_cleaner.remove_silencers!
 
@@ -37,6 +37,8 @@ end
 
 # Include all capybara + poltergeist config
 require 'ndr_dev_support/integration_testing'
+
+Capybara.server = :webrick
 
 module ActiveSupport
   # Add additional helper methods for creating logged errors

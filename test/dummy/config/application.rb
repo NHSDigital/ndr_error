@@ -51,6 +51,11 @@ module Dummy
       config.active_record.whitelist_attributes = true
     end
 
+    # Rails 5.2 deprecation:
+    if config.active_record.sqlite3.respond_to?(:represent_boolean_as_integer)
+      config.active_record.sqlite3.represent_boolean_as_integer = true
+    end
+
     # Use SQL instead of Active Record's schema dumper when creating the database.
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
