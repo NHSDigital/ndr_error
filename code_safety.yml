@@ -15,7 +15,7 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f3d6bab9bdb54dde0761c1a9c1cf706f69437a31
+    safe_revision: cee5e8e8d27e3ee1a08e84fdd473525bb17c3291
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -47,14 +47,14 @@ file safety:
   app/controllers/ndr_error/application_controller.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: baff8a5a455103dcf5ad8019fd294ada391b8656
+    safe_revision: 8e851a394d057cb3997270630b312878bb264463
   app/controllers/ndr_error/errors_controller.rb:
     comments: Potentially disclosive defaults. Index and Show have no authorization
       mechanisms in place. Under default NdrError configuration (as at rev fe0a25b)
       any (potentially malevolent) user can view captured errors and possibly harvest
       information. JMP 2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: 8e851a394d057cb3997270630b312878bb264463
   app/helpers/ndr_error/application_helper.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -62,31 +62,31 @@ file safety:
   app/helpers/ndr_error/errors_helper.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 9df8fdc14d588e1472b7e59a1f87e80423a3a0cd
+    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   app/models/ndr_error/fingerprint.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 122d979b685826ee8aaf96efd1f086b2d669ea23
+    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: dd568d9255488e1268955b5703988b9b2b589180
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 9fd3ade644dacb1a63b49ca692cd1e1cf62620ed
   app/views/ndr_error/errors/edit.html.erb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
   app/views/ndr_error/errors/index.html.erb:
     comments: 
-    reviewed_by: joshpencheon
-    safe_revision: 1c37094e278a2e892dc23b3120321561fd6397f6
+    reviewed_by: josh.pencheon
+    safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
   app/views/ndr_error/errors/show.html.erb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 9fd3ade644dacb1a63b49ca692cd1e1cf62620ed
+    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   config/routes.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -94,11 +94,15 @@ file safety:
   db/migrate/20150918162403_create_error_fingerprints.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 58530c9736190c34ac5d9d018c222d64d72db822
+    safe_revision: dd568d9255488e1268955b5703988b9b2b589180
   db/migrate/20150918162612_create_error_logs.rb:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 58530c9736190c34ac5d9d018c222d64d72db822
+  db/migrate/20180203174345_add_cause_to_error_fingerprints.rb:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: f29ceeca988132c58bb38c7ba3d85c38252aded5
   gemfiles/Gemfile.rails42:
     comments: 
     reviewed_by: josh.pencheon
@@ -111,6 +115,10 @@ file safety:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
+  gemfiles/Gemfile.rails52:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: cee5e8e8d27e3ee1a08e84fdd473525bb17c3291
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
@@ -131,16 +139,16 @@ file safety:
     safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
   lib/ndr_error/fuzzing.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: dd568d9255488e1268955b5703988b9b2b589180
   lib/ndr_error/logging.rb:
     comments: 
-    reviewed_by: joshpencheon
-    safe_revision: 834487f0259227c3b71d003a0b1360e2408075cc
+    reviewed_by: josh.pencheon
+    safe_revision: 625e8c805524abd4ca711362f6b19243c2a676f9
   lib/ndr_error/middleware/public_exceptions.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0a6aa403872f13daea294b6cd70af795f27e9c26
+    safe_revision: 625e8c805524abd4ca711362f6b19243c2a676f9
   lib/ndr_error/uuid_builder.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -148,7 +156,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: bd03c76576c6063dbd21f3e4be38e6317ea3cc91
+    safe_revision: 0bc26e9ab519b643ce050d9cf9325233266f3a5e
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -156,7 +164,7 @@ file safety:
   ndr_error.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 4f78b8c33b31e2d936e71f6d2a4631732f4f7161
+    safe_revision: '057915bb7a0219b4b0ab19028b213b372f875437'
   script/rails:
     comments: 
     reviewed_by: Miles Smith
@@ -211,8 +219,8 @@ file safety:
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/dummy/config/application.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 27acf70056937d1d7e37df0b90de576926498604
+    reviewed_by: josh.pencheon
+    safe_revision: 18517c54bf3ca51884f1abc17a371f6c3b17413b
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -304,7 +312,7 @@ file safety:
   test/integration/error_viewing_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   test/ndr_error_test.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -312,7 +320,7 @@ file safety:
   test/test_helper.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 3d45cb54aae7e27f2fd265fe4a68ff9a2a2983b7
+    safe_revision: 18517c54bf3ca51884f1abc17a371f6c3b17413b
   test/unit/helpers/ndr_error/application_helper_test.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -336,8 +344,8 @@ file safety:
   test/unit/ndr_error/log_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: 8e851a394d057cb3997270630b312878bb264463
   test/unit/ndr_error/logging_test.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 27acf70056937d1d7e37df0b90de576926498604
+    reviewed_by: josh.pencheon
+    safe_revision: e64c47f342a5ce7ff0caffc14280c351bbc54993
