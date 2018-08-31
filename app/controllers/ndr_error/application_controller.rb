@@ -1,3 +1,5 @@
+require 'ndr_ui'
+
 module NdrError
   # Global controller logic
   class ApplicationController < ActionController::Base
