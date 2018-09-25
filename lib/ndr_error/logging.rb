@@ -2,7 +2,7 @@ module NdrError
   # Module to contain helpers for logging
   module Logging
     # Which attributes can be populated when manually logging an exception:
-    ANCILLARY_ATTRS_WHITELIST = [:user_id, :user_roles, :svn_revision].freeze
+    ANCILLARY_ATTRS_WHITELIST = %i[user_id user_roles svn_revision].freeze
 
     # Log the given `exception`.
     def log(exception, ancillary_data, request_object)
@@ -34,7 +34,7 @@ module NdrError
     def initialize_log(ancillary_data)
       Log.new.tap do |log|
         ancillary_data.symbolize_keys.each do |key, value|
-          fail "Mass-assigning #{key} is forbidden!" unless ANCILLARY_ATTRS_WHITELIST.include?(key)
+          raise "Mass-assigning #{key} is forbidden!" unless ANCILLARY_ATTRS_WHITELIST.include?(key)
 
           if ActiveRecord::Base.respond_to?(:protected_attributes)
             log.assign_attributes({ key => value }, without_protection: true)

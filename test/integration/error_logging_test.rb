@@ -28,7 +28,7 @@ class ErrorLoggingTest < ActionDispatch::IntegrationTest
     end
 
     matching_error = NdrError::Log.all.detect do |error|
-      ('RuntimeError' == error.error_class) && ('boom' == error.description)
+      (error.error_class == 'RuntimeError') && (error.description == 'boom')
     end
 
     assert matching_error, 'no error log was created!'
@@ -43,7 +43,7 @@ class ErrorLoggingTest < ActionDispatch::IntegrationTest
 
   test 'should fallback if error logging fails' do
     # Raise an exception whilst handling an exception!
-    NdrError.exception_app_callback = ->(_request, _exception) { fail 'uh oh' }
+    NdrError.exception_app_callback = ->(_request, _exception) { raise 'uh oh' }
 
     # We expect fallback notification in webapp logs:
     Rails.logger.expects(:warn).with do |message|

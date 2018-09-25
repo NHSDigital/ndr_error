@@ -20,17 +20,17 @@ module NdrError
       regexp = %r{https://github.com/PublicHealthEngland/ndr_error/issues/\d+}
 
       with_ticket_url_regexp_as(regexp) do
-        valid_urls = %w(
+        valid_urls = %w[
           https://github.com/PublicHealthEngland/ndr_error/issues/1
           https://github.com/PublicHealthEngland/ndr_error/issues/22
-        )
+        ]
 
         valid_urls.each { |url| assert valid_ticket_url?(url) }
 
-        invalid_urls = %w(
+        invalid_urls = %w[
           https://github.com/PublicHealthEngland/ndr_error/issues
           https://google.com
-        )
+        ]
 
         invalid_urls.each { |url| refute valid_ticket_url?(url) }
       end

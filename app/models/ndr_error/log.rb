@@ -9,9 +9,7 @@ module NdrError
     include NdrError::UuidBuilder
 
     # Migrate away from host-specific column name:
-    unless :user_id == NdrError.user_column
-      alias_attribute :user_id, NdrError.user_column
-    end
+    alias_attribute :user_id, NdrError.user_column unless NdrError.user_column == :user_id
 
     self.primary_key = 'error_logid'
 
@@ -33,12 +31,12 @@ module NdrError
 
     def self.text_columns
       user_column = NdrError.user_column.to_s
-      %w(error_class description).tap do |text_columns|
+      %w[error_class description].tap do |text_columns|
         # Allow searching of `user_column` if it is textual:
-        if :string == columns_hash[user_column].try(:type)
+        if columns_hash[user_column].try(:type) == :string
           text_columns << user_column
         else
-          fail SecurityError, "Column '#{user_column}' not found!"
+          raise SecurityError, "Column '#{user_column}' not found!"
         end
       end
     end
@@ -173,7 +171,7 @@ module NdrError
       filter = ActionDispatch::Http::ParameterFilter.new(NdrError.filtered_parameters)
 
       if request
-        sources = [:parameters, :request_parameters, :query_parameters]
+        sources = %i[parameters request_parameters query_parameters]
         sources.inject(params) { |a, e| a.merge! request.send(e) }
       end
 

@@ -35,7 +35,7 @@ module Dummy
     config.encoding = 'utf-8'
 
     # Configure sensitive parameters which will be filtered from the log file.
-    config.filter_parameters += [:password, :dummy_app_test_sensitive_parameter]
+    config.filter_parameters += %i[password dummy_app_test_sensitive_parameter]
 
     # Configure the ActionDispatch::ShowExceptions middleware to use NdrError's exception logger.
     config.exceptions_app = NdrError::Middleware::PublicExceptions.new(Rails.public_path)

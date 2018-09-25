@@ -41,7 +41,7 @@ module NdrError
   # NdrError::Middleware::PublicExceptions middleware is used, it is called
   # with the Rack request object.
   mattr_accessor :log_parameters
-  self.log_parameters = ->(_request) { Hash.new }
+  self.log_parameters = ->(_request) { {} }
 
   # Request parameters that we should not be capturing as part of the error context.
   mattr_accessor :filtered_parameters

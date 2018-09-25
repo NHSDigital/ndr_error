@@ -13,9 +13,9 @@ module NdrError
       assert search(['john']).index(print)
       assert search(['JOHN']).index(print)
       assert search(['johnsmith']).index(print)
-      assert search(%w(john smith)).index(print)
-      assert search(%w(john jack)).index(print)
-      refute search(%w(jack smyth)).index(print)
+      assert search(%w[john smith]).index(print)
+      assert search(%w[john jack]).index(print)
+      refute search(%w[jack smyth]).index(print)
     end
 
     test 'should search by error type correctly' do
@@ -25,10 +25,10 @@ module NdrError
       assert search(['annoying']).index(print)
       assert search(['error']).index(print)
       assert search(['123']).index(print)
-      assert search(%w(123 error)).index(print)
+      assert search(%w[123 error]).index(print)
       assert search(['RUNTIME']).index(print)
       assert search(['runtimeerror']).index(print)
-      assert search(%w(missing error)).index(print)
+      assert search(%w[missing error]).index(print)
       refute search(['annoyance']).index(print)
       refute search(['exception']).index(print)
     end

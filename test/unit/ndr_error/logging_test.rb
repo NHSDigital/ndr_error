@@ -46,10 +46,10 @@ module NdrError
       assert_difference(-> { Fingerprint.count }, 2) do
         begin
           1 / 0
-        rescue
+        rescue StandardError
           begin
             trigger.call
-          rescue => downstream_exception
+          rescue StandardError => downstream_exception
             print, log = log(downstream_exception, params, nil)
             cause = print.causal_error_fingerprint
 

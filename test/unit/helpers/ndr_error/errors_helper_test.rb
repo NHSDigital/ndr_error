@@ -15,15 +15,15 @@ module NdrError
     end
 
     test 'highlighted_trace_for' do
-      error = mock(backtrace: %w(a b c), application_trace: %w(a c))
+      error = mock(backtrace: %w[a b c], application_trace: %w[a c])
 
       actual   = highlighted_trace_for(error)
       expected =
-        %w(
+        %w[
           <span\ class="trace-item">a</span>
           <span\ class="trace-item\ stack-only">b</span>
           <span\ class="trace-item">c</span>
-        )
+        ]
 
       assert_equal expected, actual
     end

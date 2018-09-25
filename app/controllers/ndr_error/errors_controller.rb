@@ -1,8 +1,8 @@
 module NdrError
   # Controller for viewing and managing errors
   class ErrorsController < ApplicationController
-    before_action :find_fingerprint,  only: [:show, :edit, :update, :destroy]
-    before_action :check_permissions, only: [:edit, :update, :destroy]
+    before_action :find_fingerprint,  only: %i[show edit update destroy]
+    before_action :check_permissions, only: %i[edit update destroy]
 
     def index
       if NdrError::Log.perform_cleanup!
@@ -25,8 +25,7 @@ module NdrError
       end
     end
 
-    def edit
-    end
+    def edit; end
 
     def update
       @fingerprint.ticket_url = params[:error_fingerprint][:ticket_url]

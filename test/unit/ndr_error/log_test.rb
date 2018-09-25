@@ -162,7 +162,7 @@ module NdrError
     end
 
     test 'should store error backtrace' do
-      trace = %w( line1 line2 line3 )
+      trace = %w[line1 line2 line3]
       error = simulate_raise(Exception, 'boom', trace)
 
       assert_equal trace, error.backtrace
@@ -318,9 +318,9 @@ module NdrError
     end
 
     test 'should not find similar errors with different backtraces' do
-      error1 = simulate_raise(Exception, 'Not found: 123', %w( foo bar ))
-      error2 = simulate_raise(Exception, 'Not found: 123', %w( bar baz ))
-      error3 = simulate_raise(Exception, 'Not found: 456', %w( baz foo ))
+      error1 = simulate_raise(Exception, 'Not found: 123', %w[foo bar])
+      error2 = simulate_raise(Exception, 'Not found: 123', %w[bar baz])
+      error3 = simulate_raise(Exception, 'Not found: 456', %w[baz foo])
 
       assert_equal [error1], error1.similar_errors
       assert_equal [error2], error2.similar_errors
@@ -328,9 +328,9 @@ module NdrError
     end
 
     test 'should find similar errors with same backtraces' do
-      error1 = simulate_raise(Exception, 'Not found: 123', %w( foo bar ))
-      error2 = simulate_raise(Exception, 'Not found: 123', %w( foo bar ))
-      error3 = simulate_raise(Exception, 'Not found: 456', %w( foo bar ))
+      error1 = simulate_raise(Exception, 'Not found: 123', %w[foo bar])
+      error2 = simulate_raise(Exception, 'Not found: 123', %w[foo bar])
+      error3 = simulate_raise(Exception, 'Not found: 456', %w[foo bar])
 
       assert_equal [error3, error2, error1], error1.similar_errors
       assert_equal [error3, error2, error1], error2.similar_errors
@@ -349,41 +349,41 @@ module NdrError
 
     test 'should extract app trace using Rails.root' do
       app   = Rails.root.basename
-      error = simulate_raise(Exception, 'msg', %W( bob/#{app}/foo bob/bar bob/#{app}/baz ))
-      assert_equal %W( bob/#{app}/foo bob/#{app}/baz ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %W[bob/#{app}/foo bob/bar bob/#{app}/baz])
+      assert_equal %W[bob/#{app}/foo bob/#{app}/baz], error.application_trace
 
-      error = simulate_raise(Exception, 'msg', %w( deploy/shared/bar deploy/current/baz ))
-      assert_equal %w( deploy/current/baz ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %w[deploy/shared/bar deploy/current/baz])
+      assert_equal %w[deploy/current/baz], error.application_trace
 
-      error = simulate_raise(Exception, 'msg', %w( deploy/releases/20150101 deploy/current/baz ))
-      assert_equal %w( deploy/releases/20150101 deploy/current/baz ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %w[deploy/releases/20150101 deploy/current/baz])
+      assert_equal %w[deploy/releases/20150101 deploy/current/baz], error.application_trace
 
-      error = simulate_raise(Exception, 'msg', %W( bob/gems/ndr_support bob/#{app}/foo ))
-      assert_equal %W( bob/gems/ndr_support bob/#{app}/foo ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %W[bob/gems/ndr_support bob/#{app}/foo])
+      assert_equal %W[bob/gems/ndr_support bob/#{app}/foo], error.application_trace
 
       # ndr_* gems shouldn't get lumped in with 3rd-party gems:
-      error = simulate_raise(Exception, 'msg', %w( bob/gems/ndr_support bob/gems/rails foo ))
-      assert_equal %w( bob/gems/ndr_support ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %w[bob/gems/ndr_support bob/gems/rails foo])
+      assert_equal %w[bob/gems/ndr_support], error.application_trace
 
       # With nothing in the application, fall back to anything non gem-like:
-      error = simulate_raise(Exception, 'msg', %w( bob/gems/rails foo ))
-      assert_equal %w( foo ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %w[bob/gems/rails foo])
+      assert_equal %w[foo], error.application_trace
     end
 
     test 'should extract remote app trace with fallback' do
       app = Rails.root.basename
 
       # We don't need the fallback, so include those matches:
-      error = simulate_raise(Exception, 'msg', %W( bob/#{app}/foo bob/gems/bar ))
-      assert_equal %W( bob/#{app}/foo ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %W[bob/#{app}/foo bob/gems/bar])
+      assert_equal %W[bob/#{app}/foo], error.application_trace
 
       # Now we do need a fallback:
-      error = simulate_raise(Exception, 'msg', %w( bob/local-app-copy/foo bob/gems/bar ))
-      assert_equal %w( bob/local-app-copy/foo ), error.application_trace
+      error = simulate_raise(Exception, 'msg', %w[bob/local-app-copy/foo bob/gems/bar])
+      assert_equal %w[bob/local-app-copy/foo], error.application_trace
     end
 
     test 'should raise when trying to generate SQL from non-existant user_column' do
-      trigger = -> { Log.filter_by_keywords %w(key words) }
+      trigger = -> { Log.filter_by_keywords %w[key words] }
       trigger.call
 
       with_config(:user_column, :not_a_column) do

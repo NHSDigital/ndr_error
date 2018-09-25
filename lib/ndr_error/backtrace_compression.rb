@@ -48,7 +48,7 @@ module NdrError
         data = Base64.decode64(string)
         begin
           string = Zlib::Inflate.inflate(data)
-        rescue
+        rescue StandardError
           Rails.logger.warn('NdrError: failed to inflate backtrace!')
         end
       end
