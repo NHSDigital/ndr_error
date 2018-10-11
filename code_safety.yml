@@ -47,14 +47,14 @@ file safety:
   app/controllers/ndr_error/application_controller.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8e851a394d057cb3997270630b312878bb264463
+    safe_revision: 41c4efa5c61f18db0c9044c8826de1c1a9c736e5
   app/controllers/ndr_error/errors_controller.rb:
     comments: Potentially disclosive defaults. Index and Show have no authorization
       mechanisms in place. Under default NdrError configuration (as at rev fe0a25b)
       any (potentially malevolent) user can view captured errors and possibly harvest
       information. JMP 2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
-    safe_revision: 8e851a394d057cb3997270630b312878bb264463
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   app/helpers/ndr_error/application_helper.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -70,7 +70,7 @@ file safety:
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
     reviewed_by: josh.pencheon
-    safe_revision: dd568d9255488e1268955b5703988b9b2b589180
+    safe_revision: fa6d3fb25f9ce072431229ffa4cf8e2fb172828f
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments: 
     reviewed_by: josh.pencheon
@@ -89,8 +89,8 @@ file safety:
     safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   config/routes.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   db/migrate/20150918162403_create_error_fingerprints.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -124,15 +124,15 @@ file safety:
       user is both authenticated and authorized to read/update/delete any error. JMP
       2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
-    safe_revision: 58530c9736190c34ac5d9d018c222d64d72db822
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   lib/ndr_error/backtrace_compression.rb:
     comments: diff not displayed, file re-checked
-    reviewed_by: joshpencheon
-    safe_revision: 834487f0259227c3b71d003a0b1360e2408075cc
+    reviewed_by: josh.pencheon
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   lib/ndr_error/engine.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 7f894b7ead836893d76fd9ea3daf41f04503fadd
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   lib/ndr_error/finder.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -144,7 +144,7 @@ file safety:
   lib/ndr_error/logging.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 625e8c805524abd4ca711362f6b19243c2a676f9
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   lib/ndr_error/middleware/public_exceptions.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -156,7 +156,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0bc26e9ab519b643ce050d9cf9325233266f3a5e
+    safe_revision: 9eefe6ca41dd822ee57656d0ee69c510f8ab678f
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -164,7 +164,7 @@ file safety:
   ndr_error.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: '057915bb7a0219b4b0ab19028b213b372f875437'
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   script/rails:
     comments: 
     reviewed_by: Miles Smith
@@ -192,7 +192,7 @@ file safety:
   test/dummy/app/controllers/disaster_controller.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 5750c196ac6146402d8130a861fc6040b5192fc2
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/app/helpers/application_helper.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -220,7 +220,7 @@ file safety:
   test/dummy/config/application.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 18517c54bf3ca51884f1abc17a371f6c3b17413b
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -268,7 +268,7 @@ file safety:
   test/dummy/config/routes.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 7350f7097c4cafacb48b083795fb09480f04c17c
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/config/secrets.yml:
     comments: 
     reviewed_by: josh.pencheon
@@ -308,7 +308,7 @@ file safety:
   test/integration/error_logging_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 5750c196ac6146402d8130a861fc6040b5192fc2
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/integration/error_viewing_test.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -327,16 +327,16 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/unit/helpers/ndr_error/errors_helper_test.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/finder_test.rb:
     comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: josh.pencheon
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/fingerprint_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 122d979b685826ee8aaf96efd1f086b2d669ea23
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/fuzzing_test.rb:
     comments: 
     reviewed_by: Miles Smith
@@ -344,8 +344,8 @@ file safety:
   test/unit/ndr_error/log_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 8e851a394d057cb3997270630b312878bb264463
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/logging_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: e64c47f342a5ce7ff0caffc14280c351bbc54993
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
