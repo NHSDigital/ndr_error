@@ -30,15 +30,15 @@ module NdrError
     before_create :set_uuid_primary_key
 
     def self.text_columns
-      user_column = NdrError.user_column.to_s
-      %w[error_class description].tap do |text_columns|
-        # Allow searching of `user_column` if it is textual:
-        if columns_hash[user_column].try(:type) == :string
-          text_columns << user_column
-        else
-          raise SecurityError, "Column '#{user_column}' not found!"
-        end
-      end
+      whitelist   = %w[error_class description]
+      column_name = NdrError.user_column.to_s
+      user_column = columns_hash[column_name]
+
+      raise SecurityError, 'User column missing!' unless user_column
+
+      # allow the user column to be searched if it is textual:
+      whitelist << column_name if user_column.type == :string
+      whitelist
     end
 
     def self.filter_by_keywords(keywords)
