@@ -174,9 +174,9 @@ file safety:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/Rakefile:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    comments: Rakefile has a shebang line, so can be executable
+    reviewed_by: josh.pencheon
+    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/app/assets/javascripts/application.js:
     comments: 
     reviewed_by: Miles Smith
