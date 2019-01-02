@@ -1,5 +1,5 @@
 ## [Unreleased]
-*no unreleased changes*
+* fix bug that causes crash on vague search. Resolves #10
 
 ## 2.0.1 / 2018-10-11
 ### Fixed
