@@ -10,7 +10,9 @@ module NdrError
 
       # Add to that fingerprints with log records that matched the search:
       log_print_ids = Log.not_deleted.filter_by_keywords(keywords).pluck(:error_fingerprintid)
-      records.concat scope.find(log_print_ids)
+      scope.where(error_fingerprintid: log_print_ids).find_in_batches do |batch|
+        records.concat batch
+      end
 
       order(records)
     end
