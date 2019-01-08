@@ -1,7 +1,7 @@
 ## [Unreleased]
 ### Fixed
 * fix bug that causes crash on vague search. Resolves #10
-* Support for Ruby 2.6, dropping support for 2.3
+* Support for Ruby 2.6, dropping support for 2.3, Rails 4.x
 
 ## 2.0.1 / 2018-10-11
 ### Fixed

@@ -18,12 +18,10 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.4'
 
-  s.add_dependency 'rails', '>= 4.1', '< 6'
+  s.add_dependency 'rails', '~> 5.0'
   s.add_dependency 'will_paginate'
 
   s.add_dependency 'ndr_ui'
-  # s.add_dependency 'jquery-rails'
-  # s.add_dependency 'sass-rails'
 
   s.add_development_dependency 'pry'
   s.add_development_dependency 'sqlite3'
