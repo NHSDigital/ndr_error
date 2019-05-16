@@ -43,16 +43,10 @@ module Dummy
     # Enable escaping HTML in JSON.
     config.active_support.escape_html_entities_in_json = true
 
-    if Rails::VERSION::MAJOR > 3
-      # Rails 4+: force strong_parameters on:
-      config.action_controller.permit_all_parameters = false
-    elsif Rails::VERSION::MAJOR > 2
-      # Rails 3: enable protected_attributes:
-      config.active_record.whitelist_attributes = true
-    end
+    # Force strong parameters on:
+    config.action_controller.permit_all_parameters = false
 
-    # Rails 5.2 deprecation:
-    if config.active_record.sqlite3.respond_to?(:represent_boolean_as_integer)
+    if Rails::VERSION::MAJOR < 6
       config.active_record.sqlite3.represent_boolean_as_integer = true
     end
 

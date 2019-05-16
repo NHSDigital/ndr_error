@@ -168,7 +168,13 @@ module NdrError
     # parameters in a form suitable for logging.
     def extract_request_params(request)
       params = {}
-      filter = ActionDispatch::Http::ParameterFilter.new(NdrError.filtered_parameters)
+      filter =
+        if defined?(ActiveSupport::ParameterFilter)
+          # Rails 6+
+          ActiveSupport::ParameterFilter.new(NdrError.filtered_parameters)
+        else
+          ActionDispatch::Http::ParameterFilter.new(NdrError.filtered_parameters)
+        end
 
       if request
         sources = %i[parameters request_parameters query_parameters]
