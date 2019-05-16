@@ -1,5 +1,7 @@
 require 'active_support/all' # TODO: want duration
 
+require 'ndr_ui/engine'
+
 require 'will_paginate'
 require 'will_paginate/array'
 
