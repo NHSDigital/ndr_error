@@ -15,7 +15,11 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cee5e8e8d27e3ee1a08e84fdd473525bb17c3291
+    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
+  CHANGELOG.md:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 6dd0874bd62c264e1629c5825638f2e8b425608f
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -70,7 +74,7 @@ file safety:
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
     reviewed_by: josh.pencheon
-    safe_revision: fa6d3fb25f9ce072431229ffa4cf8e2fb172828f
+    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments: 
     reviewed_by: josh.pencheon
@@ -103,22 +107,14 @@ file safety:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: f29ceeca988132c58bb38c7ba3d85c38252aded5
-  gemfiles/Gemfile.rails42:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
-  gemfiles/Gemfile.rails50:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
-  gemfiles/Gemfile.rails51:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
   gemfiles/Gemfile.rails52:
     comments: 
     reviewed_by: josh.pencheon
     safe_revision: cee5e8e8d27e3ee1a08e84fdd473525bb17c3291
+  gemfiles/Gemfile.rails60:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
@@ -136,7 +132,7 @@ file safety:
   lib/ndr_error/finder.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f3309af2defd832865446b2b16d3e741ef17979b
+    safe_revision: e1c892df6ea9eb5bcc300081e7513e2306ba7d82
   lib/ndr_error/fuzzing.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -156,7 +152,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 9eefe6ca41dd822ee57656d0ee69c510f8ab678f
+    safe_revision: 6dd0874bd62c264e1629c5825638f2e8b425608f
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -164,7 +160,7 @@ file safety:
   ndr_error.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
   script/rails:
     comments: 
     reviewed_by: Miles Smith
@@ -220,7 +216,7 @@ file safety:
   test/dummy/config/application.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: Miles Smith
