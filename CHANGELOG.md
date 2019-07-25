@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.0.3 / 2019-07-25
+### Fixed
+* Add `inverse_of` configuration to the associations
+
 ## 2.0.2 / 2019-05-16
 ### Fixed
 * fix bug that causes crash on vague search. Resolves #10
