@@ -15,11 +15,11 @@ file safety:
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
+    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
   CHANGELOG.md:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 6dd0874bd62c264e1629c5825638f2e8b425608f
+    safe_revision: ac9df8d36e5b0cb55f8df371bf75a3280a78e707
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -51,7 +51,7 @@ file safety:
   app/controllers/ndr_error/application_controller.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 41c4efa5c61f18db0c9044c8826de1c1a9c736e5
+    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
   app/controllers/ndr_error/errors_controller.rb:
     comments: Potentially disclosive defaults. Index and Show have no authorization
       mechanisms in place. Under default NdrError configuration (as at rev fe0a25b)
@@ -70,11 +70,11 @@ file safety:
   app/models/ndr_error/fingerprint.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
+    safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
     reviewed_by: josh.pencheon
-    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
+    safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments: 
     reviewed_by: josh.pencheon
@@ -110,11 +110,11 @@ file safety:
   gemfiles/Gemfile.rails52:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cee5e8e8d27e3ee1a08e84fdd473525bb17c3291
+    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
   gemfiles/Gemfile.rails60:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
+    safe_revision: f2dc83f9a1873d7f6f680cf7c7fa3cf487dc7ad4
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
@@ -128,7 +128,7 @@ file safety:
   lib/ndr_error/engine.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
   lib/ndr_error/finder.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -152,7 +152,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 6dd0874bd62c264e1629c5825638f2e8b425608f
+    safe_revision: ac9df8d36e5b0cb55f8df371bf75a3280a78e707
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -332,7 +332,7 @@ file safety:
   test/unit/ndr_error/fingerprint_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
   test/unit/ndr_error/fuzzing_test.rb:
     comments: 
     reviewed_by: Miles Smith
