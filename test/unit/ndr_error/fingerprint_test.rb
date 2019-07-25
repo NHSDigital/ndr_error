@@ -109,7 +109,7 @@ module NdrError
       error1  = simulate_raise(Exception, 'the error 1', [])
       _error2 = simulate_raise(Exception, 'the error 2', [])
       _error3 = simulate_raise(Exception, 'the error 3', [])
-      print   = error1.error_fingerprint
+      print   = error1.error_fingerprint.reload
 
       assert_equal 3, print.count
       assert_equal 3, print.error_logs.not_deleted.count

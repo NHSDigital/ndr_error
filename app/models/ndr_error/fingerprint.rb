@@ -8,20 +8,23 @@ module NdrError
 
     belongs_to_options = {
       class_name:  'NdrError::Fingerprint',
-      foreign_key: 'causal_error_fingerprintid'
+      foreign_key: 'causal_error_fingerprintid',
+      inverse_of: :caused_error_fingerprints
     }
     belongs_to_options[:optional] = true if Rails::VERSION::MAJOR > 4
     belongs_to :causal_error_fingerprint, belongs_to_options
 
     has_many :caused_error_fingerprints,
              class_name:  'NdrError::Fingerprint',
-             foreign_key: 'causal_error_fingerprintid'
+             foreign_key: 'causal_error_fingerprintid',
+             inverse_of: :causal_error_fingerprint
 
     has_many :error_logs,
              -> { latest_first },
              autosave:    true,
              class_name:  'NdrError::Log',
-             foreign_key: 'error_fingerprintid'
+             foreign_key: 'error_fingerprintid',
+             inverse_of: :error_fingerprint
 
     validate :ensure_ticket_url_matched_a_supplied_format
 

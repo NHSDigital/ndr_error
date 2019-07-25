@@ -15,7 +15,8 @@ module NdrError
 
     belongs_to :error_fingerprint,
                class_name:  'NdrError::Fingerprint',
-               foreign_key: 'error_fingerprintid'
+               foreign_key: 'error_fingerprintid',
+               inverse_of: :error_logs
 
     scope :deleted,     -> { where("status like 'deleted%'") }
     scope :not_deleted, -> { where("(status is null) or (status not like 'deleted%')") }
