@@ -1,5 +1,6 @@
 ## [Unreleased]
-*no unreleased changes*
+### Added
+* Add `NdrError.after_log { ... }` callback registration (#20)
 
 ## 2.0.3 / 2019-07-25
 ### Fixed
