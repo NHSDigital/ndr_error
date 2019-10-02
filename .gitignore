@@ -1,4 +1,5 @@
 .bundle/
+.rubocop-https---raw-githubusercontent-com-PublicHealthEngland-ndr-dev-support-master--rubocop-yml
 coverage/
 Gemfile.lock
 gemfiles/*.lock
