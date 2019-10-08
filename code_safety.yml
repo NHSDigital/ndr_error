@@ -3,15 +3,15 @@ file safety:
   ".gitignore":
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 02ce1726c28b3677fa3939df4bae7f428c5f5e13
+    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   ".hound.yml":
     comments: 
     reviewed_by: joshpencheon
     safe_revision: ab221104d8fd14299e55364a6ca2f1b77b857bd2
   ".rubocop.yml":
     comments: 
-    reviewed_by: joshpencheon
-    safe_revision: 951bdf3e702a6d92f77ed760456e41e96192f195
+    reviewed_by: josh.pencheon
+    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   ".travis.yml":
     comments: 
     reviewed_by: josh.pencheon
@@ -19,7 +19,7 @@ file safety:
   CHANGELOG.md:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: ac9df8d36e5b0cb55f8df371bf75a3280a78e707
+    safe_revision: 841894653d1aac90223a3494d8cb3a97bf5710c9
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -27,7 +27,7 @@ file safety:
   Gemfile:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 3ce24d8e9f41927af6a957d08c7f554b0cd1ff9e
+    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   MIT-LICENSE:
     comments: 
     reviewed_by: Miles Smith
@@ -114,17 +114,21 @@ file safety:
   gemfiles/Gemfile.rails60:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: f2dc83f9a1873d7f6f680cf7c7fa3cf487dc7ad4
+    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
       2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
   lib/ndr_error/backtrace_compression.rb:
     comments: diff not displayed, file re-checked
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+  lib/ndr_error/callbacks.rb:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
   lib/ndr_error/engine.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -140,7 +144,7 @@ file safety:
   lib/ndr_error/logging.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
   lib/ndr_error/middleware/public_exceptions.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -152,7 +156,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: ac9df8d36e5b0cb55f8df371bf75a3280a78e707
+    safe_revision: 841894653d1aac90223a3494d8cb3a97bf5710c9
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -160,7 +164,7 @@ file safety:
   ndr_error.gemspec:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
+    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   script/rails:
     comments: 
     reviewed_by: Miles Smith
@@ -344,4 +348,4 @@ file safety:
   test/unit/ndr_error/logging_test.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
