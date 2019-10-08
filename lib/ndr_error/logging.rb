@@ -16,9 +16,11 @@ module NdrError
 
       print = Fingerprint.find_or_create_by_id(log.md5_digest)
       print.causal_error_fingerprint = parent_print
-      error = print.store_log(log)
+      log = print.store_log(log)
 
-      [print, error]
+      NdrError.run_after_log_callbacks(exception, print, log)
+
+      [print, log]
     end
 
     def monitor(ancillary_data: {}, request: nil, swallow: false)

@@ -1,6 +1,7 @@
 require 'ndr_error/engine'
 
 require 'ndr_error/backtrace_compression'
+require 'ndr_error/callbacks'
 require 'ndr_error/finder'
 require 'ndr_error/fuzzing'
 require 'ndr_error/logging'
@@ -8,6 +9,7 @@ require 'ndr_error/uuid_builder'
 
 # Configuration for NdrError + convienence methods.
 module NdrError
+  extend Callbacks
   extend Finder
   extend Logging
 
