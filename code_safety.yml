@@ -19,7 +19,7 @@ file safety:
   CHANGELOG.md:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 841894653d1aac90223a3494d8cb3a97bf5710c9
+    safe_revision: a1c46cec90525ac0df824e86b61015abb4e06d0e
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -35,7 +35,7 @@ file safety:
   README.md:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 4b95a4e32c34cdbabfd0fde7802e6ddd3f42e214
+    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   Rakefile:
     comments: 
     reviewed_by: josh.pencheon
@@ -120,7 +120,7 @@ file safety:
       user is both authenticated and authorized to read/update/delete any error. JMP
       2016-01-12 - Authorisation configuration is now required.
     reviewed_by: josh.pencheon
-    safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
+    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   lib/ndr_error/backtrace_compression.rb:
     comments: diff not displayed, file re-checked
     reviewed_by: josh.pencheon
@@ -148,7 +148,11 @@ file safety:
   lib/ndr_error/middleware/public_exceptions.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 625e8c805524abd4ca711362f6b19243c2a676f9
+    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
+  lib/ndr_error/recorder.rb:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   lib/ndr_error/uuid_builder.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -156,7 +160,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: 841894653d1aac90223a3494d8cb3a97bf5710c9
+    safe_revision: a1c46cec90525ac0df824e86b61015abb4e06d0e
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -220,7 +224,7 @@ file safety:
   test/dummy/config/application.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: cd9a7d49429d852c6d1cb7f7673171b0ad207ead
+    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   test/dummy/config/boot.rb:
     comments: 
     reviewed_by: Miles Smith
