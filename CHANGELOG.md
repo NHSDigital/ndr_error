@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.2.1 / 2020-02-26
+### Fixed
+* Allow basic loading into a host app that doesn't use `sprockets`.
+
 ## 2.2.0 / 2020-02-26
 ### Added
 * Add more flexible middleware `NdrError::Recorder` middleware
