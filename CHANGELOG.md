@@ -1,6 +1,10 @@
 ## [Unreleased]
 *no unreleased changes*
 
+## 2.2.0 / 2020-02-26
+### Added
+* Add more flexible middleware `NdrError::Recorder` middleware
+
 ## 2.1.0 / 2019-10-08
 ### Added
 * Add `NdrError.after_log { ... }` callback registration (#20)
