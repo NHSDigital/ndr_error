@@ -19,7 +19,7 @@ file safety:
   CHANGELOG.md:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: a1c46cec90525ac0df824e86b61015abb4e06d0e
+    safe_revision: d956a690413291d31b4b4c0c02a50b8ed99c739e
   CODE_OF_CONDUCT.md:
     comments: 
     reviewed_by: Miles Smith
@@ -132,7 +132,7 @@ file safety:
   lib/ndr_error/engine.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
+    safe_revision: 556811d2b46e4f6d95eac1ac4be80f4fdc586493
   lib/ndr_error/finder.rb:
     comments: 
     reviewed_by: josh.pencheon
@@ -160,7 +160,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments: 
     reviewed_by: josh.pencheon
-    safe_revision: a1c46cec90525ac0df824e86b61015abb4e06d0e
+    safe_revision: d956a690413291d31b4b4c0c02a50b8ed99c739e
   lib/tasks/ndr_error_tasks.rake:
     comments: 
     reviewed_by: Miles Smith
@@ -181,6 +181,10 @@ file safety:
     comments: Rakefile has a shebang line, so can be executable
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+  test/dummy/app/assets/config/manifest.js:
+    comments: 
+    reviewed_by: josh.pencheon
+    safe_revision: c8b7e3697091aecdd296160615ddd413febdfba3
   test/dummy/app/assets/javascripts/application.js:
     comments: 
     reviewed_by: Miles Smith
