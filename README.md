@@ -38,6 +38,11 @@ a Rack application that can be used as part of the Rails exception-handling midd
 
 In the host application's `application.rb`, the following configuration can be added:
 
+To log the error, but have the host application's routing respond:
+```ruby
+config.exceptions_app = NdrError::Recorder.new(self.routes)
+```
+or log the error, then serve error templates from `public/` (legacy):
 ```ruby
 require 'ndr_error/middleware/public_exceptions'
 # Configure the ActionDispatch::ShowExceptions middleware to use NdrError's exception logger:

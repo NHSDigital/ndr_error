@@ -1,4 +1,5 @@
 require 'ndr_error/engine'
+require 'ndr_error/recorder'
 
 require 'ndr_error/backtrace_compression'
 require 'ndr_error/callbacks'
