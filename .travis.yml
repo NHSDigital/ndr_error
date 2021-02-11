@@ -5,6 +5,7 @@ rvm:
 gemfile:
 - gemfiles/Gemfile.rails52
 - gemfiles/Gemfile.rails60
+# - gemfiles/Gemfile.rails61 # no ndr_dev_support yet.
 sudo: false
 cache: bundler
 before_script: bundle update
