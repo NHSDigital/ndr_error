@@ -111,7 +111,10 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     print1 = simulate_raise(StandardError, 'Doh!', []).error_fingerprint
 
     visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
-    click_link 'Purge'
+
+    accept_alert(/Delete all logs of this error?/) do
+      click_link 'Purge'
+    end
 
     assert_equal '/fingerprinting/errors', current_path
     assert page.has_content?('Fingerprint purged!')

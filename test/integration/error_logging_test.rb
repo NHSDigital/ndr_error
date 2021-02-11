@@ -61,7 +61,6 @@ class ErrorLoggingTest < ActionDispatch::IntegrationTest
       visit "/disaster/cause/?message=#{message}"
 
       assert page.body.include? 'This is the 500 page for DummyApp.'
-      assert_equal 500, page.status_code
     end
   end
 end

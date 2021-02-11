@@ -36,6 +36,7 @@ ActionDispatch::IntegrationTest.class_eval do
 end
 
 # Include all capybara + poltergeist config
+ENV['INTEGRATION_DRIVER'] ||= 'chrome_headless'
 require 'ndr_dev_support/integration_testing'
 
 Capybara.server = :webrick
