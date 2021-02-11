@@ -41,12 +41,12 @@ module NdrError
     end
 
     test 'should fuzz compiled template / partial IDs from backtraces' do
-      template = ActionView::Template.new('test template', 'template.html.erb', nil, {})
+      template = ActionView::Template.new('test template', 'template.html.erb', nil, locals: [])
       compiled = template.send(:method_name) # The method name of the template once compiled
 
       assert_equal '_template_html_erb__COMPILED_ID', send(:fuzz_backtrace, [compiled])
 
-      partial  = ActionView::Template.new('test partial', '_partial.html.erb', nil, {})
+      partial  = ActionView::Template.new('test partial', '_partial.html.erb', nil, locals: [])
       compiled = partial.send(:method_name) # The method name of the partial once compiled
 
       assert_equal '__partial_html_erb__COMPILED_ID', send(:fuzz_backtrace, [compiled])
