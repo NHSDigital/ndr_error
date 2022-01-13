@@ -16,9 +16,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.md'] - ['.travis.yml']
 
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 2.6'
 
-  s.add_dependency 'rails', '>= 5.2', '< 7'
+  s.add_dependency 'rails', '>= 6.0', '< 7'
   s.add_dependency 'will_paginate'
 
   s.add_dependency 'ndr_ui'

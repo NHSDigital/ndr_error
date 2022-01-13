@@ -1,4 +1,5 @@
 ## [Unreleased]
+* Drop support for Rails 5, Ruby 2.5
 * Support Ruby 3.0
 
 ## 2.2.1 / 2020-02-26
