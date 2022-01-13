@@ -1,5 +1,5 @@
 ## [Unreleased]
-*no unreleased changes*
+* Support Ruby 3.0
 
 ## 2.2.1 / 2020-02-26
 ### Fixed
