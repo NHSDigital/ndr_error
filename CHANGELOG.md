@@ -1,4 +1,9 @@
 ## [Unreleased]
+* No unreleased changes
+
+## 2.3.0 / 2022-01-14
+### Fixed
+* Allow basic loading into a host app that doesn't use `sprockets`.
 * Drop support for Rails 5, Ruby 2.5
 * Support Ruby 3.0
 
