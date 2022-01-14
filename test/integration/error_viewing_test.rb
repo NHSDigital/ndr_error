@@ -12,7 +12,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
 
     visit '/fingerprinting/errors'
 
-    assert_equal '/', current_path
+    assert_current_path('/')
     assert page.has_content?('You are not authenticated.')
   end
 
@@ -49,7 +49,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     log.error_fingerprint.purge!
 
     visit base_path
-    assert_equal '/fingerprinting/errors', current_path
+    assert_current_path('/fingerprinting/errors', ignore_query: true)
     assert page.has_content? 'No matching Logs exist for that Fingerprint!'
   end
 
@@ -79,7 +79,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
   test 'should redirect to listing when error not found' do
     visit '/fingerprinting/errors/notafingerprint'
 
-    assert_equal '/fingerprinting/errors', current_path
+    assert_current_path('/fingerprinting/errors')
     assert page.has_content?('Unknown or deleted error fingerprint')
   end
 
@@ -100,7 +100,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     fill_in('Ticket URL', with: 'http://google.com')
     click_button 'Update'
 
-    assert_equal "/fingerprinting/errors/#{print1.error_fingerprintid}", current_path
+    assert_current_path("/fingerprinting/errors/#{print1.error_fingerprintid}", ignore_query: true)
     assert page.has_content?('The Error Fingerprint was successfully updated!')
 
     get "/fingerprinting/errors/#{print1.error_fingerprintid}"
@@ -116,15 +116,16 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
       click_link 'Purge'
     end
 
-    assert_equal '/fingerprinting/errors', current_path
+    # Don't use assert_equal '/fingerprinting/errors', current_path
+    # because this has race conditions
+    assert_current_path('/fingerprinting/errors')
     assert page.has_content?('Fingerprint purged!')
     assert_equal 0, print1.error_logs.not_deleted.count
 
     visit "/fingerprinting/errors/#{print1.error_fingerprintid}"
 
     # Should redirect to filtered listing if there are no logs to view:
-    path_with_params = current_url[current_url =~ Regexp.new(current_path)..-1] # TODO: yuk?
-    assert_equal "/fingerprinting/errors?q=#{print1.error_fingerprintid}", path_with_params
+    assert_current_path("/fingerprinting/errors?q=#{print1.error_fingerprintid}")
     assert page.has_content?('No matching Logs exist for that Fingerprint!')
   end
 
@@ -143,7 +144,7 @@ class ErrorViewingTest < ActionDispatch::IntegrationTest
     assert page.has_no_content? down_link
     click_link up_link
 
-    assert current_path.end_with?(print1.id)
+    assert_current_path(Regexp.new(".*/#{Regexp.escape(print1.id)}"))
     assert page.has_content? down_link
     assert page.has_no_link? up_link
   end
