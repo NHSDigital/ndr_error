@@ -1,4 +1,4 @@
-$LOAD_PATH.push File.expand_path('../lib', __FILE__)
+$LOAD_PATH.push File.expand_path('lib', __dir__)
 
 # Maintain your gem's version:
 require 'ndr_error/version'
@@ -16,14 +16,15 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.md'] - ['.travis.yml']
 
-  s.required_ruby_version = '>= 2.5'
+  s.required_ruby_version = '>= 2.6'
 
-  s.add_dependency 'rails', '>= 5.2', '< 7'
+  s.add_dependency 'rails', '>= 6.0', '< 7'
   s.add_dependency 'will_paginate'
 
   s.add_dependency 'ndr_ui'
 
   s.add_development_dependency 'pry'
+  s.add_development_dependency 'puma'
   s.add_development_dependency 'sqlite3'
 
   s.add_development_dependency 'mocha'

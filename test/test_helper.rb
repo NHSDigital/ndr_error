@@ -39,7 +39,7 @@ end
 ENV['INTEGRATION_DRIVER'] ||= 'chrome_headless'
 require 'ndr_dev_support/integration_testing'
 
-Capybara.server = :webrick
+Capybara.server = :puma, { Silent: true }
 
 module ActiveSupport
   # Add additional helper methods for creating logged errors
