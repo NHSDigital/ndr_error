@@ -1,55 +1,63 @@
 ---
 file safety:
+  ".github/CODEOWNERS":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c90243cf99541357a3bdfb913db7f40c5813dce9
+  ".github/workflows/lint.yml":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c90243cf99541357a3bdfb913db7f40c5813dce9
+  ".github/workflows/test.yml":
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
   ".gitignore":
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   ".hound.yml":
-    comments: 
+    comments:
     reviewed_by: joshpencheon
     safe_revision: ab221104d8fd14299e55364a6ca2f1b77b857bd2
   ".rubocop.yml":
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
-  ".travis.yml":
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
   CHANGELOG.md:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: d956a690413291d31b4b4c0c02a50b8ed99c739e
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
   CODE_OF_CONDUCT.md:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   Gemfile:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   MIT-LICENSE:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   README.md:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: c90243cf99541357a3bdfb913db7f40c5813dce9
   Rakefile:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: f9f6fe7769c995d7904d453a06c3490a57893c19
   app/assets/javascripts/ndr_error/ndr_error.js:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 02ce1726c28b3677fa3939df4bae7f428c5f5e13
   app/assets/stylesheets/ndr_error/ndr_error.scss:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 02ce1726c28b3677fa3939df4bae7f428c5f5e13
   app/controllers/ndr_error/application_controller.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
   app/controllers/ndr_error/errors_controller.rb:
@@ -60,121 +68,125 @@ file safety:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   app/helpers/ndr_error/application_helper.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/helpers/ndr_error/errors_helper.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   app/models/ndr_error/fingerprint.rb:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 78b1039b4691155ed0a7b4d5ba1b931415ab7716
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
     reviewed_by: josh.pencheon
     safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
   app/views/layouts/ndr_error/ndr_error.html.erb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 9fd3ade644dacb1a63b49ca692cd1e1cf62620ed
   app/views/ndr_error/errors/edit.html.erb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
   app/views/ndr_error/errors/index.html.erb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
   app/views/ndr_error/errors/show.html.erb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
   config/routes.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   db/migrate/20150918162403_create_error_fingerprints.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: dd568d9255488e1268955b5703988b9b2b589180
   db/migrate/20150918162612_create_error_logs.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 58530c9736190c34ac5d9d018c222d64d72db822
   db/migrate/20180203174345_add_cause_to_error_fingerprints.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: f29ceeca988132c58bb38c7ba3d85c38252aded5
-  gemfiles/Gemfile.rails52:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: d714aace6d35ccc37ee88d800a43ee915d2a4c37
   gemfiles/Gemfile.rails60:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
+  gemfiles/Gemfile.rails61:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: f538c9dc6398af2823dc5ff9052b0527c26253e7
+  gemfiles/Gemfile.rails70:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
       2016-01-12 - Authorisation configuration is now required.
-    reviewed_by: josh.pencheon
-    safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
+    reviewed_by: brian.shand
+    safe_revision: 78b1039b4691155ed0a7b4d5ba1b931415ab7716
   lib/ndr_error/backtrace_compression.rb:
     comments: diff not displayed, file re-checked
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   lib/ndr_error/callbacks.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
   lib/ndr_error/engine.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 556811d2b46e4f6d95eac1ac4be80f4fdc586493
   lib/ndr_error/finder.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: e1c892df6ea9eb5bcc300081e7513e2306ba7d82
   lib/ndr_error/fuzzing.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: dd568d9255488e1268955b5703988b9b2b589180
   lib/ndr_error/logging.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
   lib/ndr_error/middleware/public_exceptions.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   lib/ndr_error/recorder.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   lib/ndr_error/uuid_builder.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0a6aa403872f13daea294b6cd70af795f27e9c26
   lib/ndr_error/version.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: d956a690413291d31b4b4c0c02a50b8ed99c739e
   lib/tasks/ndr_error_tasks.rake:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   ndr_error.gemspec:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
   script/rails:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/README.rdoc:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/Rakefile:
@@ -182,178 +194,182 @@ file safety:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/app/assets/config/manifest.js:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: c8b7e3697091aecdd296160615ddd413febdfba3
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 041b134d5185ca19a42335caa99e68207710d732
   test/dummy/app/assets/javascripts/application.js:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/assets/stylesheets/application.css:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/controllers/application_controller.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/controllers/disaster_controller.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/app/helpers/application_helper.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/mailers/.gitkeep:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/models/.gitkeep:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/app/views/disaster/no_panic.html.erb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 74ca150d40becaeb12020a4779c89273e1aaf3ee
   test/dummy/app/views/layouts/application.html.erb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 74ca150d40becaeb12020a4779c89273e1aaf3ee
   test/dummy/config.ru:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/dummy/config/application.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 3a90be07bc39458e0d712d67d6ad749d47c1a0f1
   test/dummy/config/boot.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6032d2ffd7911c5f861e336ae463cd7af52badf7
   test/dummy/config/database.yml:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: baff8a5a455103dcf5ad8019fd294ada391b8656
   test/dummy/config/environment.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/environments/test.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: baff8a5a455103dcf5ad8019fd294ada391b8656
   test/dummy/config/initializers/backtrace_silencers.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/configure_ndr_error.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 2c26dd03cb934bf5cc1941907083c1df3625dfab
   test/dummy/config/initializers/inflections.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/mime_types.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/session_store.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/initializers/wrap_parameters.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/locales/en.yml:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/config/routes.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/dummy/config/secrets.yml:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: baff8a5a455103dcf5ad8019fd294ada391b8656
+  test/dummy/config/storage.yml:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: f538c9dc6398af2823dc5ff9052b0527c26253e7
   test/dummy/db/migrate/20150918163720_add_custom_user_column_to_error_logs.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 58530c9736190c34ac5d9d018c222d64d72db822
   test/dummy/lib/assets/.gitkeep:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/log/.gitkeep:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/404.html:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/422.html:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/500.html:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/public/favicon.ico:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/dummy/script/rails:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
   test/integration/error_logging_test.rb:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 8f3b4e058c8947b352417704401b45887caa90ed
   test/integration/error_viewing_test.rb:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 97714a37197d1edbf0c7361387962b03288b6535
   test/ndr_error_test.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/test_helper.rb:
-    comments: 
-    reviewed_by: josh.pencheon
-    safe_revision: 18517c54bf3ca51884f1abc17a371f6c3b17413b
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 78b1039b4691155ed0a7b4d5ba1b931415ab7716
   test/unit/helpers/ndr_error/application_helper_test.rb:
-    comments: 
+    comments:
     reviewed_by: Miles Smith
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   test/unit/helpers/ndr_error/errors_helper_test.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/finder_test.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/fingerprint_test.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
   test/unit/ndr_error/fuzzing_test.rb:
-    comments: 
-    reviewed_by: Miles Smith
-    safe_revision: ae18bbbff14d543b9a04e0c2b6158de66fb39772
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 0a8e49f503ec8ca2f839a976919c299c9a3b65f0
   test/unit/ndr_error/log_test.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/logging_test.rb:
-    comments: 
+    comments:
     reviewed_by: josh.pencheon
     safe_revision: efa29bca4a499b4e69cddec2d7145a9220a7122b
