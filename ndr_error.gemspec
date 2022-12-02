@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = []
   s.summary     = 'Rails exception logging'
   s.description = 'Mountable engine for exception logging and fingerprinting'
-  s.homepage    = 'https://github.com/PublicHealthEngland/ndr_error'
+  s.homepage    = 'https://github.com/NHSDigital/ndr_error'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md',

@@ -17,18 +17,18 @@ module NdrError
     end
 
     test 'should validate the ticket url with format supplied' do
-      regexp = %r{https://github.com/PublicHealthEngland/ndr_error/issues/\d+}
+      regexp = %r{https://github.com/NHSDigital/ndr_error/issues/\d+}
 
       with_ticket_url_regexp_as(regexp) do
         valid_urls = %w[
-          https://github.com/PublicHealthEngland/ndr_error/issues/1
-          https://github.com/PublicHealthEngland/ndr_error/issues/22
+          https://github.com/NHSDigital/ndr_error/issues/1
+          https://github.com/NHSDigital/ndr_error/issues/22
         ]
 
         valid_urls.each { |url| assert valid_ticket_url?(url) }
 
         invalid_urls = %w[
-          https://github.com/PublicHealthEngland/ndr_error/issues
+          https://github.com/NHSDigital/ndr_error/issues
           https://google.com
         ]
 
