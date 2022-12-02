@@ -3,7 +3,7 @@ file safety:
   ".github/CODEOWNERS":
     comments:
     reviewed_by: brian.shand
-    safe_revision: c90243cf99541357a3bdfb913db7f40c5813dce9
+    safe_revision: 44c015f5255e39e614022274144accdb2e17081f
   ".github/workflows/lint.yml":
     comments:
     reviewed_by: brian.shand
@@ -11,7 +11,7 @@ file safety:
   ".github/workflows/test.yml":
     comments:
     reviewed_by: brian.shand
-    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
+    safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
   ".gitignore":
     comments:
     reviewed_by: josh.pencheon
@@ -23,11 +23,11 @@ file safety:
   ".rubocop.yml":
     comments:
     reviewed_by: brian.shand
-    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
+    safe_revision: 6677736f0d095dcc14e79dfea3b317178ca65070
   CHANGELOG.md:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 6fbef03cf526b2838d75b5c0b847d36e1f41a43e
+    safe_revision: 71c40edb16ca5068278ae2f5f8f9b595be0fd0e1
   CODE_OF_CONDUCT.md:
     comments:
     reviewed_by: Miles Smith
@@ -38,12 +38,12 @@ file safety:
     safe_revision: deb386d3e2088d974c4dd3c9d8292e7ff8c07228
   MIT-LICENSE:
     comments:
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: brian.shand
+    safe_revision: 71c40edb16ca5068278ae2f5f8f9b595be0fd0e1
   README.md:
     comments:
     reviewed_by: brian.shand
-    safe_revision: c90243cf99541357a3bdfb913db7f40c5813dce9
+    safe_revision: 71c40edb16ca5068278ae2f5f8f9b595be0fd0e1
   Rakefile:
     comments:
     reviewed_by: josh.pencheon
@@ -73,16 +73,16 @@ file safety:
     safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
   app/helpers/ndr_error/errors_helper.rb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
+    reviewed_by: brian.shand
+    safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
   app/models/ndr_error/fingerprint.rb:
     comments:
     reviewed_by: brian.shand
     safe_revision: 78b1039b4691155ed0a7b4d5ba1b931415ab7716
   app/models/ndr_error/log.rb:
     comments: raises SecurityError if user column isn't known to Rails
-    reviewed_by: josh.pencheon
-    safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
+    reviewed_by: brian.shand
+    safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments:
     reviewed_by: josh.pencheon
@@ -97,8 +97,8 @@ file safety:
     safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
   app/views/ndr_error/errors/show.html.erb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: 6a63ccc028ad3c729938faf1b5b2d4186a4f5c27
+    reviewed_by: brian.shand
+    safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
   config/routes.rb:
     comments:
     reviewed_by: josh.pencheon
@@ -180,7 +180,7 @@ file safety:
   ndr_error.gemspec:
     comments:
     reviewed_by: brian.shand
-    safe_revision: bbdd29b364a7151de4ad704c77c0936132e640ec
+    safe_revision: 71c40edb16ca5068278ae2f5f8f9b595be0fd0e1
   script/rails:
     comments:
     reviewed_by: Miles Smith
@@ -359,8 +359,8 @@ file safety:
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   test/unit/ndr_error/fingerprint_test.rb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: cd956b04738f57451ff607bf0458f7b8976938f5
+    reviewed_by: brian.shand
+    safe_revision: 71c40edb16ca5068278ae2f5f8f9b595be0fd0e1
   test/unit/ndr_error/fuzzing_test.rb:
     comments:
     reviewed_by: brian.shand
