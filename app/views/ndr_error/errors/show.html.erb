@@ -78,7 +78,7 @@
 <table class="table table-bordered">
   <tbody>
     <tr>
-      <th>Time of Error:</th><td><%= @error.created_at.to_s(:db) %></td>
+      <th>Time of Error:</th><td><%= @error.created_at.to_formatted_s(:db) %></td>
       <th>User:</th><td><%= @error.user_id %> <small class="text-muted"><%= @error.user_roles %></small></td>
     </tr>
     <tr>

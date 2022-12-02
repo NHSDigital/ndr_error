@@ -1,6 +1,6 @@
-# NdrError [![Build Status](https://github.com/publichealthengland/ndr_error/workflows/Test/badge.svg)](https://github.com/publichealthengland/ndr_error/actions?query=workflow%3Atest) [![Gem Version](https://badge.fury.io/rb/ndr_error.svg)](https://rubygems.org/gems/ndr_error)
+# NdrError [![Build Status](https://github.com/NHSDigital/ndr_error/workflows/Test/badge.svg)](https://github.com/NHSDigital/ndr_error/actions?query=workflow%3Atest) [![Gem Version](https://badge.fury.io/rb/ndr_error.svg)](https://rubygems.org/gems/ndr_error)
 
-This is the Public Health England (PHE) National Disease Registers (NDR) Error ruby gem. It is a 
+This is the NHS Digital (NHS-D) National Disease Registers (NDR) Error ruby gem. It is a 
 Rails engine that provides error logging, viewing, and grouping capabilities.
 
 Exceptions are logged as `NdrError::Log` records, which can be associated by instances
@@ -94,7 +94,7 @@ NdrError.description_fuzzers.unshift(lambda { |description|
 
 ## Contributing
 
-1. Fork it ( https://github.com/PublicHealthEngland/ndr_error/fork )
+1. Fork it ( https://github.com/NHSDigital/ndr_error/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)

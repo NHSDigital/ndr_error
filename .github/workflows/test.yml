@@ -13,7 +13,7 @@ jobs:
         gemfile:
           - gemfiles/Gemfile.rails60
           - gemfiles/Gemfile.rails61
-          # - gemfiles/Gemfile.rails70 # no ndr_ui yet.
+          - gemfiles/Gemfile.rails70
 
     name: Ruby ${{ matrix.ruby-version }} / Bundle ${{ matrix.gemfile }}
 
