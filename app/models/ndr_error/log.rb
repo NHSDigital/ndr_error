@@ -85,7 +85,7 @@ module NdrError
 
     # Performs a soft-delete of this log.
     def flag_as_deleted!(time = Time.current)
-      update_attribute(:status, "deleted at #{time.to_s(:db)}")
+      update_attribute(:status, "deleted at #{time.to_formatted_s(:db)}")
     end
 
     # Copy across attributes from the exception object.

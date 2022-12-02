@@ -18,7 +18,7 @@ module NdrError
     end
 
     def latest_timestamp_for(fingerprint)
-      fingerprint.updated_at.to_s(:db)
+      fingerprint.updated_at.to_formatted_s(:db)
     end
 
     def latest_user_for(fingerprint, search)
@@ -36,7 +36,7 @@ module NdrError
         'class'          => 'badge badge-info',
         'data-toggle'    => 'tooltip',
         'data-placement' => 'right',
-        'title'          => "Since #{fingerprint.created_at.to_s(:db)}"
+        'title'          => "Since #{fingerprint.created_at.to_formatted_s(:db)}"
       }
 
       content_tag(:span, text, opts)
@@ -44,7 +44,7 @@ module NdrError
 
     def similar_error_link(error)
       user = error.user_id && content_tag(:span, error.user_id, class: 'text-muted')
-      text = safe_join([user, error.created_at.to_s(:db)].compact, ' - ')
+      text = safe_join([user, error.created_at.to_formatted_s(:db)].compact, ' - ')
 
       bootstrap_list_link_to text, error_fingerprint_path(error.error_fingerprint, log_id: error)
     end
