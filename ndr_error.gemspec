@@ -16,9 +16,15 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*'] + ['MIT-LICENSE', 'Rakefile', 'README.md'] - ['.travis.yml']
 
-  s.required_ruby_version = '>= 2.6'
+  s.required_ruby_version = '>= 2.7'
 
   s.add_dependency 'rails', '>= 6.0', '< 7'
+
+  # Support rails 6.0 / 6.1 with Ruby 3.1
+  s.add_dependency 'net-imap'
+  s.add_dependency 'net-pop'
+  s.add_dependency 'net-smtp'
+
   s.add_dependency 'will_paginate'
 
   s.add_dependency 'ndr_ui'

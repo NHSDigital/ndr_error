@@ -1,5 +1,7 @@
 ## [Unreleased]
-* No unreleased changes
+### Fixed
+* Drop support for Ruby 2.6
+* Support Ruby 3.1
 
 ## 2.3.0 / 2022-01-14
 ### Fixed
