@@ -237,7 +237,7 @@ module NdrError
 
     test 'should auto-calculate clock drift on create when configured' do
       test_checker = lambda do
-        stamp = ActiveRecord::Base.connection.execute('select CURRENT_TIMESTAMP')[0][0]
+        stamp = ActiveRecord::Base.connection.execute('select CURRENT_TIMESTAMP')[0]['CURRENT_TIMESTAMP']
         Time.zone.parse(stamp) + Time.zone.utc_offset
       end
 

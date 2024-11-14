@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 3.0'
 
-  s.add_dependency 'rails', '>= 6.1', '< 7.1'
+  s.add_dependency 'rails', '>= 6.1', '< 7.3'
 
   # Support rails 6.1 with Ruby 3.1
   s.add_dependency 'net-imap'
@@ -32,6 +32,10 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'
+
+  # Rails 6.1 and 7.0 do not support sqlite3 2.x; they specify gem "sqlite3", "~> 1.4"
+  # in lib/active_record/connection_adapters/sqlite3_adapter.rb
+  # cf. gemfiles/Gemfile.rails70
   s.add_development_dependency 'sqlite3'
 
   s.add_development_dependency 'mocha'
