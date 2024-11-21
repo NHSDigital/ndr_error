@@ -3,3 +3,7 @@ source 'https://rubygems.org'
 gemspec path: '..'
 
 gem 'rails', '~> 7.0.0'
+
+# Rails 7.0 does not support sqlite3 2.x; it specifies gem "sqlite3", "~> 1.4"
+# in lib/active_record/connection_adapters/sqlite3_adapter.rb
+gem 'sqlite3', '~> 1.7'

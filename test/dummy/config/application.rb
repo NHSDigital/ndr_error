@@ -7,8 +7,12 @@ Bundler.require(*Rails.groups)
 module Dummy
   # Dummy application to host and test the engine
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 6.1
+    # Initialize configuration defaults for current Rails version.
+    config.load_defaults Rails.version.match(/[0-9]*[.][0-9]*/).to_s # e.g. 7.2
+
+    # Rails 6.1 default
+    # TODO: Some of our tests fail when this Rails 6.1 default is removed
+    config.active_support.executor_around_test_case = false
 
     # Configuration for the application, engines, and railties goes here.
     #

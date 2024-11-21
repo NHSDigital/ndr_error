@@ -1,0 +1,8 @@
+source 'https://rubygems.org'
+
+gemspec path: '..'
+
+gem 'rails', '~> 7.1.0'
+
+# sqlite3 2.x is not supported on ruby 3.0
+gem 'sqlite3', '~> 1.7'

@@ -26,7 +26,7 @@ Dummy::Application.configure do
   config.cache_store = :null_store
 
   # Let middleware intercept errors:
-  config.action_dispatch.show_exceptions = true
+  config.action_dispatch.show_exceptions = :all
 
   # Disable request forgery protection in test environment.
   config.action_controller.allow_forgery_protection = false
