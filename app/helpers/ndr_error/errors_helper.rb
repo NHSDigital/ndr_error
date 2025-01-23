@@ -57,8 +57,8 @@ module NdrError
     end
 
     def ticket_link_for(fingerprint, small = false)
-      text = glyphicon_tag('asterisk') + ' View ticket'
-      css  = 'btn btn-default'
+      text = bootstrap_icon_tag('asterisk', :bi) + ' View ticket'
+      css  = 'btn btn-outline-secondary'
       css << ' btn-xs' if small
 
       url = fingerprint.ticket_url
@@ -66,15 +66,15 @@ module NdrError
     end
 
     def edit_button_for(fingerprint)
-      css   = 'btn btn-default'
-      text  = glyphicon_tag('pencil') + ' Edit Ticket'
+      css   = 'btn btn-outline-secondary'
+      text  = bootstrap_icon_tag('pencil', :bi) + ' Edit Ticket'
 
       link_to(text, edit_error_fingerprint_path(fingerprint), class: css)
     end
 
     def purge_button_for(fingerprint)
       css   = 'btn btn-danger'
-      text  = glyphicon_tag('trash icon-white') + ' Purge'
+      text  = bootstrap_icon_tag('trash-fill', :bi) + ' Purge'
 
       options = {
         'method'       => :delete,
@@ -86,18 +86,18 @@ module NdrError
     end
 
     def previous_button_for(error)
-      css = 'btn btn-default'
+      css = 'btn btn-outline-secondary'
       css << ' disabled' if error.nil?
-      text = glyphicon_tag('chevron-left')
+      text = bootstrap_icon_tag('chevron-left', :bi)
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
       link_to(text, path, class: css)
     end
 
     def next_button_for(error)
-      css = 'btn btn-default'
+      css = 'btn btn-outline-secondary'
       css << ' disabled' if error.nil?
-      text = glyphicon_tag('chevron-right')
+      text = bootstrap_icon_tag('chevron-right', :bi)
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
       link_to(text, path, class: css)
