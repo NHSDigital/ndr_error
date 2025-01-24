@@ -41,7 +41,7 @@ Gem::Specification.new do |s|
   # Workaround build issue on GitHub Actions with ruby <= 3.1 when installing sass-embedded
   # gem version 1.81.0: NoMethodError: undefined method `parse' for #<Psych::Parser...>
   # https://bugs.ruby-lang.org/issues/19371
-  spec.add_development_dependency 'psych', '< 5'
+  s.add_development_dependency 'psych', '< 5'
 
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'test-unit', '~> 3.0'
