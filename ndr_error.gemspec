@@ -20,8 +20,6 @@ Gem::Specification.new do |s|
   s.required_ruby_version = '>= 3.0'
 
   s.add_dependency 'rails', '>= 6.1', '< 7.3'
-  # See https://github.com/rails/rails/issues/54260.
-  s.add_dependency 'concurrent-ruby', '1.3.4'
 
   # Support rails 6.1 with Ruby 3.1
   s.add_dependency 'net-imap'
@@ -30,7 +28,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'will_paginate'
 
-  s.add_dependency 'ndr_ui'
+  s.add_dependency 'ndr_ui', '>= 5.0'
 
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'

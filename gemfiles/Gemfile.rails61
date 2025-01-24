@@ -7,3 +7,6 @@ gem 'rails', '~> 6.1.0'
 # Rails 6.1 does not support sqlite3 2.x; it specifies gem "sqlite3", "~> 1.4"
 # in lib/active_record/connection_adapters/sqlite3_adapter.rb
 gem 'sqlite3', '~> 1.7'
+
+# Latest concurrent-ruby breaks Rails < 7.1. See https://github.com/rails/rails/issues/54260
+gem 'concurrent-ruby', '1.3.4'
