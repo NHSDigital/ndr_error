@@ -3,7 +3,9 @@ $LOAD_PATH.push File.expand_path('lib', __dir__)
 # Maintain your gem's version:
 require 'ndr_error/version'
 
-# Describe your gem and declare its dependencies:
+# We list development dependencies for all Rails versions here.
+# Rails version-specific dependencies can go in the relevant Gemfile.
+# rubocop:disable Gemspec/DevelopmentDependencies
 Gem::Specification.new do |s|
   s.name        = 'ndr_error'
   s.version     = NdrError::VERSION
@@ -28,7 +30,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'will_paginate'
 
-  s.add_dependency 'ndr_ui'
+  s.add_dependency 'ndr_ui', '< 5.0'
 
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'
@@ -38,6 +40,11 @@ Gem::Specification.new do |s|
   # cf. gemfiles/Gemfile.rails70
   s.add_development_dependency 'sqlite3'
 
+  # Workaround build issue on GitHub Actions with ruby <= 3.1 when installing sass-embedded
+  # gem version 1.81.0: NoMethodError: undefined method `parse' for #<Psych::Parser...>
+  # https://bugs.ruby-lang.org/issues/19371
+  s.add_development_dependency 'psych', '< 5'
+
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'test-unit', '~> 3.0'
 
@@ -45,3 +52,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ndr_dev_support', '>= 5.10'
   s.add_development_dependency 'simplecov'
 end
+# rubocop:enable Gemspec/DevelopmentDependencies
