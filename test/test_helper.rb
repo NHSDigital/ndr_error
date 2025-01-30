@@ -33,6 +33,23 @@ ActionDispatch::IntegrationTest.class_eval do
   # Instead, insert fixtures afresh between each test:
   setup    { DatabaseCleaner.start }
   teardown { DatabaseCleaner.clean }
+
+  # assert_current_path is brittle with Chrome 132 on capybara 3.40.0
+  # Retry up to 3 times on error
+  def assert_current_path(path, **options, &optional_filter_block)
+    failures = 0
+    begin
+      super
+    rescue Selenium::WebDriver::Error::WebDriverError => e
+      failures += 1
+      if e.message.start_with?('aborted by navigation: loader has changed ' \
+                               "while resolving nodes\n") && failures <= 3
+        # puts "Retrying after failure #{failures}: #{e.class} #{e.message}"
+        retry
+      end
+      raise
+    end
+  end
 end
 
 # Include all capybara + poltergeist config
