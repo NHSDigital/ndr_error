@@ -28,7 +28,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'will_paginate'
 
-  s.add_dependency 'ndr_ui', '>= 5.0'
+  s.add_dependency 'ndr_ui', '< 5.0'
 
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'
