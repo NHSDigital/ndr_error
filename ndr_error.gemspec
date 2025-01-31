@@ -3,7 +3,9 @@ $LOAD_PATH.push File.expand_path('lib', __dir__)
 # Maintain your gem's version:
 require 'ndr_error/version'
 
-# Describe your gem and declare its dependencies:
+# We list development dependencies for all Rails versions here.
+# Rails version-specific dependencies can go in the relevant Gemfile.
+# rubocop:disable Gemspec/DevelopmentDependencies
 Gem::Specification.new do |s|
   s.name        = 'ndr_error'
   s.version     = NdrError::VERSION
@@ -50,3 +52,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'ndr_dev_support', '>= 5.10'
   s.add_development_dependency 'simplecov'
 end
+# rubocop:enable Gemspec/DevelopmentDependencies
