@@ -2,5 +2,5 @@
 
 # Contains the version of NdrError. Sourced by the gemspec.
 module NdrError
-  VERSION = '2.3.2'
+  VERSION = '2.4.0'
 end
