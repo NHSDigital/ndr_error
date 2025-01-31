@@ -8,19 +8,14 @@
 </head>
 <body class="bootstrap">
 
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+<div class="navbar navbar-expand-lg fixed-top bg-body-tertiary" role="navigation">
   <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menubar" aria-controls="menubar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
       </button>
-
       <%= link_to '&#171; Back to App'.html_safe, '/', class: "navbar-brand" %>
-      <p class="navbar-text">Error Logging by NDR</p>
+      <span class="navbar-text">Error Logging by NDR</span>
     </div>
   </div>
 </div>

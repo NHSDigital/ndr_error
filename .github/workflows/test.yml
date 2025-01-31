@@ -45,6 +45,8 @@ jobs:
       run: bundle install
     - name: Prepare SQLite
       run: RAILS_ENV=test bundle exec rake db:migrate --trace
+    - name: Precompile assets
+      run: RAILS_ENV=test bundle exec rails app:assets:clobber app:assets:precompile
     - name: Run tests
       run: bundle exec rails test
 

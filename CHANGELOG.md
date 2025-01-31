@@ -1,5 +1,7 @@
 ## [Unreleased]
-* no unreleased changes
+### Changed
+* new views with bootstrap 5 styles
+* switch to bootstrap-icons as glyphicon no longer available in bootstrap 5
 
 ## 2.3.2 / 2024-11-21
 ### Fixed

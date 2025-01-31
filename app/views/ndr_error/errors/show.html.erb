@@ -7,7 +7,7 @@
 
 <hr />
 <div class="clearfix">
-  <div class="pull-right">
+  <div class="float-end">
     <div class="btn-group">
       <%= ticket_link_for(@fingerprint) if @fingerprint.ticket_url.present? %>
       <%= edit_button_for(@fingerprint) if user_can_edit_errors? %>
@@ -22,7 +22,7 @@
         <%= previous_button_for(@error.previous) %>
 
         <div class="btn-group">
-          <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+          <a class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" href="#">
             <%= pluralize(@error.similar_errors.length - 1, 'Similar Error') %> Stored
             <span class="caret"></span>
           </a>
@@ -39,13 +39,13 @@
 
     <% if @fingerprint.causal_error_fingerprint %>
       <div class="btn-group">
-        <%= link_to bootstrap_icon_tag('arrow-up') + ' View Cause', error_fingerprint_path(@fingerprint.causal_error_fingerprint), class: 'btn btn-default' %>
+        <%= link_to bootstrap_icon_tag('arrow-up') + ' View Cause', error_fingerprint_path(@fingerprint.causal_error_fingerprint), class: 'btn btn-outline-secondary' %>
       </div>
     <% end %>
 
     <% if @fingerprint.caused_error_fingerprints.any? %>
       <div class="btn-group">
-        <a class="btn btn-default dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" href="#">
           <%= pluralize(@fingerprint.caused_error_fingerprints.length, 'Downstream Error') %> Stored
           <span class="caret"></span>
         </a>
@@ -117,7 +117,7 @@
 <% end %>
 
 <h4>
-  <small class="pull-right"><%= check_box_tag :toggle_app_trace_only %> only app trace?</small>
+  <small class="float-end"><%= check_box_tag :toggle_app_trace_only %> only app trace?</small>
   Backtrace:
 </h4>
 <% if (highlighted_trace = highlighted_trace_for(@error)).present? %>
