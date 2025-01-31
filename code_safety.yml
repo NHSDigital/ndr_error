@@ -11,7 +11,7 @@ file safety:
   ".github/workflows/test.yml":
     comments:
     reviewed_by: brian.shand
-    safe_revision: 6c6c33cfa43cf89b18a122c131f1c01bceb1386f
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   ".gitignore":
     comments:
     reviewed_by: josh.pencheon
@@ -27,7 +27,7 @@ file safety:
   CHANGELOG.md:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 6c6c33cfa43cf89b18a122c131f1c01bceb1386f
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   CODE_OF_CONDUCT.md:
     comments:
     reviewed_by: Miles Smith
@@ -69,12 +69,12 @@ file safety:
     safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
   app/helpers/ndr_error/application_helper.rb:
     comments:
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: brian.shand
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   app/helpers/ndr_error/errors_helper.rb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   app/models/ndr_error/fingerprint.rb:
     comments:
     reviewed_by: brian.shand
@@ -85,20 +85,20 @@ file safety:
     safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
   app/views/layouts/ndr_error/ndr_error.html.erb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: 9fd3ade644dacb1a63b49ca692cd1e1cf62620ed
+    reviewed_by: brian.shand
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   app/views/ndr_error/errors/edit.html.erb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
+    reviewed_by: brian.shand
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   app/views/ndr_error/errors/index.html.erb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: ed97290e47480c6ff94ff243424d4509f5506440
+    reviewed_by: brian.shand
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   app/views/ndr_error/errors/show.html.erb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 7793a9f2f74f0acef108c541d9df64dc16798bc2
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   config/routes.rb:
     comments:
     reviewed_by: josh.pencheon
@@ -118,11 +118,11 @@ file safety:
   gemfiles/Gemfile.rails61:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 6c6c33cfa43cf89b18a122c131f1c01bceb1386f
+    safe_revision: 0f971049679ceed9c8061b4bd87954a635ee555c
   gemfiles/Gemfile.rails70:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 6c6c33cfa43cf89b18a122c131f1c01bceb1386f
+    safe_revision: 0f971049679ceed9c8061b4bd87954a635ee555c
   gemfiles/Gemfile.rails71:
     comments:
     reviewed_by: brian.shand
@@ -176,7 +176,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 180d26d43236a5f3b8210e1b857f7c5abeddec6f
+    safe_revision: c7df9078d94a3b4fe8850053e6782361d148d853
   lib/tasks/ndr_error_tasks.rake:
     comments:
     reviewed_by: Miles Smith
@@ -184,7 +184,7 @@ file safety:
   ndr_error.gemspec:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 6c6c33cfa43cf89b18a122c131f1c01bceb1386f
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   script/rails:
     comments:
     reviewed_by: Miles Smith
@@ -348,11 +348,11 @@ file safety:
   test/test_helper.rb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 78b1039b4691155ed0a7b4d5ba1b931415ab7716
+    safe_revision: 0f971049679ceed9c8061b4bd87954a635ee555c
   test/unit/helpers/ndr_error/application_helper_test.rb:
     comments:
-    reviewed_by: Miles Smith
-    safe_revision: 6b335dd1e823dffecb0d2c936e11b81edff0b067
+    reviewed_by: brian.shand
+    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   test/unit/helpers/ndr_error/errors_helper_test.rb:
     comments:
     reviewed_by: josh.pencheon
