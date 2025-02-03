@@ -33,10 +33,10 @@ module NdrError
 
       text = "+ #{fingerprint.count - 1}"
       opts = {
-        'class'          => 'badge badge-info',
-        'data-toggle'    => 'tooltip',
-        'data-placement' => 'right',
-        'title'          => "Since #{fingerprint.created_at.to_formatted_s(:db)}"
+        'class'             => 'badge badge-info',
+        'data-bs-toggle'    => 'tooltip',
+        'data-bs-placement' => 'right',
+        'data-bs-title'     => "Since #{fingerprint.created_at.to_formatted_s(:db)}"
       }
 
       content_tag(:span, text, opts)

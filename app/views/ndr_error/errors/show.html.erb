@@ -22,7 +22,7 @@
         <%= previous_button_for(@error.previous) %>
 
         <div class="btn-group">
-          <a class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" href="#">
+          <a class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" href="#">
             <%= pluralize(@error.similar_errors.length - 1, 'Similar Error') %> Stored
             <span class="caret"></span>
           </a>
@@ -45,7 +45,7 @@
 
     <% if @fingerprint.caused_error_fingerprints.any? %>
       <div class="btn-group">
-        <a class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown" href="#">
+        <a class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" href="#">
           <%= pluralize(@fingerprint.caused_error_fingerprints.length, 'Downstream Error') %> Stored
           <span class="caret"></span>
         </a>
