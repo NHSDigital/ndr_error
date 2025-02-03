@@ -56,8 +56,8 @@ module NdrError
       print.stubs(count: 3)
 
       actual   = multiple_occurrences_badge_for(print)
-      expected = '<span class="badge badge-info" data-placement="right"' \
-                 ' data-toggle="tooltip" title="Since 2015-01-01">+ 2</span>'
+      expected = '<span class="badge badge-info" data-bs-placement="right"' \
+                 ' data-bs-toggle="tooltip" data-bs-title="Since 2015-01-01">+ 2</span>'
 
       assert_dom_equal expected, actual
     end
