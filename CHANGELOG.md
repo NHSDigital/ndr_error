@@ -1,4 +1,8 @@
 ## [Unreleased]
+* no unreleased changes
+
+## 2.4.1 / 2025-02-03
+### Fixed
 * fix bootstrap 5 data attribute with BS namespace
 
 ## 2.4.0 / 2025-01-31
