@@ -1,5 +1,5 @@
 ## [Unreleased]
-* no unreleased changes
+* fix link with icon button style
 
 ## 2.4.1 / 2025-02-03
 ### Fixed
