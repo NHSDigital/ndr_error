@@ -57,7 +57,7 @@ module NdrError
     end
 
     def ticket_link_for(fingerprint, small = false) # rubocop:disable Style/OptionalBooleanParameter
-      text = bootstrap_icon_tag('asterisk', :bi) + ' View ticket'
+      text = bootstrap_icon_tag('asterisk', :bi) + ' View ticket' # rubocop:disable Style/StringConcatenation
       css  = 'btn btn-outline-secondary'
       css << ' btn-xs' if small
 
@@ -67,14 +67,14 @@ module NdrError
 
     def edit_button_for(fingerprint)
       css   = 'btn btn-outline-secondary'
-      text  = bootstrap_icon_tag('pencil', :bi) + ' Edit Ticket'
+      text  = bootstrap_icon_tag('pencil', :bi) + ' Edit Ticket' # rubocop:disable Style/StringConcatenation
 
       link_to(text, edit_error_fingerprint_path(fingerprint), class: css)
     end
 
     def purge_button_for(fingerprint)
       css   = 'btn btn-danger'
-      text  = bootstrap_icon_tag('trash-fill', :bi) + ' Purge'
+      text  = bootstrap_icon_tag('trash-fill', :bi) + ' Purge' # rubocop:disable Style/StringConcatenation
 
       options = {
         'method'       => :delete,
