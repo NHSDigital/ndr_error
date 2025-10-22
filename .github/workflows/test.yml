@@ -18,6 +18,7 @@ jobs:
           - gemfiles/Gemfile.rails70
           - gemfiles/Gemfile.rails71
           - gemfiles/Gemfile.rails72
+          - gemfiles/Gemfile.rails80
         exclude:
           # rails 6.1 requires ruby < 3.4
           - ruby-version: '3.4'

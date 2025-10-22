@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 3.0'
 
-  s.add_dependency 'rails', '>= 6.1', '< 7.3'
+  s.add_dependency 'rails', '>= 6.1', '< 8.1'
 
   # Support rails 6.1 with Ruby 3.1
   s.add_dependency 'net-imap'
