@@ -1,5 +1,6 @@
 ## [Unreleased]
-* no unreleased changes
+### Fixed
+* Support Ruby 3.4, Rails 8.0
 
 ## 2.4.2 / 2025-03-23
 * fix link with icon button style
