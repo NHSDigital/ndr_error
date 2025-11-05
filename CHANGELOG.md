@@ -1,6 +1,7 @@
 ## [Unreleased]
 ### Fixed
 * Support Ruby 3.4, Rails 8.0
+* Fix ruby 3.4 frozen string literal warnings
 
 ## 2.4.2 / 2025-03-23
 * fix link with icon button style

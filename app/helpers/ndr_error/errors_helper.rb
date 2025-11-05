@@ -11,7 +11,7 @@ module NdrError
 
       error.backtrace.map do |line|
         css_classes = 'trace-item'
-        css_classes << ' stack-only' unless highlighting.include?(line)
+        css_classes += ' stack-only' unless highlighting.include?(line)
 
         content_tag(:span, line, class: css_classes)
       end
@@ -96,7 +96,7 @@ module NdrError
 
     def next_button_for(error)
       css = 'btn btn-outline-secondary'
-      css << ' disabled' if error.nil?
+      css += ' disabled' if error.nil?
       text = bootstrap_icon_tag('chevron-right', :bi)
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
