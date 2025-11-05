@@ -7,11 +7,11 @@ file safety:
   ".github/workflows/lint.yml":
     comments:
     reviewed_by: brian.shand
-    safe_revision: c90243cf99541357a3bdfb913db7f40c5813dce9
+    safe_revision: 2944af4f7174ccc35b730544caaa97e9dc09c64b
   ".github/workflows/test.yml":
     comments:
     reviewed_by: brian.shand
-    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
+    safe_revision: 2944af4f7174ccc35b730544caaa97e9dc09c64b
   ".gitignore":
     comments:
     reviewed_by: josh.pencheon
@@ -27,7 +27,7 @@ file safety:
   CHANGELOG.md:
     comments:
     reviewed_by: brian.shand
-    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
+    safe_revision: 2944af4f7174ccc35b730544caaa97e9dc09c64b
   CODE_OF_CONDUCT.md:
     comments:
     reviewed_by: Miles Smith
@@ -74,7 +74,7 @@ file safety:
   app/helpers/ndr_error/errors_helper.rb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
+    safe_revision: f968e83350a73d8f2a8492d347227e5f14dd5c95
   app/models/ndr_error/fingerprint.rb:
     comments:
     reviewed_by: brian.shand
@@ -98,7 +98,7 @@ file safety:
   app/views/ndr_error/errors/show.html.erb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
+    safe_revision: 0a16c83664ec45d09e939162a50ab3c7d0acbf85
   config/routes.rb:
     comments:
     reviewed_by: josh.pencheon
@@ -131,6 +131,10 @@ file safety:
     comments:
     reviewed_by: brian.shand
     safe_revision: 6c6c33cfa43cf89b18a122c131f1c01bceb1386f
+  gemfiles/Gemfile.rails80:
+    comments:
+    reviewed_by: brian.shand
+    safe_revision: 2944af4f7174ccc35b730544caaa97e9dc09c64b
   lib/ndr_error.rb:
     comments: Potentially dangerous defaults. Default configuration assumes any given
       user is both authenticated and authorized to read/update/delete any error. JMP
@@ -176,7 +180,7 @@ file safety:
   lib/ndr_error/version.rb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: c7df9078d94a3b4fe8850053e6782361d148d853
+    safe_revision: 02eb1839eb802e086f253306571475d5361cf573
   lib/tasks/ndr_error_tasks.rake:
     comments:
     reviewed_by: Miles Smith
@@ -184,7 +188,7 @@ file safety:
   ndr_error.gemspec:
     comments:
     reviewed_by: brian.shand
-    safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
+    safe_revision: 2944af4f7174ccc35b730544caaa97e9dc09c64b
   script/rails:
     comments:
     reviewed_by: Miles Smith
@@ -355,8 +359,8 @@ file safety:
     safe_revision: aaf2bb6a41ebe0c8fed889b8410a66eb8d5a26eb
   test/unit/helpers/ndr_error/errors_helper_test.rb:
     comments:
-    reviewed_by: josh.pencheon
-    safe_revision: 0c8ae75d4cba713cc45dca3d94734fa77f170a82
+    reviewed_by: brian.shand
+    safe_revision: 0a16c83664ec45d09e939162a50ab3c7d0acbf85
   test/unit/ndr_error/finder_test.rb:
     comments:
     reviewed_by: josh.pencheon
