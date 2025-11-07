@@ -11,7 +11,7 @@ module NdrError
 
       error.backtrace.map do |line|
         css_classes = 'trace-item'
-        css_classes << ' stack-only' unless highlighting.include?(line)
+        css_classes += ' stack-only' unless highlighting.include?(line)
 
         content_tag(:span, line, class: css_classes)
       end
@@ -59,7 +59,7 @@ module NdrError
     def ticket_link_for(fingerprint, small = false) # rubocop:disable Style/OptionalBooleanParameter
       text = bootstrap_icon_tag('asterisk', :bi) + ' View ticket' # rubocop:disable Style/StringConcatenation
       css  = 'btn btn-outline-secondary'
-      css << ' btn-xs' if small
+      css += ' btn-xs' if small
 
       url = fingerprint.ticket_url
       link_to(text, /^http/i =~ url ? url : "http://#{url}", class: css)
@@ -87,7 +87,7 @@ module NdrError
 
     def previous_button_for(error)
       css = 'btn btn-outline-secondary'
-      css << ' disabled' if error.nil?
+      css += ' disabled' if error.nil?
       text = bootstrap_icon_tag('chevron-left', :bi)
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 
@@ -96,7 +96,7 @@ module NdrError
 
     def next_button_for(error)
       css = 'btn btn-outline-secondary'
-      css << ' disabled' if error.nil?
+      css += ' disabled' if error.nil?
       text = bootstrap_icon_tag('chevron-right', :bi)
       path = error.nil? ? '#' : error_fingerprint_path(error.error_fingerprint, log_id: error)
 

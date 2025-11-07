@@ -45,6 +45,13 @@ Gem::Specification.new do |s|
   # https://bugs.ruby-lang.org/issues/19371
   s.add_development_dependency 'psych', '< 5'
 
+  # Workaround build issue on GitHub Actions with ruby <= 3.1 when installing sass-embedded
+  # Versions 1.77.0 and above require ruby >= 3.2 for packaged x86_64-linux binaries
+  # but say they're compatible with ruby 3.1.
+  # 1.76.0 has a bug that was fixed in 1.77.1, which we can't use yet.
+  # https://github.com/sass/dart-sass/issues/2239
+  s.add_development_dependency 'sass-embedded', '~> 1.75.0' if RUBY_VERSION.start_with?('3.1') # rubocop:disable Gemspec/RubyVersionGlobalsUsage
+
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'test-unit', '~> 3.0'
 
