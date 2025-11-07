@@ -74,7 +74,7 @@ file safety:
   app/helpers/ndr_error/errors_helper.rb:
     comments:
     reviewed_by: brian.shand
-    safe_revision: f968e83350a73d8f2a8492d347227e5f14dd5c95
+    safe_revision: e7ccbf33391e42f9ed13acefb4727f2371a76be2
   app/models/ndr_error/fingerprint.rb:
     comments:
     reviewed_by: brian.shand
@@ -188,7 +188,7 @@ file safety:
   ndr_error.gemspec:
     comments:
     reviewed_by: brian.shand
-    safe_revision: 2944af4f7174ccc35b730544caaa97e9dc09c64b
+    safe_revision: 5f91437ebbc288f9543784b5fab88434eca27064
   script/rails:
     comments:
     reviewed_by: Miles Smith
