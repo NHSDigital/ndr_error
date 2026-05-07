@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md',
-                'MIT-LICENSE', 'Rakefile', 'README.md'] - ['.travis.yml']
+                'MIT-LICENSE', 'Rakefile', 'README.md', 'SECURITY.md']
 
   s.required_ruby_version = '>= 3.0'
 
