@@ -19,14 +19,9 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'CHANGELOG.md', 'CODE_OF_CONDUCT.md',
                 'MIT-LICENSE', 'Rakefile', 'README.md', 'SECURITY.md']
 
-  s.required_ruby_version = '>= 3.0'
+  s.required_ruby_version = '>= 3.2'
 
-  s.add_dependency 'rails', '>= 6.1', '< 8.1'
-
-  # Support rails 6.1 with Ruby 3.1
-  s.add_dependency 'net-imap'
-  s.add_dependency 'net-pop'
-  s.add_dependency 'net-smtp'
+  s.add_dependency 'rails', '>= 7.1', '< 8.2'
 
   s.add_dependency 'will_paginate'
 
@@ -35,22 +30,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry'
   s.add_development_dependency 'puma'
 
-  # Rails 6.1 and 7.0 do not support sqlite3 2.x; they specify gem "sqlite3", "~> 1.4"
-  # in lib/active_record/connection_adapters/sqlite3_adapter.rb
-  # cf. gemfiles/Gemfile.rails70
   s.add_development_dependency 'sqlite3'
-
-  # Workaround build issue on GitHub Actions with ruby <= 3.1 when installing sass-embedded
-  # gem version 1.81.0: NoMethodError: undefined method `parse' for #<Psych::Parser...>
-  # https://bugs.ruby-lang.org/issues/19371
-  s.add_development_dependency 'psych', '< 5'
-
-  # Workaround build issue on GitHub Actions with ruby <= 3.1 when installing sass-embedded
-  # Versions 1.77.0 and above require ruby >= 3.2 for packaged x86_64-linux binaries
-  # but say they're compatible with ruby 3.1.
-  # 1.76.0 has a bug that was fixed in 1.77.1, which we can't use yet.
-  # https://github.com/sass/dart-sass/issues/2239
-  s.add_development_dependency 'sass-embedded', '~> 1.75.0' if RUBY_VERSION.start_with?('3.1') # rubocop:disable Gemspec/RubyVersionGlobalsUsage
 
   s.add_development_dependency 'mocha'
   s.add_development_dependency 'test-unit', '~> 3.0'
